@@ -10,6 +10,7 @@ WashU Epigenome Browser
     :maxdepth: 2
     :caption: Contents:
 
+    usage
     tracks
     datahub
     installation
