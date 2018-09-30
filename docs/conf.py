@@ -20,8 +20,8 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = 'WashU Epigenome Browser'
-copyright = '2018, Daofeng Li, Silas Hsu, Deepak Purushotham and Ting Wang'
-author = 'Daofeng Li, Silas Hsu, Deepak Purushotham and Ting Wang'
+copyright = '2018, Daofeng Li, Renee Sears and Ting Wang'
+author = 'Daofeng Li, Renee Sears and Ting Wang'
 
 # The short X.Y version
 version = ''
@@ -134,7 +134,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'WashUEpigenomeBrowser.tex', 'WashU Epigenome Browser Documentation',
-     'Daofeng Li, Silas Hsu, Deepak Purushotham and Ting Wang', 'manual'),
+     'Daofeng Li, Renee Sears and Ting Wang', 'manual'),
 ]
 
 

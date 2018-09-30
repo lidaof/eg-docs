@@ -21,7 +21,9 @@ we can use generic Linux ``sort`` command or the ``bedSort`` tool from UCSC. The
 do the same thing.
 
     sort -k1,1 -k2,2n track.bedgraph > track.bedgraph.sorted
+   
 or
+
     bedSort track.bedgraph track.bedgraph.sorted
 
 then compressed and index using tabix:
@@ -35,7 +37,7 @@ The two files must be in the same directory. Obtain the URL to "track.bedgraph.s
 .. _`compressed by bgzip and indexed by tabix`: http://www.htslib.org/doc/tabix.html
 
 Configure your webserver to enable CORS
--------------------------------------
+---------------------------------------
 
 Quoted from MDN_:
 
