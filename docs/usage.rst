@@ -157,7 +157,7 @@ Save session
 ~~~~~~~~~~~~
 
 Clike the **Save session** button to save a session, you will also see a session
-bundle Id which you can use later to retrieve session. you can save as 
+bundle Id which you can use later to retrieve session. you can save as
 many session as you want.
 
 .. image:: _static/save_session.png
@@ -192,15 +192,71 @@ would see same browser view as you.
 Screenshot
 ----------
 
+Users can create publication quality image using *Screenshot* from ``Apps`` menu.
+Click the *Screenshot* submenu, a new window will popup and re-rendering all your
+tracks as a new SVG file, then you can click the green download button to save
+current browser view as a SVG image file.
+
+.. image:: _static/screenshot.png
+
 Track management
 ----------------
+
+The browser collects data from large corsortiums like Roadmap Epigenomics, ENCODE,
+4DN, TaRGER etc. The data are called public data/tracks, and are organized to different
+collections, called hubs. Besides these public hubs and tracks, users can also submit
+their own tracks and data hub, these are so called custom tracks and hubs.
 
 Add tracks from public hubs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+From ``Tracks`` menu, choose **Public Data Hubs**, for example, for mouse you can see the 
+*4D Nucleome Network* hub, click the *Add* button to load this hub:
+
+.. image:: _static/mm10_4dn.png
+
+After the hub was added, a facet table contain all the tracks will popup for you to choose
+any tracks you interested:
+
+.. image:: _static/mm10_4dn_facet.png
+
+You can expand the row and/or cloumn selection, to swap row and column:
+
+.. image:: _static/mm10_4dn_facet2.png
+
+Click each cell in the facet table will bring you a new window has table contains all
+the tracks in the row and column selection:
+
+.. image:: _static/mm10_4dn_track.png
+
+Click the *Add* button to add the track(s) you want, and you can see the track is added
+to the browser view window:
+
+.. image:: _static/mm10_4dn_track_added.png
+
 Add custom tracks or data hub
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Also see tracks and datahub section for how to prepare your tracks and datahub file.
+Users can also submit their own track as custom track, say we have a bigWig track located at
+https://wangftp.wustl.edu/~dli/test/TW463_20-5-bonemarrow_MeDIP.bigWig, from ``Tracks``, choose
+**Custom tracks**, will popup the custom track interface, fill in the track type, label and URL,
+Click the green *Submit* button:
 
+.. image:: _static/custom_track.png
 
+You can see the track is added:
+
+.. image:: _static/custom_track_added.png
+
+Adding custom data hub is similar, say you have a hub located at https://wangftp.wustl.edu/~dli/test/a.json,
+From ``Tracks``, choose **Custom tracks**, choose *Add custom data hub* tab, paste the URL and load the hub
+from URL.
+
+.. image:: _static/custom_hub.png
+
+The tracks can then be added from the generated facet table.
+
+.. note:: The tracks from custom hubs are hidden by default as users may submit a hub contains hubdreds
+          of tracks. But users can always add the tracks they want from the facet table.
+
+Also see :doc:`tracks` and :doc:`datahub` section for how to prepare your tracks and datahub file.
