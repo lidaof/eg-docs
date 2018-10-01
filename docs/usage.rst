@@ -92,29 +92,102 @@ operations and you can jump to, or clear the whole history.
 Settings
 --------
 
+``Settings`` menu controls global setting for the browser.
+
 Toggle display of genome Navigator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+By using genome navigator (shown bleow) users can jump to any genomic region,
+or whole chromosome(s). 
+
+.. image:: _static/genome_navigator.png
+
+The operations on genome navigator are:
+
+* Left mouse drag: select
+* Right mouse drag: pan
+* Mousewheel: zoom
+
+The genome navigator can also be hidden to save more space
+for the tracks container. Click ``Settings`` on top menu you fill find the switch:
+
+.. image:: _static/show_genome_nav.png
+
 
 Toggle highlighting of enter region
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+When user jump to a region either by gene search or input a genomic coordinate, the entered
+region is highlighted by a light yellow box, indicating the user entered region:
+
+.. image:: _static/highlight.png
+
+the highlight can be truned off/on from the switch on ``Settings`` menu:
+
+.. image:: _static/show_highlight.png
+
 Change track lable width
 ~~~~~~~~~~~~~~~~~~~~~~~~
+
+The default width of track lebels shown below is 120 pixels.
+
+.. image:: _static/label_width.png
+
+The width of track label can be configured by the submenu under ``Settings`` menu:
+
+.. image:: _static/change_label_width.png
 
 Toggle display of VR mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
+From the ``Settings`` menu use can choose to toggle the VR display mode
+of tracks:
+
+.. image:: _static/show_vr.png
+
 Session
 -------
+
+Choose ``Session`` from the ``Apps`` menu will bring you the session interface
+shown as below:
+
+.. image:: _static/session.png
 
 Save session
 ~~~~~~~~~~~~
 
+Clike the **Save session** button to save a session, you will also see a session
+bundle Id which you can use later to retrieve session. you can save as 
+many session as you want.
+
+.. image:: _static/save_session.png
+
 Retrieve session
 ~~~~~~~~~~~~~~~~
 
+the **session bundle Id** can be used later to retrieve a session, paste you session
+bundle id in the session interface and click the ``Retrieve session`` button, you would
+see the saved sessions before:
+
+.. image:: _static/retrieve_session.png
+
+you will need to choose which session you want to restore:
+
+.. image:: _static/restore_session.png
+
+Click the green *Restore* button, your session will be restored:
+
+.. image:: _static/session_restored.png
+
 Live browsing
 -------------
+
+From ``Apps`` menu choose **Go Live**, the browser will navigate you to a new
+link, which you can share with someone else, like your collaborator, your PI
+or your friends, whatever you operates in you end, people who opened same link
+would see same browser view as you.
+
+.. image:: _static/live.png
 
 Screenshot
 ----------
