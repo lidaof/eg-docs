@@ -1,28 +1,36 @@
 Installation
 ============
 
-Server-side
------------
+Setup
+-----
+* install NodeJS from https://nodejs.org/en/
+* install MongoDB from https://www.mongodb.com/
 
-Enter the ``backend`` directory.  ``npm install``\ , and then ``npm run setup``.  MongoDB must be running.
+.. note:: Feel free to use any package manager tool on your system to install them. Like ``brew`` etc.
 
-Running
-~~~~~~~
+Then enter the ``backend`` directory. Type
+``npm install``\ , and then ``npm run setup``.  This step will load the gene annotation data
+to MongoDB database. (Make sure MongoDB server is running). Go to the ``frontend`` directory,
+type ``npm install`` to install dependent packages.
 
-#. Make sure MongoDB is running.
-#. Enter the ``backend`` directory.
-#. ``npm start``.
-#. Enter the ``frontend`` directory.
-#. ``npm start``.
+Start the browser
+-----------------
 
-Client-side
------------
+#. Make sure MongoDB is running
+#. Enter the ``backend`` directory
+#. type ``npm start``
+#. Enter the ``frontend`` directory
+#. type ``npm start``
+
+The browser is now accessible from http://localhost:3000/browser.
+
+Frontend code architeture
+-------------------------
 
 Quick tour
 ~~~~~~~~~~
 
 The client code is in the ``frontend`` folder.  Here is a quick tour of ``frontend/src``\ :
-
 
 * ``components``\ : All React components.
 
@@ -40,7 +48,6 @@ Suggested order of reading
 
 If you plan to understand the app as a whole, here's a suggested order of code to read:
 
-
 #. ``Feature``\ : a feature or annotation in the genome
 #. ``NavigationContext``\ : a list of ``Feature`` that represents everywhere a user can navigate.  If the ``Feature``\ s are
    actually entire chromosomes, then the user can effectively navigate the whole genome.
@@ -57,7 +64,6 @@ Make a new TrackConfig
 Make a new class that extends ``TrackConfig``\ , or one of its subclasses.  This class packages many essential track
 characteristics:
 
-
 * ``getComponent()`` - gets the component that renders the main visualizer and legend of the track.
 * ``getMenuComponents()`` - specifies context menu items in an array of components.  You can choose existing ones
   in the ``contextMenu`` directory, or make new ones.
@@ -70,13 +76,11 @@ Just work on making the browser render *some* temporary placeholder at first.
 Specify when to use the TrackConfig
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-
 #. Import your new TrackConfig into ``trackConfig/getTrackConfig.js``.
 #. Add an appropriate entry to ``TYPE_NAME_TO_SUBTYPE``\ , which maps track type name to track renderer.
 
 Write a new track visualizer component (implement ``getComponent()``\ )
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 
 #. Make a new component expecting to receive a bunch of props from ``TrackContainer``.  ``Track.js`` documents the props
    to expect.
@@ -110,7 +114,6 @@ components.  After you use this function, a component will automatically receive
 Specify context menu items with an array of components.  You can choose existing ones in the ``contextMenu`` directory, or
 make new ones.
 
-
 * Make sure the method returns Component *classes*\ , not component instances.
 
 3.  Specify default options
@@ -133,7 +136,6 @@ second or more of computation -- very noticable to the user!
 React (and other) gotchas
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 * On Macs, control + click is the same as a right click, which fires a ``contextmenu`` event.  Note that ``click`` events
   do not fire on ``contextmenu`` events.  The ``mousedown`` and ``mouseup`` events will still fire, though.
 * When using native DOM events, they take priority over React events.  This is because React waits for events to bubble
@@ -147,7 +149,6 @@ React (and other) gotchas
 
 Lessons trying to refactor into WebWorkers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 #. Data fetch and track display options are intimately related.  For example, what if someone wants HiC data and
    selects the 5KB resolution option?
