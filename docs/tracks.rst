@@ -152,4 +152,4 @@ genomic regions. `HiC`_ is used to show the results from a HiC experiment.
 HiC
 ~~~
 
-Learn more about HiC format please check https://github.com/aidenlab/juicer/wiki/Data.
+To learn more about the HiC format please check https://github.com/aidenlab/juicer/wiki/Data.
