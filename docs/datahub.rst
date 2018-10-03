@@ -40,7 +40,8 @@ Pasted below is an example data hub for mouse mm10:
         "url": "https://wangftp.wustl.edu/~dli/test/TW463_20-5-bonemarrow_MeDIP.bigWig",
         "name": "MeDIP",
         "options": {
-            "color": "red"
+            "color": "red",
+            "backgroundColor":"#FFE7AB"
             },
         "metadata": {
             "sample": "bone",
@@ -52,7 +53,8 @@ Pasted below is an example data hub for mouse mm10:
         "url": "https://wangftp.wustl.edu/~dli/test/TW551_20-5-bonemarrow_MRE.CpG.bigWig",
         "name": "MRE",
         "options": {
-            "color": "blue"
+            "color": "blue",
+            "backgroundColor":"#C0E3CC"
             },
         "metadata": {
             "sample": "bone",
@@ -76,7 +78,7 @@ Example bigWig track
         }
     }
 
-Supported options: color_, color2_, yScale_, yMax_, yMin_
+Supported options: backgroundColor_, color_, color2_, yScale_, yMax_, and yMin_
 
 Track properties
 ----------------
@@ -102,37 +104,41 @@ type
 name
 ~~~~
 
-*Requried*. ``name`` specifies the track name used internally by the browser. It's aso used for
-display as track legend if no label_ speficied. Value can be any string.
+*Requried*. ``name`` specifies the track name used internally by the browser. It is also 
+displayed as the track legend if no label_ speficied. Value can be any string.
 
 label
 ~~~~~
 
-*Optional*. ``label`` specifies the track legend displayed in the browser. It overrites the name_ arrtibute.
+*Optional*. ``label`` specifies the track legend displayed in the browser. It overrides the name_ arrtibute.
 Value can be any string.
 
 url
 ~~~
 
-*Requried*. ``url`` contains the URL to the track file, need to be HTTP or HTTPS location string.
+*Requried*. ``url`` contains the URL to the track file and needs to be HTTP or HTTPS location string.
 
-.. important:: ``url`` is requried for all the tracks in binary format. While for gene annotaion tracks
-               like ``refGene``, it's not requried, since the data are stored in Mongo database. Another
-               case is ``ruler`` track, ``url`` is also not needed.
-
+.. important:: A ``url`` is requried for all the tracks in binary format. Gene annotaion tracks,
+               like ``refGene``, do not need a ``url`` as they are stored in the Mongo database. 
+               Additional annotation tracks, such as the ``ruler`` track, also do not need a ``url``.
+               
+.. caution:: Each user-provided ``url`` must link to a publically available website, without password 
+             protection, so that the browser can read in the file. 
 
 metadata
 ~~~~~~~~
 
-*Optional*. An object speficies the metadata of the track. Examples like::
+*Optional*. An object specifying the metadata of the track. 
+
+In this basic example the value of each metadata term is a **string**. ::
 
     "metadata": {
         "sample": "bone",
         "assay": "MRE"
     }
 
-the value of each metadata term can be a **string** or a **list of string** with *hirarchical structure*, for
-example, the public Roamap hub have metadata definition like::
+This example public Roadmap data hub has more complex metadata definitions and makes use of a **list of strings** 
+to build a *hierarchical structure*. ::
 
     {
         "url": "https://egg.wustl.edu/d/hg19/GSM997242_1.bigWig", 
@@ -165,15 +171,15 @@ example, the public Roamap hub have metadata definition like::
         "name": "H3K9me3 of CD4+_CD25-_Th_Primary_Cells"
     }
 
-The list of metadata has order from more generic to more specific, and 
-this helps build the facet table hierarchy, make **search** and **filter** in track table easier.
+The list of metadata is ordered from more generic to more specific and 
+ helps build the facet table hierarchy making the **search** and **filter** functions in track table easier.
 
 details
 ~~~~~~~
 
-*Optional*. If you want to more information to be shown on right click the track, you can put
-them in ``details`` attribute, contents put here will be displayed when right click the track,
-and toggle the **More Information** dropdown menu::
+*Optional*. If you want to add more information for each track then the ``details`` attribute is helpful.
+After right clicking on the track you can click **More Information** and see the 
+``details``, ``url``, and ``metadata`` for each track in the dropdown menu. ::
 
     "details": {
         "data source": "Roadmap Project",
@@ -184,67 +190,66 @@ options
 ~~~~~~~
 
 *Optional*. All track render options are placed in an object called ``options``.
-this object can have the following properties:
+This object can have the following properties:
 
-color
-^^^^^
+    color
+    ^^^^^
 
-``color`` is used to define the color for the track, color name, RGB values can be used.
-For more about color name or RGB, please check https://www.w3schools.com/css/css_colors.asp.
+    ``color`` is used to define the color for each track. A color name, RGB values, or hex color code can be used.
+    For more about color name or RGB please see https://www.w3schools.com/css/css_colors.asp.
 
-color2
-^^^^^^
+    color2
+    ^^^^^^
 
-``color2`` is used to define the color for negative values from the track data. Default is
-the same as color_.
+    ``color2`` is used to define the color for negative values from the track data. The default is
+    the same as color_.
 
-backgroundColor
+    backgroundColor
+    ^^^^^^^^^^^^^^^
 
-``backgroundColor`` defines the background color of the track.
+    ``backgroundColor`` defines the background color of the track.
 
-height
-^^^^^^
+    height
+    ^^^^^^
 
-``height`` controls the height of the track, speficied in number, unit is *pixel*.
+    ``height`` controls the height of the track which is specified as a number and displayed in *pixels*.
 
-yScale
-^^^^^^
+    yScale
+    ^^^^^^
 
-``yScale`` allows you to configure the track's y-scale, you can use *auto* or *fixed*
-here. *auto* means the y-scale will be calculated from the values in view region, from 0
-to maximal of values in view region. *fixed* means you can specify the *minimal* and *maximal* value.
+    ``yScale`` allows you to configure the track's y-scale. Options include *auto* or *fixed*.
+    *auto* sets the y-scale from 0 to the max value of values in the view region for a given track. 
+    *fixed* means you can specify the *minimal* and *maximal* value.
 
-yMax
-^^^^
+    yMax
+    ^^^^
 
-``yMax`` used to define the *maximal* value of track y-axis. Value is number.
+    ``yMax`` is used to define the *maximum* value of a track's y-axis. Value is number.
 
-yMin
-^^^^
+    yMin
+    ^^^^
 
-``yMin`` used to define the *minimal* value of track y-axis. Value is number.
+    ``yMin`` is used to define the *minimum* value of a track's y-axis. Value is number.
 
 .. important:: If you need the track to be in *fixed* scale, you need to specify ``yScale`` to *fixed*
                besides of set ``yMax`` and ``yMin``.
 
-colorAboveMax
-^^^^^^^^^^^^^
+    colorAboveMax
+    ^^^^^^^^^^^^^
 
-``colorAboveMax`` defines the color when yScale_ set to *fixed*, and the value exceeds the value
-yMax_ defined.
+    ``colorAboveMax`` defines the color displayed when a *fixed* yScale_ is used and a value exceeds the 
+    yMax_ defined.
 
-color2BelowMin
-^^^^^^^^^^^^^^
+    color2BelowMin
+    ^^^^^^^^^^^^^^
 
-``color2BelowMin`` defines the color when yScale_ set to *fixed*, and the value below the value
-yMin_ defined.
+    ``color2BelowMin`` defines the color displayed when a *fixed* yScale_ is used and a value is below the
+    yMin_ defined.
 
-displayMode
-^^^^^^^^^^^
+    displayMode
+    ^^^^^^^^^^^
 
-``displayMode`` specifies display mode for tracks, different tracks have different display mode
-supported. 
-
+    ``displayMode`` specifies display mode for each tracks. Different tracks have different display modes as listed below.
 
 .. list-table::
    :widths: 25 50
