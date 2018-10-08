@@ -38,9 +38,10 @@ the track files need be hosted in a web accssible location using HTTP or HTTPS.
 The following sections introduce the track types that the browser supports.
 
 Binary track file formats like bigWig_ and HiC_ can be used directly with the browser.
-bedGraph_, methylC_, and categorical_ track files need to
+
+bedGraph_, methylC_, categorical_, and bed_ track files need to
 be `compressed by bgzip and indexed by tabix`_ for use by the browser.
-The resulting index file with suffix ``.tbi`` need be located
+The resulting index file with suffix ``.tbi`` needs to be located
 at the same URL with the ``.gz`` file.
 
 Bed like format track files need be sorted before submission. For example, if we have a track file named ``track.bedgraph``
@@ -63,6 +64,47 @@ The two files must be in the same directory. Obtain the URL to "track.bedgraph.s
 
 .. _`compressed by bgzip and indexed by tabix`: http://www.htslib.org/doc/tabix.html
 
+SAM files first need to be compressed to BAM_ files. BAM_ files need to be coordinate sorted and indexed for use by the browser. 
+The resulting index file with suffix ``.bai`` needs be located
+at the same URL with the ``.bam`` file.
+
+Here is an example command::
+
+    # Using samtools view to convert to bam
+    samtools view -Sb test.sam > test.bam
+    # Using samtools sort to coordinate sort the file
+    samtools sort test.bam > test.sorted.bam
+    # Using samtools index 
+    samtools index test.sorted.bam 
+
+.. _`coordinate sorting and indexing of bam files`: http://www.htslib.org/doc/samtools.html
+
+Annotation Tracks
+----------------
+
+Annotation tracks represent genomic features or intervals across the genome. Popular examples include SNP files, CpG Island files, and blacklisted regions.
+
+bed
+~~~
+
+``bed`` format files can be used to annotate elements across the genome or to represent reads from a sequencing experiment.
+For more about the bed format please check the `UCSC bed`_ page.
+
+Example lines are below::
+
+    chr9	3035610	3036180	Blacklist_155	.	+
+    chr9	3036200	3036480	Blacklist_156	.	+
+    chr9	3036420	3036660	Blacklist_157	.	+
+
+Every line must consist of at least 3 fields separated by the ``Tab`` delimiter. The required fields from
+left to right are ``chromosome``, ``start position`` (0-based), and ``end position`` (not included). A fourth (optional) column is reserved for the name of the interval and the sixth column (optional) is reserved for the strand. All other columns are ignored, but can be present in the file.   
+
+.. image:: _static/Bed_format_with_different_columns.png
+
+.. note:: The display of a bed file differs by how many columns are provided in the file (see image above). The simplest, 3 column, format just displays blocks for each interval. The four column format displays the name of each element over each interval. If the sixth column is provided in the file then ``>>>`` or ``<<<`` will be displayed over each interval to represent strand information.   
+
+.. _UCSC bed: https://genome.ucsc.edu/FAQ/FAQformat.html#format1
+
 Numerical Tracks
 ----------------
 
@@ -83,7 +125,7 @@ bedGraph
 ~~~~~~~~
 
 ``bedGraph`` format also defines values in diffenent genomic locations.
-For more about the bedGraph format please check `UCSC bedGraph`_ page.
+For more about the bedGraph format please check the `UCSC bedGraph`_ page.
 
 Example lines are below::
 
@@ -100,6 +142,18 @@ left to right are ``chromosome``, ``start position`` (0-based), ``end position``
           negative values can also be specified, but they cannot overlap with positive values.
 
 .. _UCSC bedGraph: https://genome.ucsc.edu/goldenpath/help/bedgraph.html
+
+Read Alignment BAM Tracks
+----------------
+
+BAM 
+~~~~
+
+The ``BAM`` format is a compressed SAM format used to store sequence alignment data.
+Please check the `Samtools Documentation`_ page to learn more about this format and how to manipulate these files.
+
+.. _Samtools Documentation: https://samtools.github.io/hts-specs/SAMv1.pdf
+
 
 Methylation tracks
 ------------------
