@@ -77,6 +77,48 @@ Example bigWig track
             "color": "blue"
         }
     }
+    
+Example methylC track
+--------------------
+
+.. code-block:: json
+
+  {
+    "type": "methylc",
+    "name": "H1",
+    "url": "https://vizhub.wustl.edu/public/hg19/methylc2/h1.liftedtohg19.gz",
+    "isSelected": false,
+    "options": {
+      "label": "Methylation",
+      "colorsForContext": {
+        "CG": { "color": "#648bd8", "background": "#d9d9d9" },
+        "CHG": { "color": "#ff944d", "background": "#ffe0cc" },
+        "CHH": { "color": "#ff00ff", "background": "#ffe5ff" }
+      },
+      "depthColor": "#01E9FE"
+    },
+  }
+
+Example categorical track
+--------------------
+
+.. code-block:: json
+
+  {
+    "type": "methylc",
+    "name": "ChromHMM",
+    "url": "https://egg.wustl.edu/d/hg19/E017_15_coreMarks_dense.gz",
+    "isSelected": false,
+    "options": {
+      "label": "ChromHMM107",
+      "colorsForContext": {
+        "1": { "color": "#FF0000"},
+        "2": { "color": "#FF4500"},
+        "3": { "color": "#32Cd32"}
+      }
+    }
+  }
+
 
 Supported options: backgroundColor_, color_, color2_, yScale_, yMax_, and yMin_
 
