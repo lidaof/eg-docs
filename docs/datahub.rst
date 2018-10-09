@@ -79,7 +79,7 @@ Example bigWig track
     }
     
 Example methylC track
---------------------
+----------------------
 
 .. code-block:: json
 
@@ -87,7 +87,6 @@ Example methylC track
     "type": "methylc",
     "name": "H1",
     "url": "https://vizhub.wustl.edu/public/hg19/methylc2/h1.liftedtohg19.gz",
-    "isSelected": false,
     "options": {
       "label": "Methylation",
       "colorsForContext": {
@@ -100,25 +99,34 @@ Example methylC track
   }
 
 Example categorical track
---------------------
+-------------------------
 
 .. code-block:: json
 
   {
-    "type": "methylc",
+    "type": "categorical",
     "name": "ChromHMM",
     "url": "https://egg.wustl.edu/d/hg19/E017_15_coreMarks_dense.gz",
-    "isSelected": false,
     "options": {
-      "label": "ChromHMM107",
-      "colorsForContext": {
-        "1": { "color": "#FF0000"},
-        "2": { "color": "#FF4500"},
-        "3": { "color": "#32Cd32"}
-      }
-    }
+            "category": {
+                "1": {"name": "Active TSS", "color": "#ff0000"},
+                "2": {"name": "Flanking Active TSS", "color": "#ff4500"},
+                "3": {"name": "Transcr at gene 5' and 3'", "color": "#32cd32"},
+                "4": {"name": "Strong transcription", "color": "#008000"},
+                "5": {"name": "Weak transcription", "color": "#006400"},
+                "6": {"name": "Genic enhancers", "color": "#c2e105"},
+                "7": {"name": "Enhancers", "color": "#ffff00"},
+                "8": {"name": "ZNF genes & repeats", "color": "#66cdaa"},
+                "9": {"name": "Heterochromatin", "color": "#8    a91d0"},
+                "10": {"name": "Bivalent/Poised TSS", "color": "#cd5c5c"},
+                "11": {"name": "Flanking Bivalent TSS/Enh", "color": "#e9967a"},
+                "12": {"name": "Bivalent Enhancer", "color": "#bdb76b"},
+                "13": {"name": "Repressed PolyComb", "color": "#808080"},
+                "14": {"name": "Weak Repressed PolyComb", "color": "#c0c0c0"},
+                "15": {"name": "Quiescent/Low", "color": "#ffffff"}
+            }
+        }
   }
-
 
 Supported options: backgroundColor_, color_, color2_, yScale_, yMax_, and yMin_
 
@@ -163,7 +171,7 @@ url
 .. important:: A ``url`` is requried for all the tracks in binary format. Gene annotaion tracks,
                like ``refGene``, do not need a ``url`` as they are stored in the Mongo database. 
                Additional annotation tracks, such as the ``ruler`` track, also do not need a ``url``.
-               
+
 .. caution:: Each user-provided ``url`` must link to a publically available website, without password 
              protection, so that the browser can read in the file. 
 
@@ -214,7 +222,8 @@ to build a *hierarchical structure*. ::
     }
 
 The list of metadata is ordered from more generic to more specific and 
- helps build the facet table hierarchy making the **search** and **filter** functions in track table easier.
+helps build the facet table hierarchy making the **search** and **filter** functions 
+in track table easier.
 
 details
 ~~~~~~~
