@@ -268,6 +268,11 @@ Track Customization
 
 Tracks can be customized in a multitude of manners. 
 
+Selecting Tracks
+~~~~~~~~~~~~~~~~
+
+An indivdual track can be selected by simply right clicking on the tracking on the track. Multiple tracks can be selected by either holding the *shift* button and left clicking on each track or by holding shift and left clicking on a shared metadata term of consecutive tracks. In this manner, multiple tracks can be customized or moved at the same time. To deselect the tracks simply right click and press the button ``Deselect # tracks`` .
+
 Track Color
 ~~~~~~~~~~~
 
