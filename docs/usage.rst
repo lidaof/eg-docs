@@ -137,6 +137,18 @@ of tracks:
 
 .. image:: _static/show_vr.png
 
+After choose the **Show 3D scene** submenu, a new container with VR view of the tracks will appear:
+
+.. image:: _static/vr.png
+
+You can click the |vricon| icon at the bottom right to toggle the full screen display of VR mode, then you can
+use your mouse and keys ``W``, ``A``, ``S`` and ``D`` to control the view of VR mode, like this view below
+can easily show you the interaction between two genomic loci and methylation status along this region.
+
+.. |vricon| image:: _static/vr_icon.png
+
+.. image:: _static/vr2.png
+
 Apps
 ----
 
@@ -246,6 +258,8 @@ The tracks within the custom hub can then be added from the generated facet tabl
 
 .. note:: Tracks from custom hubs are hidden by default as users may submit a hub contains hundreds 
           of tracks. Users should add tracks that they want from the facet table.
+
+You can also load a local data hub file in JSON format from your computer using the *file upload* interface, right below the *URL submit* hub interface.
 
 Also see the :doc:`tracks` and :doc:`datahub` sections for how to prepare your tracks and datahub files.
 

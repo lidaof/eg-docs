@@ -234,64 +234,64 @@ options
 *Optional*. All track render options are placed in an object called ``options``.
 This object can have the following properties:
 
-    color
-    ^^^^^
+color
+^^^^^
 
-    ``color`` is used to define the color for each track. A color name, RGB values, or hex color code can be used.
-    For more about color name or RGB please see https://www.w3schools.com/css/css_colors.asp.
+``color`` is used to define the color for each track. A color name, RGB values, or hex color code can be used.
+For more about color name or RGB please see https://www.w3schools.com/css/css_colors.asp.
 
-    color2
-    ^^^^^^
+color2
+^^^^^^
 
-    ``color2`` is used to define the color for negative values from the track data. The default is
-    the same as color_.
+``color2`` is used to define the color for negative values from the track data. The default is
+the same as color_.
 
-    backgroundColor
-    ^^^^^^^^^^^^^^^
+backgroundColor
+^^^^^^^^^^^^^^^
 
-    ``backgroundColor`` defines the background color of the track.
+``backgroundColor`` defines the background color of the track.
 
-    height
-    ^^^^^^
+height
+^^^^^^
 
-    ``height`` controls the height of the track which is specified as a number and displayed in *pixels*.
+``height`` controls the height of the track which is specified as a number and displayed in *pixels*.
 
-    yScale
-    ^^^^^^
+yScale
+^^^^^^
 
-    ``yScale`` allows you to configure the track's y-scale. Options include *auto* or *fixed*.
-    *auto* sets the y-scale from 0 to the max value of values in the view region for a given track. 
-    *fixed* means you can specify the *minimal* and *maximal* value.
+``yScale`` allows you to configure the track's y-scale. Options include *auto* or *fixed*.
+*auto* sets the y-scale from 0 to the max value of values in the view region for a given track. 
+*fixed* means you can specify the *minimal* and *maximal* value.
 
-    yMax
-    ^^^^
+yMax
+^^^^
 
-    ``yMax`` is used to define the *maximum* value of a track's y-axis. Value is number.
+``yMax`` is used to define the *maximum* value of a track's y-axis. Value is number.
 
-    yMin
-    ^^^^
+yMin
+^^^^
 
-    ``yMin`` is used to define the *minimum* value of a track's y-axis. Value is number.
+``yMin`` is used to define the *minimum* value of a track's y-axis. Value is number.
 
 .. important:: If you need the track to be in *fixed* scale, you need to specify ``yScale`` to *fixed*
                besides of set ``yMax`` and ``yMin``.
 
-    colorAboveMax
-    ^^^^^^^^^^^^^
+colorAboveMax
+^^^^^^^^^^^^^
 
-    ``colorAboveMax`` defines the color displayed when a *fixed* yScale_ is used and a value exceeds the 
-    yMax_ defined.
+``colorAboveMax`` defines the color displayed when a *fixed* yScale_ is used and a value exceeds the 
+yMax_ defined.
 
-    color2BelowMin
-    ^^^^^^^^^^^^^^
+color2BelowMin
+^^^^^^^^^^^^^^
 
-    ``color2BelowMin`` defines the color displayed when a *fixed* yScale_ is used and a value is below the
-    yMin_ defined.
+``color2BelowMin`` defines the color displayed when a *fixed* yScale_ is used and a value is below the
+yMin_ defined.
 
-    displayMode
-    ^^^^^^^^^^^
+displayMode
+^^^^^^^^^^^
 
-    ``displayMode`` specifies display mode for each tracks. Different tracks have different display modes as listed below.
+``displayMode`` specifies display mode for each tracks. Different tracks have different display modes as listed below.
 
 .. list-table::
    :widths: 25 50
