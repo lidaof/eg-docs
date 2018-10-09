@@ -272,4 +272,4 @@ For each ``numerical``, ``annotation``, or ``BAM`` track the display can be chan
 Track Y-axis Scale
 ~~~~~~~~~~~~~~~~~~
 
-For each ``numerical`` track the y-axis can be displayed in ``AUTO`` or ``FIXED`` mode by right clicking on the track. The ``AUTO`` mode will scale the axis based on numerical values in the immediate area of the view range. The ``FIXED`` mode allows the user to select ``a Y-Axis min`` or ``Y-axis max``. For values above the set max the ``Primary color above max``can be set for easy viewing. For values below the set minimum the ``Primary color below min`` can bet set.  
+For each ``numerical`` track the y-axis can be displayed in ``AUTO`` or ``FIXED`` mode by right clicking on the track. The ``AUTO`` mode will scale the axis based on numerical values in the immediate area of the view range. The ``FIXED`` mode allows the user to select ``a Y-Axis min`` or ``Y-axis max``. For values above the set max the ``Primary color above max`` can be set for easy viewing. For values below the set minimum the ``Primary color below min`` can bet set.  
