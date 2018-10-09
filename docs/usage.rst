@@ -137,8 +137,11 @@ of tracks:
 
 .. image:: _static/show_vr.png
 
+Apps
+----
+
 Session
--------
+~~~~~~~
 
 Choosing ``Session`` from the ``Apps`` menu will bring you to the session interface
 shown below:
@@ -146,7 +149,7 @@ shown below:
 .. image:: _static/session.png
 
 Save session
-~~~~~~~~~~~~
+^^^^^^^^^^^^
 
 Click the **Save session** button to save a session. A session
 bundle Id will be created which allows the user to retrieve their session at a later date.
@@ -154,7 +157,7 @@ bundle Id will be created which allows the user to retrieve their session at a l
 .. image:: _static/save_session.png
 
 Retrieve session
-~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^
 
 The **session bundle Id** can be used later to retrieve a session by pasting the session
 bundle id in the session interface and clicking the ``Retrieve session`` button.
@@ -170,7 +173,7 @@ Click the green *Restore* button and your session will be restored:
 .. image:: _static/session_restored.png
 
 Live browsing
--------------
+~~~~~~~~~~~~~
 
 From the ``Apps`` menu choose **Go Live**, the browser will navigate you to a new
 link which you can share with someone else, like your collaborator, your PI,
@@ -179,7 +182,7 @@ or your friends. Whatever operations are done by you are mirrored on the display
 .. image:: _static/live.png
 
 Screenshot
-----------
+~~~~~~~~~~
 
 Users can create publication quality images using the *Screenshot*  tool from the ``Apps`` menu.
 Click the *Screenshot* button and a new window will po pup that re-renders all your
@@ -245,3 +248,28 @@ The tracks within the custom hub can then be added from the generated facet tabl
           of tracks. Users should add tracks that they want from the facet table.
 
 Also see the :doc:`tracks` and :doc:`datahub` sections for how to prepare your tracks and datahub files.
+
+Track Customization
+-------------------
+
+Tracks can be customized in a multitude of manners. 
+
+Track Color
+~~~~~~~~~~~
+
+Right clicking on ``annotation`` and ``numerical`` tracks will display ``Primary Color``, ``Secondary Color``, and ``Background Color`` which can all be customized using the color picker. For ``methylC`` tracks and ``categorical`` tracks the ``Color`` and ``Background`` of each class of elements (e.g. CG, CHG, and CHH) can be personalized. Additionally, for ``methylC``tracks the ``Read depth line color`` can be customized. 
+
+Track Height
+~~~~~~~~~~~~
+
+For each track the height can be customized by right clicking on the track and typing in a number to the panel. At 20 pixels and below for ``numerical`` tracks the track will display as a heatmap. 
+
+Track Display Mode
+~~~~~~~~~~~~~~~~~~
+
+For each ``numerical``, ``annotation``, or ``BAM`` track the display can be changed to ``DENSITY`` or ``FULL`` mode by right clicking on the track. 
+
+Track Y-axis Scale
+~~~~~~~~~~~~~~~~~~
+
+For each ``numerical`` track the y-axis can be displayed in ``AUTO`` or ``FIXED`` mode by right clicking on the track. The ``AUTO`` mode will scale the axis based on numerical values in the immediate area of the view range. The ``FIXED`` mode allows the user to select ``a Y-Axis min`` or ``Y-axis max``. For values above the set max the ``Primary color above max``can be set for easy viewing. For values below the set minimum the ``Primary color below min`` can bet set.  
