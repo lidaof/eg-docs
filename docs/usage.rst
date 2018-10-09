@@ -28,6 +28,7 @@ the browser will try to find gene symbols starting with what you typed:
 After a gene is selected a dropdown menu will pop up with isoforms for the gene. After clicking an isoform the browser will navigate you to its genomic region. 
 
 .. image:: _static/gene_search2.png
+   :width: 60px
 
 Voice input gene symbol
 ^^^^^^^^^^^^^^^^^^^^^^^
