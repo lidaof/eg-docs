@@ -12,7 +12,6 @@ version information, species and assembly information, genomic region locator, z
 Genomic Region Locator
 ----------------------
 .. image:: _static/region_jump.png
-   :width: 60px
 
 The genomic region locator allows the user to navigate to a region or gene. 
 
@@ -23,12 +22,10 @@ You can type a gene name/symbol, like ``Hox``, and when the input content reache
 the browser will try to find gene symbols starting with what you typed:
 
 .. image:: _static/gene_search1.png
-   :width: 60px
 
 After a gene is selected a dropdown menu will pop up with isoforms for the gene. After clicking an isoform the browser will navigate you to its genomic region. 
 
 .. image:: _static/gene_search2.png
-   :width: 60px
 
 Voice input gene symbol
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -53,6 +50,7 @@ Below the gene search box you can use the region search box to navigate to speci
 
 Operations in the Tracks View Container
 ---------------------------------------
+
 .. image:: _static/tools.png
 
 Right above the tracks on the left hand side there are a bunch of tools for operating on the tracks. From left to right these include the
