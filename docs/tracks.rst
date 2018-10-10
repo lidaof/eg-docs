@@ -39,13 +39,14 @@ The following sections introduce the track types that the browser supports.
 
 Binary track file formats like bigWig_ and HiC_ can be used directly with the browser.
 
-bedGraph_, methylC_, categorical_, and bed_ track files need to
+bedGraph_, methylC_, categorical_, longrange_ and bed_ track files need to
 be `compressed by bgzip and indexed by tabix`_ for use by the browser.
 The resulting index file with suffix ``.tbi`` needs to be located
 at the same URL with the ``.gz`` file.
 
 Bed like format track files need be sorted before submission. For example, if we have a track file named ``track.bedgraph``
-we can use the generic Linux ``sort`` command, the ``bedSort`` tool from UCSC, or the ``sort-bed`` command from BEDOPS. Here is an example command using each of the three methods::
+we can use the generic Linux ``sort`` command, the ``bedSort`` tool from UCSC, or the ``sort-bed`` command from BEDOPS. 
+Here is an example command using each of the three methods::
 
     # Using Linux sort
     sort -k1,1 -k2,2n track.bedgraph > track.bedgraph.sorted 
@@ -64,7 +65,8 @@ The two files must be in the same directory. Obtain the URL to "track.bedgraph.s
 
 .. _`compressed by bgzip and indexed by tabix`: http://www.htslib.org/doc/tabix.html
 
-SAM files first need to be compressed to BAM_ files. BAM_ files need to be coordinate sorted and indexed for use by the browser. 
+SAM files first need to be compressed to BAM_ files. BAM_ files need to be coordinate sorted and 
+indexed for use by the browser. 
 The resulting index file with suffix ``.bai`` needs be located
 at the same URL with the ``.bam`` file.
 
@@ -82,7 +84,8 @@ Here is an example command::
 Annotation Tracks
 ----------------
 
-Annotation tracks represent genomic features or intervals across the genome. Popular examples include SNP files, CpG Island files, and blacklisted regions.
+Annotation tracks represent genomic features or intervals across the genome. 
+Popular examples include SNP files, CpG Island files, and blacklisted regions.
 
 bed
 ~~~
@@ -97,13 +100,21 @@ Example lines are below::
     chr9	3036420	3036660	Blacklist_157	.	+
 
 Every line must consist of at least 3 fields separated by the ``Tab`` delimiter. The required fields from
-left to right are ``chromosome``, ``start position`` (0-based), and ``end position`` (not included). A fourth (optional) column is reserved for the name of the interval and the sixth column (optional) is reserved for the strand. All other columns are ignored, but can be present in the file.   
+left to right are ``chromosome``, ``start position`` (0-based), and ``end position`` (not included). 
+A fourth (optional) column is reserved for the name of the interval and the sixth column (optional) 
+is reserved for the strand. All other columns are ignored, but can be present in the file.
 
 .. image:: _static/Bed_format_with_different_columns.png
 
-.. note:: The display of a bed file differs by how many columns are provided in the file (see image above). The simplest, 3 column, format just displays blocks for each interval. The four column format displays the name of each element over each interval. If the sixth column is provided in the file then ``>>>`` or ``<<<`` will be displayed over each interval to represent strand information.   
+.. note:: The display of a bed file differs by how many columns are provided in the file 
+          (see image above). The simplest, 3 column, format just displays blocks for 
+          each interval. The four column format displays the name of each element over each interval. 
+          If the sixth column is provided in the file then ``>>>`` or ``<<<`` will be displayed over 
+          each interval to represent strand information.   
 
-.. _UCSC bed: https://genome.ucsc.edu/FAQ/FAQformat.html#format1
+.. _`UCSC bed`: https://genome.ucsc.edu/FAQ/FAQformat.html#format1
+
+This format needs to be compressed by bgzip and indexed by tabix for submission as a track. See `Prepare track files`_.
 
 Numerical Tracks
 ----------------
@@ -119,7 +130,7 @@ bigWig
 ``bigWig`` is a popular format to represent numerical values over genomic coordinates.
 Please check the `UCSC bigWig`_ page to learn more about this format.
 
-.. _UCSC bigWig: https://genome.ucsc.edu/goldenpath/help/bigWig.html
+.. _`UCSC bigWig`: https://genome.ucsc.edu/goldenpath/help/bigWig.html
 
 bedGraph
 ~~~~~~~~
@@ -143,8 +154,10 @@ left to right are ``chromosome``, ``start position`` (0-based), ``end position``
 
 .. _UCSC bedGraph: https://genome.ucsc.edu/goldenpath/help/bedgraph.html
 
+This format needs to be compressed by bgzip and indexed by tabix for submission as a track. See `Prepare track files`_.
+
 Read Alignment BAM Tracks
-----------------
+-------------------------
 
 BAM 
 ~~~~
@@ -153,7 +166,6 @@ The ``BAM`` format is a compressed SAM format used to store sequence alignment d
 Please check the `Samtools Documentation`_ page to learn more about this format and how to manipulate these files.
 
 .. _Samtools Documentation: https://samtools.github.io/hts-specs/SAMv1.pdf
-
 
 Methylation tracks
 ------------------
@@ -181,21 +193,47 @@ Each line contains 7 fields separated by Tab. The fields are
 ``methylation context`` (CG, CHG, CHG etc.), ``methylation value``, ``strand``,
 and ``read depth``.
 
+This format needs to be compressed by bgzip and indexed by tabix for submission as a track. See `Prepare track files`_.
+
 Categorical tracks
 ------------------
 
 Categorical tracks represent genomic bins for different categories. The most popular
 example is the represnetation of chromHMM data which indicates which region is likely an enhancer, likely a promoter, etc. 
-Other uses for the track include the display of different types of methylation (DMRs, DMVs, LMRs, UMRs, etc.) or even peaks colored by tissue type.
+Other uses for the track include the display of different types of methylation 
+(DMRs, DMVs, LMRs, UMRs, etc.) or even peaks colored by tissue type.
 
 categorical
 ~~~~~~~~~~~
-The ``categorical`` track uses the first three columns of the standard `bed`_ format (``chromosome``, ``start position`` (0-based), and ``end position`` (not included)) with the addition of a 4th column indicating the category type which can be a string or number::
+
+The ``categorical`` track uses the first three columns of the standard `bed`_ format
+(``chromosome``, ``start position`` (0-based), and ``end position`` (not included)) 
+with the addition of a 4th column indicating the category type which can be a string or number::
 
     chr1    start1  end1    category1
     chr2    start2  end2    category2
     chr3    start3  end3    category3
     chr4    start4  end4    category4
+
+.. important:: when you use numbers like 1, 2 and 3 as category names, in the datahub definition,
+            please use it a string for the ``category`` attribute in options, see the example below:
+                
+            .. code-block:: json
+
+                {
+                    "type": "categorical",
+                    "name": "ChromHMM",
+                    "url": "https://egg.wustl.edu/d/hg19/E017_15_coreMarks_dense.gz",
+                    "options": {
+                        "category": {
+                            "1": {"name": "Active TSS", "color": "#ff0000"},
+                            "2": {"name": "Flanking Active TSS", "color": "#ff4500"},
+                            "3": {"name": "Transcr at gene 5' and 3'", "color": "#32cd32"}
+                        }
+                    }
+                }
+
+This format needs to be compressed by bgzip and indexed by tabix for submission as a track. See `Prepare track files`_.
 
 Long range chromatin interaction
 --------------------------------
@@ -207,3 +245,28 @@ HiC
 ~~~
 
 To learn more about the HiC format please check https://github.com/aidenlab/juicer/wiki/Data.
+
+longrange
+~~~~~~~~~
+
+The ``longrange`` track is a `bed`_ format-like file type. Each row contains columns from left to right:
+``chromosome``, ``start position`` (0-based), and ``end position`` (not included), interaction target
+in this format ``chr2:333-444,55``. As an example, interval "chr1:111-222" interacts with 
+interval "chr2:333-444" on a score of 55, 
+we will use following two lines to represent this interaction::
+
+    chr1    111 222  chr2:333-444,55
+    chr2    333 444  chr1:111-222,55
+
+.. important:: Be sure to make **TWO** records for a pair of interacting loci, 
+               one record for each locus.
+
+This format needs to be compressed by bgzip and indexed by tabix for submission as a track. See `Prepare track files`_.
+
+bigInteract
+~~~~~~~~~~~
+
+The bigInteract format from UCSC can also be used at the browser, for more details about
+this format, please check the `UCSC bigInteract format`_ page.
+
+.. _`UCSC bigInteract format`: https://genome.ucsc.edu/goldenPath/help/interact.html
