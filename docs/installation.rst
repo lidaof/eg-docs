@@ -3,29 +3,53 @@ Installation
 
 Setup
 -----
+
 * Install NodeJS from https://nodejs.org/en/
-* Install MongoDB from https://www.mongodb.com/
 
 .. note:: Feel free to use any package manager tool on your system for installation (``brew``\ , etc.).
-
-Enter the ``backend`` directory. Type ``npm install`` and then ``npm run setup``. This step will load the gene annotation data to the MongoDB database. (Make sure the MongoDB server is running). Go to the ``frontend`` directory and type ``npm install`` to install dependent packages.
 
 Start the browser
 -----------------
 
-#. Make sure MongoDB is running
-#. Enter the ``backend`` directory
-#. Type ``npm start``
 #. Enter the ``frontend`` directory
+#. Type ``npm install`` (just for the first time)
+    This step will install dependent packages.
 #. Type ``npm start``
 
+That's it! You are done with your mirror site.
 The browser is now accessible from http://localhost:3000/browser.
 
+Setup your own backend API (optional)
+-------------------------------------
+
+By default, your local browser mirror site uses our API service at ``https://api.epigenomegateway.org/documentation``,
+while if you find the species or assembly you are interested is not listed by our API, you can either contact us to add
+it or build your own API. To build your own API, please follow the steps below:
+
+#. Install MongoDB from https://www.mongodb.com/
+#. start mongdb server
+#. Enter the ``backend`` directory
+#. Type ``npm install``
+
+Then prepare your gene annotation files like the ones for ``hg19``, ``mm10`` etc:
+
+#. Make sure MongoDB is running
+#. Enter the ``backend`` directory
+#. Run ``npm run setup``
+    This step will load the gene annotation data to the MongoDB database
+#. Type ``npm start``
+
+Now your own backend API is running, change ``AWS_API`` variable to empty string in ``GeneSource.js`` file.
+After this you are using your own API for gene annotation tracks and gene search.
+
 Frontend code architeture
--------------------------
+==========================
+
+.. note:: This section explains how frontend code is organized, intend to be used for development purpose.
+          Regular browser users don't need to care about this section.
 
 Quick tour
-~~~~~~~~~~
+----------
 
 The client code is in the ``frontend`` folder.  Here is a quick tour of ``frontend/src``\ :
 
@@ -41,7 +65,7 @@ The client code is in the ``frontend`` folder.  Here is a quick tour of ``fronte
 * ``vendor``\ : 3rd-party libraries that are not in NPM.
 
 Suggested order of reading
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 If you plan to understand the app as a whole here is a suggested order to read the code in:
 
@@ -53,7 +77,7 @@ If you plan to understand the app as a whole here is a suggested order to read t
 #. From ``App``\ , descend into interested components.
 
 Making a new track type
-~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------
 
 Make a new TrackConfig
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -123,7 +147,7 @@ track component! The ``configOptionMerging`` HOC should help with that.
 Once you have a default options object, call ``setDefaultOptions()`` in the constructor of ``TrackConfig`` to use them.
 
 Performance tips
-~~~~~~~~~~~~~~~~
+----------------
 
 Querying the width or height of any element, for example through ``clientWidth`` or ``getBoundingClientRect()``\ is slow.
 Such queries take on the order of 2 to 20 ms. While it is fine to do it once or twice, avoid doing it in a loop.
@@ -131,7 +155,7 @@ Suppose you aim to plot 500 data points on a SVG and for each point you query th
 second or more of computation -- very noticable to the user!
 
 React (and other) gotchas
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 * On Macs, control + click is the same as a right click which fires a ``contextmenu`` event. Note that ``click`` events
   do not fire on ``contextmenu`` events. The ``mousedown`` and ``mouseup`` events will still fire though.
@@ -145,7 +169,7 @@ React (and other) gotchas
   ``undefined`` at runtime.
 
 Lessons trying to refactor into WebWorkers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------------
 
 #. Data fetch and track display options are intimately related. For example, what if someone wants HiC data and
    selects the 5KB resolution option?
