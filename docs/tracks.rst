@@ -82,7 +82,7 @@ Here is an example command::
 .. _`coordinate sorting and indexing of bam files`: http://www.htslib.org/doc/samtools.html
 
 Annotation Tracks
-----------------
+-----------------
 
 Annotation tracks represent genomic features or intervals across the genome. 
 Popular examples include SNP files, CpG Island files, and blacklisted regions.
@@ -115,6 +115,28 @@ is reserved for the strand. All other columns are ignored, but can be present in
 .. _`UCSC bed`: https://genome.ucsc.edu/FAQ/FAQformat.html#format1
 
 This format needs to be compressed by bgzip and indexed by tabix for submission as a track. See `Prepare track files`_.
+
+refbed
+~~~~~~
+
+``refbed`` format files allow you to upload custom gene annotation track. It's like
+refGene bed like file downloaded from UCSC but with slightly modifications. Each of
+this format contains (each column is separated by *Tab*):
+
+    chr, transript_start, transript_stop, translation_start,stranslation_stop, strand, gene_name, transcript_id, type, exons(including UTRs) start, exons(including UTRs) stops, additional gene info
+
+Example lines::
+
+    chr1    3073253 3074322 3073253 3074322 +       RP23-271O17.1   ENSMUST00000193812.1    TEC     3073253,        3074322,        
+    chr1    3102016 3102125 3102016 3102125 +       Gm26206 ENSMUST00000082908.1    nonCoding       3102016,        3102125,        
+    chr1    3214482 3671498 3216024 3671349 -       Xkr4    ENSMUST00000070533.4    coding  3670552,3421702,3214482,        3671498,3421901,3216968,        Mus musculus X-linked Kx blood group related 4 (Xkr4), mRNA.
+    chr1    3252757 3253236 3252757 3253236 +       RP23-317L18.1   ENSMUST00000192857.1    pseudo  3252757,        3253236, 
+
+.. note:: Last column is optional, dislayed as gene description when you click a gene on the track.
+          This format can be easily obtain from refGene.bed file downloaded from UCSC, or converted from
+          a GTF or GFF3 format file. Check out our scripts_ for help on converting file to this format.
+
+.. _scripts: https://github.com/lidaof/eg-react/tree/master/backend/scripts
 
 Numerical Tracks
 ----------------
@@ -159,8 +181,8 @@ This format needs to be compressed by bgzip and indexed by tabix for submission 
 Read Alignment BAM Tracks
 -------------------------
 
-BAM 
-~~~~
+BAM
+~~~
 
 The ``BAM`` format is a compressed SAM format used to store sequence alignment data.
 Please check the `Samtools Documentation`_ page to learn more about this format and how to manipulate these files.

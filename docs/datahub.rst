@@ -198,6 +198,17 @@ Example bed track
         "url": "https://epgg-test.wustl.edu/d/mm10/mm10_cpgIslands.bed.gz"
     }
 
+Example refbed track
+--------------------
+
+.. code-block:: json
+
+    {
+        "type": "refbed",
+        "name": "mm10 gencode basic",
+        "url": "https://wangftp.wustl.edu/~rsears/FOR_DAOFENG/gencodeM18_load_basic_Gene.bed.gz"
+    }
+
 Example HiC track
 -----------------
 
@@ -250,6 +261,7 @@ type
 * hic
 * bed
 * bigbed
+* refbed
 * repeatmasker
 * geneAnnotation
 * genomealign
