@@ -6,6 +6,10 @@
 WashU Epigenome Browser
 =======================
 
+.. figure:: _static/eg.png
+
+            The gateway to epigenomes. (Art by **Ting Wang**)
+
 .. toctree::
     :maxdepth: 2
     :caption: Contents:

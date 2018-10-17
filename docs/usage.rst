@@ -150,6 +150,38 @@ can easily show you the interaction between two genomic loci and methylation sta
 Apps
 ----
 
+Region set view
+~~~~~~~~~~~~~~~
+
+Users can submit a list of regions or genes to the browser, by choose ``Apps`` -> ``Region set view``:
+
+.. image:: _static/region_set.png
+
+The brings up the region set user interface, here you can enter a list of gene names or coordinates 
+to make a gene set one item per line. 
+Gene names and coordinates can be mixed for input. 
+Coordinate string must be in the form of "chr1:345-678" fields can be joined by space/tab/comma/colon/hyphen.
+
+.. image:: _static/region_ui.png
+
+After Click the *Add* button, will bring you to the region set editting interface, you can either add region one
+by one, or delete regions from the table, and set the flanking region strategy:
+
+.. image:: _static/region_edit.png
+
+Once you done with edit the set, cick the button *Add set*.
+Now you have the option to enter regin set view, click the button *Enter region set view*:
+
+.. image:: _static/region_enter.png
+
+This indicates you are in *region set view* mode and which set you are viewing:
+
+.. image:: _static/region_entered.png
+
+Go back to the browser, you can your browser view is ordered by your region set:
+
+.. image:: _static/region_view.png
+
 Session
 ~~~~~~~
 
