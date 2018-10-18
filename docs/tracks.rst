@@ -159,6 +159,7 @@ Here are a few example lines in refbed format from gencode.vM17.annotation.gtf (
           Our modified format can be easily obtained from available refGene.bed file downloads from UCSC. A Gencode GTF format file can be           manipulated to this format using the Converting_Gencode_GTF_to_refBed.bash script in scripts_. The script by default puts ``Gene           ID:``, ``Gene Type:``, and ``Transcript Type`` in the additional information column. Run with an annotation file, with columns             Transcript_ID Description (seperated by a tab), the script will also add "Additional Info" to the 12th column. The script                 depends on bedtools, bgzip, and tabix. Lastly, within the script an ``awk`` array is used to reclassify gene type and can easily           be modified for additional gene types. 
           
 The script is run as follows::
+
     bash Converting_Gencode_GTF_to_refBed.bash my.gtf my_optional_annotation.txt
     bash Converting_Gencode_GTF_to_refBed.bash gencode.vM17.annotation.gtf 
     bash Converting_Gencode_GTF_to_refBed.bash gencode.vM17.annotation.gtf biomart_2col.txt
