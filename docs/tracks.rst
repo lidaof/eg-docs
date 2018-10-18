@@ -94,7 +94,7 @@ bed
 For more about the bed format please check the `UCSC bed`_ page.
 
 Example lines are below::
-
+    
     chr9	3035610	3036180	Blacklist_155	.	+
     chr9	3036200	3036480	Blacklist_156	.	+
     chr9	3036420	3036660	Blacklist_157	.	+
@@ -127,34 +127,42 @@ this format contains (each column is separated by *Tab*):
     
 This format needs to be compressed by bgzip and indexed by tabix for submission as a track. See `Prepare track files`_.
 
-.. hint:: The 9th column contains gene type, but is simplified from the Gencode/Ensembl annotations to coding, pseudo, nonCoding, problem, and other. These classes of gene type are colored differently when the track is displayed on the browser. 
+.. hint:: The 9th column contains gene type, but is simplified from the Gencode/Ensembl annotations to coding, pseudo, nonCoding, problem,           and other. These classes of gene type are colored differently when the track is displayed on the browser. 
 
-.. hint:: The 10th and 11th columns contain exon starts and ends respectively. Each start or end is seperated by a comma. For example::
+.. hint:: The 10th and 11th columns contain exon starts and ends respectively. Each start or end is seperated by a comma. 
 
-  start1,start2,start3,start4 stop1,stop2,stop3,stop4
-  100,120,140,160 110,130,150,170
+For example::
 
-.. hint:: The 12th column contains extra information. This information can be manually annotated or we suggest using `Ensembl Biomart`_ to download paired Transcript stable IDs and Gene descriptions. The information in this column must be seperated by *spaces* and not tabs. All of the below lines will work for additional information in the 12th column::
+    start1,start2,start3,start4 stop1,stop2,stop3,stop4
+    100,120,140,160 110,130,150,170
 
-  Gene ID:ENSMUSG00000103482.1 Gene Type:TEC Transcript Type:TEC Additional Info:predicted gene, 37999 [Source:MGI Symbol;Acc:MGI:5611227]
-  Gene ID:ENSMUSG00000103482.1 Gene Type:TEC Transcript Type:TEC 
-  ENSMUSG00000103482.1 TEC
-  Additional Info:predicted gene, 37999 [Source:MGI Symbol;Acc:MGI:5611227]
-  My Favorite Gene
+.. hint:: The 12th column contains extra information. This information can be manually annotated or we suggest using `Ensembl Biomart`_ to           download paired Transcript stable IDs and Gene descriptions. The information in this column must be seperated by *spaces* and             not tabs. 
+
+All of the below lines will work for additional information in the 12th column::
+
+    Gene ID:ENSMUSG00000103482.1 Gene Type:TEC Transcript Type:TEC Additional Info:predicted gene, 37999 [Source:MGI Symbol;Acc:MGI:5611227]
+    Gene ID:ENSMUSG00000103482.1 Gene Type:TEC Transcript Type:TEC 
+    ENSMUSG00000103482.1 TEC
+    Additional Info:predicted gene, 37999 [Source:MGI Symbol;Acc:MGI:5611227]
+    My Favorite Gene
   
 .. _`Ensembl Biomart`: http://useast.ensembl.org/biomart/martview/
 
 Here are a few example lines in refbed format from gencode.vM17.annotation.gtf (mouse mm10 format)::
-    chr1	24910461	24911659	24910461	24911659	-	RP23-109H7.1	ENSMUST00000187022.1	pseudo	24911220,24910461	24911659,24910681	Gene ID:ENSMUSG00000100808.1 Gene Type:processed_pseudogene Transcript Type:processed_pseudogene Additional Info:predicted gene 28594 [Source:MGI Symbol;Acc:MGI:5579300]
-    chr1	25203443	25205696	25203443	25205696	-	Adgrb3	ENSMUST00000190202.1	coding	25203443	25205696	Gene ID:ENSMUSG00000033569.17 Gene Type:protein_coding Transcript Type:retained_intron Additional Info:adhesion G protein-coupled receptor B3 [Source:MGI Symbol;Acc:MGI:2441837]
-    chr1	25276404	25277954	25276404	25277954	-	RP23-21P2.4	ENSMUST00000193138.1	problem	25276404	25277954	Gene ID:ENSMUSG00000104257.1 Gene Type:TEC Transcript Type:TEC Additional Info:predicted gene, 20172 [Source:MGI Symbol;Acc:MGI:5012357]
-    chr1	26566833	26566938	26566833	26566938	+	Gm24064	ENSMUST00000157486.1	nonCoding	26566833	26566938	Gene ID:ENSMUSG00000088111.1 Gene Type:snoRNA Transcript Type:snoRNA Additional Info:predicted gene, 24064 [Source:MGI Symbol;Acc:MGI:5453841]
+
+    chr1	24910461	24911659	24910461	24911659	-	RP23-109H7.1	ENSMUST00000187022.1	pseudo	24911220,24910461	24911659,24910681	Gene       ID:ENSMUSG00000100808.1 Gene Type:processed_pseudogene Transcript Type:processed_pseudogene Additional Info:predicted gene 28594           [Source:MGI Symbol;Acc:MGI:5579300]
+    chr1	25203443	25205696	25203443	25205696	-	Adgrb3	ENSMUST00000190202.1	coding	25203443	25205696	Gene                             ID:ENSMUSG00000033569.17 Gene Type:protein_coding Transcript Type:retained_intron Additional Info:adhesion G protein-coupled receptor     B3 [Source:MGI Symbol;Acc:MGI:2441837]
+    chr1	25276404	25277954	25276404	25277954	-	RP23-21P2.4	ENSMUST00000193138.1	problem	25276404	25277954	Gene                         ID:ENSMUSG00000104257.1 Gene Type:TEC Transcript Type:TEC Additional Info:predicted gene, 20172 [Source:MGI Symbol;Acc:MGI:5012357]
+    chr1	26566833	26566938	26566833	26566938	+	Gm24064	ENSMUST00000157486.1	nonCoding	26566833	26566938	Gene                           ID:ENSMUSG00000088111.1 Gene Type:snoRNA Transcript Type:snoRNA Additional Info:predicted gene, 24064 [Source:MGI                         Symbol;Acc:MGI:5453841]
 
 .. note:: The last optional column is dislayed as a gene description when a gene is clicked on the browser.
-          Our modified format can be easily obtained from available refGene.bed file downloads from UCSC. A Gencode GTF format file can be manipulated to this format using the Converting_Gencode_GTF_to_refBed.bash script in scripts_. The script by default puts "Gene ID:", "Gene Type:", and "Transcript Type" in the additional information column. Run with an annotation file, with columns Transcript_ID Description (seperated by a tab), the script will also add "Additional Info" to the 12th column. The script depends on bedtools, bgzip, and tabix. Lastly, within the script an ``awk`` array is used to reclassify gene type and can easily be modified for additional gene types. The script is run as follows::
-          bash Converting_Gencode_GTF_to_refBed.bash my.gtf my_optional_annotation.txt
-          bash Converting_Gencode_GTF_to_refBed.bash gencode.vM17.annotation.gtf 
-          bash Converting_Gencode_GTF_to_refBed.bash gencode.vM17.annotation.gtf biomart_2col.txt
+          Our modified format can be easily obtained from available refGene.bed file downloads from UCSC. A Gencode GTF format file can be           manipulated to this format using the Converting_Gencode_GTF_to_refBed.bash script in scripts_. The script by default puts ``Gene           ID:``, ``Gene Type:``, and ``Transcript Type`` in the additional information column. Run with an annotation file, with columns             Transcript_ID Description (seperated by a tab), the script will also add "Additional Info" to the 12th column. The script                 depends on bedtools, bgzip, and tabix. Lastly, within the script an ``awk`` array is used to reclassify gene type and can easily           be modified for additional gene types. 
+          
+The script is run as follows::
+
+    bash Converting_Gencode_GTF_to_refBed.bash my.gtf my_optional_annotation.txt
+    bash Converting_Gencode_GTF_to_refBed.bash gencode.vM17.annotation.gtf 
+    bash Converting_Gencode_GTF_to_refBed.bash gencode.vM17.annotation.gtf biomart_2col.txt
 
 .. _scripts: https://github.com/lidaof/eg-react/tree/master/backend/scripts
 
