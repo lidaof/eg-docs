@@ -248,8 +248,8 @@ From the ``Tracks`` menu choose **Public Data Hubs**. This will display all of t
 
 .. image:: _static/mm10_4dn.png
 
-After a hub is added, a facet table containing all tracks will pop up. This allows you to choose
-any tracks you are interested in:
+After a hub is added, a ``facet table`` containing all tracks will pop up. This allows you to choose
+any tracks you are interested in. The ``facet table`` can also be revisted through the menu when you choose **Track Facet Table**:
 
 .. image:: _static/mm10_4dn_facet.png
 
@@ -265,7 +265,18 @@ Click the *Add* button to add the track(s) you want. You can then view tracks in
 
 .. image:: _static/mm10_4dn_track_added.png
 
-Adding custom tracks or data hub
+Adding annotation tracks
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Users can add numerous annotation tracks from the ``Tracks`` menu by choosing **Annotation Tracks**. 
+
+.. image:: _static/Annotation_Tracks.png
+
+Each header can be expanded to one or more submenus that display tracks that can be added to the browser. The tracks include CpG island information, repeat information, G/C content information, and conservation information to name a few.
+
+.. image:: _static/Annotation_Tracks_Expanded.png
+
+Adding a custom track or data hub
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Users can also submit their own track as a custom track. For example, say we have a bigWig track located at
