@@ -248,8 +248,8 @@ From the ``Tracks`` menu choose **Public Data Hubs**. This will display all of t
 
 .. image:: _static/mm10_4dn.png
 
-After a hub is added, a facet table containing all tracks will pop up. This allows you to choose
-any tracks you are interested in:
+After a hub is added, a ``facet table`` containing all tracks will pop up. This allows you to choose
+any tracks you are interested in. The ``facet table`` can also be revisted through the menu when you choose **Track Facet Table**:
 
 .. image:: _static/mm10_4dn_facet.png
 
@@ -265,7 +265,18 @@ Click the *Add* button to add the track(s) you want. You can then view tracks in
 
 .. image:: _static/mm10_4dn_track_added.png
 
-Adding custom tracks or data hub
+Adding annotation tracks
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Users can add numerous annotation tracks from the ``Tracks`` menu by choosing **Annotation Tracks**. 
+
+.. image:: _static/Annotation_Tracks.png
+
+Each header can be expanded to one or more submenus that display tracks that can be added to the browser. The tracks include CpG island information, repeat information, G/C content information, and conservation information to name a few.
+
+.. image:: _static/Annotation_Tracks_Expanded.png
+
+Adding a custom track or data hub
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Users can also submit their own track as a custom track. For example, say we have a bigWig track located at
@@ -322,3 +333,10 @@ Track Y-axis Scale
 ~~~~~~~~~~~~~~~~~~
 
 For each ``numerical`` track the y-axis can be displayed in ``AUTO`` or ``FIXED`` mode by right clicking on the track. The ``AUTO`` mode will scale the axis based on numerical values in the immediate area of the view range. The ``FIXED`` mode allows the user to select ``a Y-Axis min`` or ``Y-axis max``. For values above the set max the ``Primary color above max`` can be set for easy viewing. For values below the set minimum the ``Primary color below min`` can bet set.  
+
+Track Information
+~~~~~~~~~~~~~~~~~
+
+If ``details`` were specified for a track in the data hub file these can be viewed by right clicking on the sample and clicking on the arrow to the right. An easy access ``copy`` but is also available to copy the ``URL`` for the track.
+
+.. image:: _static/More_Information.png
