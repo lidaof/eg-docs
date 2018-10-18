@@ -77,7 +77,7 @@ Example bigWig track
             "color": "blue"
         }
     }
-    
+
 Example methylC track
 ----------------------
 
@@ -108,27 +108,143 @@ Example categorical track
     "name": "ChromHMM",
     "url": "https://egg.wustl.edu/d/hg19/E017_15_coreMarks_dense.gz",
     "options": {
-            "category": {
-                "1": {"name": "Active TSS", "color": "#ff0000"},
-                "2": {"name": "Flanking Active TSS", "color": "#ff4500"},
-                "3": {"name": "Transcr at gene 5' and 3'", "color": "#32cd32"},
-                "4": {"name": "Strong transcription", "color": "#008000"},
-                "5": {"name": "Weak transcription", "color": "#006400"},
-                "6": {"name": "Genic enhancers", "color": "#c2e105"},
-                "7": {"name": "Enhancers", "color": "#ffff00"},
-                "8": {"name": "ZNF genes & repeats", "color": "#66cdaa"},
-                "9": {"name": "Heterochromatin", "color": "#8    a91d0"},
-                "10": {"name": "Bivalent/Poised TSS", "color": "#cd5c5c"},
-                "11": {"name": "Flanking Bivalent TSS/Enh", "color": "#e9967a"},
-                "12": {"name": "Bivalent Enhancer", "color": "#bdb76b"},
-                "13": {"name": "Repressed PolyComb", "color": "#808080"},
-                "14": {"name": "Weak Repressed PolyComb", "color": "#c0c0c0"},
-                "15": {"name": "Quiescent/Low", "color": "#ffffff"}
-            }
+        "category": {
+            "1": {"name": "Active TSS", "color": "#ff0000"},
+            "2": {"name": "Flanking Active TSS", "color": "#ff4500"},
+            "3": {"name": "Transcr at gene 5' and 3'", "color": "#32cd32"},
+            "4": {"name": "Strong transcription", "color": "#008000"},
+            "5": {"name": "Weak transcription", "color": "#006400"},
+            "6": {"name": "Genic enhancers", "color": "#c2e105"},
+            "7": {"name": "Enhancers", "color": "#ffff00"},
+            "8": {"name": "ZNF genes & repeats", "color": "#66cdaa"},
+            "9": {"name": "Heterochromatin", "color": "#8    a91d0"},
+            "10": {"name": "Bivalent/Poised TSS", "color": "#cd5c5c"},
+            "11": {"name": "Flanking Bivalent TSS/Enh", "color": "#e9967a"},
+            "12": {"name": "Bivalent Enhancer", "color": "#bdb76b"},
+            "13": {"name": "Repressed PolyComb", "color": "#808080"},
+            "14": {"name": "Weak Repressed PolyComb", "color": "#c0c0c0"},
+            "15": {"name": "Quiescent/Low", "color": "#ffffff"}
         }
+    }
   }
 
-Supported options: backgroundColor_, color_, color2_, yScale_, yMax_, and yMin_
+Supported options: backgroundColor_, color_, color2_, yScale_, yMax_, and yMin_.
+
+Example longrange track
+-----------------------
+
+.. code-block:: json
+
+    {
+        "type": "longrange",
+        "name": "ES-E14 ChIA-PET",
+        "url": "https://egg.wustl.edu/d/mm9/GSE28247_st3c.gz"
+    }
+
+Example bigInteract track
+-------------------------
+
+.. code-block:: json
+
+    {
+        "type": "biginteract",
+        "name": "test bigInteract",
+        "url": "https://epgg-test.wustl.edu/dli/long-range-test/interactExample3.inter.bb"
+    }
+
+Example repeatmasker track
+--------------------------
+
+.. code-block:: json
+
+    {
+        "type": "repeatmasker",
+        "name": "RepeatMasker",
+        "url": "https://vizhub.wustl.edu/public/mm10/rmsk16.bb"
+    }
+
+Example geneAnnotation track
+----------------------------
+
+.. code-block:: json
+
+    {
+        "type": "geneAnnotation",
+        "name": "refGene",
+        "genome": "mm10"
+    }
+
+.. note:: Please specify the ``genome`` attibute for gene annotation tracks.
+
+Example bigbed track
+--------------------
+
+.. code-block:: json
+
+    {
+        "type": "bigbed",
+        "name": "test bigbed",
+        "url": "https://vizhub.wustl.edu/hubSample/hg19/bigBed1"
+    }
+
+Example bed track
+-----------------
+
+.. code-block:: json
+
+    {
+        "type": "bed",
+        "name": "mm10 bed",
+        "url": "https://epgg-test.wustl.edu/d/mm10/mm10_cpgIslands.bed.gz"
+    }
+
+Example refbed track
+--------------------
+
+.. code-block:: json
+
+    {
+        "type": "refbed",
+        "name": "mm10 gencode basic",
+        "url": "https://wangftp.wustl.edu/~rsears/FOR_DAOFENG/gencodeM18_load_basic_Gene.bed.gz"
+    }
+
+Example HiC track
+-----------------
+
+.. code-block:: json
+
+    {
+        "type": "hic",
+        "name": "test hic",
+        "url": "https://epgg-test.wustl.edu/dli/long-range-test/test.hic",
+        "options": {
+            "displayMode": "arc"
+        }
+    }
+
+Example genomealign track
+-------------------------
+
+.. code-block:: json
+
+    {
+        "name": "hg19 to mm10 alignment",
+        "type": "genomealign",
+        "metadata": {
+            "genome": "mm10"
+        }
+    }
+
+Example Ruler track
+--------------------
+
+.. code-block:: json
+
+    {
+        "type": "ruler",
+        "name": "Ruler"
+    }
 
 Track properties
 ----------------
@@ -145,9 +261,13 @@ type
 * hic
 * bed
 * bigbed
+* refbed
 * repeatmasker
 * geneAnnotation
 * genomealign
+* longrange
+* bigInteract
+* ruler
 
 .. note:: ``type`` is case insensitive.
 
