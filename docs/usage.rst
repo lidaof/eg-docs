@@ -333,3 +333,10 @@ Track Y-axis Scale
 ~~~~~~~~~~~~~~~~~~
 
 For each ``numerical`` track the y-axis can be displayed in ``AUTO`` or ``FIXED`` mode by right clicking on the track. The ``AUTO`` mode will scale the axis based on numerical values in the immediate area of the view range. The ``FIXED`` mode allows the user to select ``a Y-Axis min`` or ``Y-axis max``. For values above the set max the ``Primary color above max`` can be set for easy viewing. For values below the set minimum the ``Primary color below min`` can bet set.  
+
+Track Information
+~~~~~~~~~~~~~~~~~
+
+If ``details`` were specified for a track in the data hub file these can be viewed by right clicking on the sample and clicking on the arrow to the right. An easy access ``copy`` but is also available to copy the ``URL`` for the track.
+
+.. image:: _static/More_Information.png
