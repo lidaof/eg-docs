@@ -18,6 +18,7 @@ WashU Epigenome Browser
     tracks
     datahub
     installation
+    contact
 
 
 Indices and tables

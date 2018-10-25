@@ -277,10 +277,10 @@ Each header can be expanded to one or more submenus that display tracks that can
 .. image:: _static/Annotation_Tracks_Expanded.png
 
 Adding a custom track or data hub
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Users can also submit their own track as a custom track. For example, say we have a bigWig track located at
-https://wangftp.wustl.edu/~dli/test/TW463_20-5-bonemarrow_MeDIP.bigWig . From the ``Tracks`` menu choose
+https://vizhub.wustl.edu/public/tmp/TW463_20-5-bonemarrow_MeDIP.bigWig . From the ``Tracks`` menu choose
 **Custom tracks** and a custom track interface will pop up. Fill in the track type, label, and URL before clicking
 the green *Submit* button:
 
@@ -290,7 +290,7 @@ You can see the track is added:
 
 .. image:: _static/custom_track_added.png
 
-Adding a custom data hub is similar to the steps above. For example, say you have a hub located at https://wangftp.wustl.edu/~dli/test/a.json . From the ``Tracks`` menu choose **Custom tracks**, switch to the *Add custom data hub* tab, paste the URL of your hub, and then click the green *Load From URL* button. 
+Adding a custom data hub is similar to the steps above. For example, say you have a hub located at https://vizhub.wustl.edu/public/tmp/a.json . From the ``Tracks`` menu choose **Custom tracks**, switch to the *Add custom data hub* tab, paste the URL of your hub, and then click the green *Load From URL* button. 
 from URL.
 
 .. image:: _static/custom_hub.png
