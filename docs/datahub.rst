@@ -206,8 +206,19 @@ Example refbed track
     {
         "type": "refbed",
         "name": "mm10 gencode basic",
-        "url": "https://vizhub.wustl.edu/public/tmp/gencodeM18_load_basic_Gene.bed.gz"
+        "url": "https://vizhub.wustl.edu/public/tmp/gencodeM18_load_basic_Gene.bed.gz",
+        "options": {
+                "categoryColors": {
+                    "coding": "rgb(101,1,168)",
+                    "nonCoding": "rgb(1,193,75)",
+                    "pseudo": "rgb(230,0,172)",
+                    "problem": "rgb(224,2,2)",
+                    "other":"rgb(128,128,128)"
+                }
+            }
     }
+
+.. note:: ``categoryColors`` designates colors for the gene type as indicated in the 9th column. The default scheme is shown above for the five classes created by the ``Converting_Gencode_GTF_to_refBed.bash`` script, but any number of categories can be defined.  
 
 Example HiC track
 -----------------
