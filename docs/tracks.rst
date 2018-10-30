@@ -291,10 +291,14 @@ Long range chromatin interaction
 Long range chromatin interaction data are used to show relationships between
 genomic regions. `HiC`_ is used to show the results from a HiC experiment.
 
+.. _HiC:
+
 HiC
 ~~~
 
 To learn more about the HiC format please check https://github.com/aidenlab/juicer/wiki/Data.
+
+.. _longrange:
 
 longrange
 ~~~~~~~~~
@@ -312,6 +316,8 @@ we will use following two lines to represent this interaction::
                one record for each locus.
 
 This format needs to be compressed by bgzip and indexed by tabix for submission as a track. See `Prepare track files`_.
+
+.. _bigInteract:
 
 bigInteract
 ~~~~~~~~~~~

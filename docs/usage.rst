@@ -80,6 +80,14 @@ operations and allows you to jump to any of these operations or clear the histor
 
 .. image:: _static/view_history.png
 
+Hotkeys
+~~~~~~~
+
+#. ``Alt + H`` or ``Alt + D`` for the Drag Tool
+#. ``Alt + S`` or ``Alt + R`` for the Reorder/Swap Tool
+#. ``Alt + M`` for the Magnify Tool
+#. ``Alt + Z`` and ``Alt + X`` to pan one full panel left or right.
+
 Settings
 --------
 
@@ -141,7 +149,7 @@ After choose the **Show 3D scene** submenu, a new container with VR view of the 
 
 You can click the |vricon| icon at the bottom right to toggle the full screen display of VR mode, then you can
 use your mouse and keys ``W``, ``A``, ``S`` and ``D`` to control the view of VR mode, like this view below
-can easily show you the interaction between two genomic loci and methylation status along this region.
+can show you the interaction between two genomic loci and methylation status along this region in a 3D way.
 
 .. |vricon| image:: _static/vr_icon.png
 
@@ -277,10 +285,10 @@ Each header can be expanded to one or more submenus that display tracks that can
 .. image:: _static/Annotation_Tracks_Expanded.png
 
 Adding a custom track or data hub
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Users can also submit their own track as a custom track. For example, say we have a bigWig track located at
-https://wangftp.wustl.edu/~dli/test/TW463_20-5-bonemarrow_MeDIP.bigWig . From the ``Tracks`` menu choose
+https://vizhub.wustl.edu/public/tmp/TW463_20-5-bonemarrow_MeDIP.bigWig . From the ``Tracks`` menu choose
 **Custom tracks** and a custom track interface will pop up. Fill in the track type, label, and URL before clicking
 the green *Submit* button:
 
@@ -290,7 +298,7 @@ You can see the track is added:
 
 .. image:: _static/custom_track_added.png
 
-Adding a custom data hub is similar to the steps above. For example, say you have a hub located at https://wangftp.wustl.edu/~dli/test/a.json . From the ``Tracks`` menu choose **Custom tracks**, switch to the *Add custom data hub* tab, paste the URL of your hub, and then click the green *Load From URL* button. 
+Adding a custom data hub is similar to the steps above. For example, say you have a hub located at https://vizhub.wustl.edu/public/tmp/a.json . From the ``Tracks`` menu choose **Custom tracks**, switch to the *Add custom data hub* tab, paste the URL of your hub, and then click the green *Load From URL* button. 
 from URL.
 
 .. image:: _static/custom_hub.png
@@ -340,3 +348,21 @@ Track Information
 If ``details`` were specified for a track in the data hub file these can be viewed by right clicking on the sample and clicking on the arrow to the right. An easy access ``copy`` but is also available to copy the ``URL`` for the track.
 
 .. image:: _static/More_Information.png
+
+Circlet view for chromatin interaction tracks
+---------------------------------------------
+
+For any chromatin interaction track type (:ref:`HiC`, :ref:`longrange`, :ref:`bigInteract`), when you right click the track, you can see the ``Circlet view`` button:
+
+.. image:: _static/circlet_menu.png
+
+Click the button will bring you to the **Circlet view** interface. 
+You can config the layout and/or the data source:
+
+.. image:: _static/circlet_config1.png
+
+.. image:: _static/circlet_config2.png
+
+And config the color, scale, flanking region length at each end of one interaction. You also can download the view as a SVG file used for publication.
+
+.. image:: _static/circlet.png

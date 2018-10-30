@@ -37,7 +37,7 @@ Pasted below is an example data hub for mouse mm10:
     [
         {
         "type": "bigwig",
-        "url": "https://wangftp.wustl.edu/~dli/test/TW463_20-5-bonemarrow_MeDIP.bigWig",
+        "url": "https://vizhub.wustl.edu/public/tmp/TW463_20-5-bonemarrow_MeDIP.bigWig",
         "name": "MeDIP",
         "options": {
             "color": "red",
@@ -50,7 +50,7 @@ Pasted below is an example data hub for mouse mm10:
         },
         {
         "type": "bigwig",
-        "url": "https://wangftp.wustl.edu/~dli/test/TW551_20-5-bonemarrow_MRE.CpG.bigWig",
+        "url": "https://vizhub.wustl.edu/public/tmp/TW551_20-5-bonemarrow_MRE.CpG.bigWig",
         "name": "MRE",
         "options": {
             "color": "blue",
@@ -205,8 +205,8 @@ Example refbed track
 
     {
         "type": "refbed",
-        "name": "mm10 gencode basic",
-        "url": "https://wangftp.wustl.edu/~rsears/FOR_DAOFENG/gencodeM18_load_basic_Gene.bed.gz"
+        "name": "mm10 gencode basic",
+        "url": "https://vizhub.wustl.edu/public/tmp/gencodeM18_load_basic_Gene.bed.gz"
     }
 
 Example HiC track
