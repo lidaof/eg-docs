@@ -218,7 +218,9 @@ Example refbed track
             }
     }
 
-.. note:: ``categoryColors`` designates colors for the gene type as indicated in the 9th column. The default scheme is shown above for the five classes created by the ``Converting_Gencode_GTF_to_refBed.bash`` script, but any number of categories can be defined.  
+.. note:: ``categoryColors`` designates colors for the gene type as indicated in the 9th column. The default scheme is shown above for
+          the five classes created by the ``Converting_Gencode_or_Ensembl_GTF_to_refBed.bash`` script, but any number of categories can
+          be defined.  
 
 Example HiC track
 -----------------
