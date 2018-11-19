@@ -340,3 +340,10 @@ The bigInteract format from UCSC can also be used at the browser, for more detai
 this format, please check the `UCSC bigInteract format`_ page.
 
 .. _`UCSC bigInteract format`: https://genome.ucsc.edu/goldenPath/help/interact.html
+
+cool
+~~~~
+
+Thanks to the higlass team who provides the data API, the browser is able to display cool tracks by using the data uuid
+from the higlass server, for example, you can use the uuid ``Hyc3TZevQVm3FcTAZShLQg`` to represent the track for *Aiden et al. (2009) GM06900 HINDIII 1kb*,
+for a full list of available cool tracks please check http://higlass.io/api/v1/tilesets/?dt=matrix

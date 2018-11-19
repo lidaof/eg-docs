@@ -236,6 +236,25 @@ Example HiC track
         }
     }
 
+Example cool track
+-----------------
+
+.. code-block:: json
+
+    {
+        "type": "cool",
+        "name": "Aiden et al. (2009) GM06900 HINDIII 1kb",
+        "url": "Hyc3TZevQVm3FcTAZShLQg",
+        "options": {
+            "displayMode": "arc"
+        }
+    }
+
+.. note:: please note we are using the uuid ``Hyc3TZevQVm3FcTAZShLQg`` here from `higlass API server`_ instead of a file URL
+          to represent a cool track.
+
+.. _`higlass API server`: http://higlass.io/api/v1/tilesets
+
 Example genomealign track
 -------------------------
 
