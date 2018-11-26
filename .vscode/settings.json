@@ -1,3 +1,3 @@
 {
-    "restructuredtext.confPath": "/Users/dli/eg-docs/docs"
+    "restructuredtext.confPath": "${workspaceFolder}/docs"
 }

@@ -21,13 +21,35 @@ Configure your webserver to enable CORS
 ---------------------------------------
 
 Most likely the browser domain is different from the server the tracks are hosted on. The hosting server
-needs CORS enabled and for an Apache web server in Ubuntu this setup will work::
+needs CORS enabled.
+
+Enable CORS on Apache2 under Ubuntu
+===================================
+
+For an Apache web server in Ubuntu this setup (add this to the enabled .conf file) would work::
 
     Header always set Access-Control-Allow-Origin "*"
     Header always set Access-Control-Allow-Methods "POST, GET, OPTIONS, DELETE, PUT"
-    Header always set Access-Control-Max-Age "1000"
+    Header always set Access-Control-Max-Age 1000
     Header always set Access-Control-Allow-Headers "x-requested-with, Content-Type, origin, authorization, accept, client-security-token"
 
+Enable CORS on Amazon S3 bucket
+===============================
+
+We have setup a test s3 bucket at http://washu-track-host.s3-website-us-east-1.amazonaws.com and tried bigWig_ files, 
+the link http://washu-track-host.s3-website-us-east-1.amazonaws.com/bigwig/TW551_20-5-bonemarrow_MRE.CpG.bigWig can be
+displayed at the browser with following CORS setup::
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+    <CORSRule>
+        <AllowedOrigin>*</AllowedOrigin>
+        <AllowedMethod>GET</AllowedMethod>
+        <AllowedHeader>*</AllowedHeader>
+    </CORSRule>
+    </CORSConfiguration>
+
+.. image:: _static/s3_cors.png
 
 Prepare track files
 -------------------
