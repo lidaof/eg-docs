@@ -24,7 +24,7 @@ Most likely the browser domain is different from the server the tracks are hoste
 needs CORS enabled.
 
 Enable CORS on Apache2 under Ubuntu
-===================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For an Apache web server in Ubuntu this setup (add this to the enabled .conf file) would work::
 
@@ -34,7 +34,7 @@ For an Apache web server in Ubuntu this setup (add this to the enabled .conf fil
     Header always set Access-Control-Allow-Headers "x-requested-with, Content-Type, origin, authorization, accept, client-security-token"
 
 Enable CORS on Amazon S3 bucket
-===============================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We have setup a test s3 bucket at http://washu-track-host.s3-website-us-east-1.amazonaws.com and tried bigWig_ files, 
 the link http://washu-track-host.s3-website-us-east-1.amazonaws.com/bigwig/TW551_20-5-bonemarrow_MRE.CpG.bigWig can be
@@ -342,13 +342,13 @@ longrange
 The ``longrange`` track is a `bed`_ format-like file type. Each row contains columns from left to right:
 ``chromosome``, ``start position`` (0-based), and ``end position`` (not included), interaction target
 in this format ``chr2:333-444,55``. As an example, interval "chr1:111-222" interacts with 
-interval "chr2:333-444" on a score of 55, 
+interval "chr2:333-444" on a score of 55,
 we will use following two lines to represent this interaction::
 
     chr1    111 222  chr2:333-444,55
     chr2    333 444  chr1:111-222,55
 
-.. important:: Be sure to make **TWO** records for a pair of interacting loci, 
+.. important:: Be sure to make **TWO** records for a pair of interacting loci,
                one record for each locus.
 
 This format needs to be compressed by bgzip and indexed by tabix for submission as a track. See `Prepare track files`_.
