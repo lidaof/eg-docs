@@ -42,6 +42,19 @@ Then prepare your gene annotation files like the ones for ``hg19``, ``mm10`` etc
 Now your own backend API is running, change ``AWS_API`` variable to empty string in ``GeneSource.js`` file.
 After this you are using your own API for gene annotation tracks and gene search.
 
+Firebase setup
+--------------
+
+If you installed a local browser mirror, you also need setup a Firebase instance to enable ``Session`` and ``Go Live``
+function, signup a Firebase account at https://firebase.google.com/, which is free.
+
+Create a ``.env`` file under ``frontend/`` folder with following content::
+
+    REACT_APP_FIREBASE_KEY="Your own info"
+    REACT_APP_FIREBASE_DOMAIN="Your own info"
+    REACT_APP_FIREBASE_DATABASE="Your own info"
+    REACT_APP_FIREBASE_STORAGE_BUCKET="Your own info"
+
 Embedding
 =========
 
@@ -123,19 +136,6 @@ To embed the browser in any HTML file, create a HTML page with following content
     </html>
 
 The key API is the function ``renderBrowserInElement``, it accepts the contents array as first argument, and container as second argument which is a DOM element.
-
-Firebase setup
-==============
-
-If you installed a local browser mirror, you also need setup a Firebase instance to enable ``Session`` and ``Go Live``
-function, signup a Firebase account at https://firebase.google.com/, which is free.
-
-Create a ``.env`` file under ``frontend/`` folder with following content::
-
-    REACT_APP_FIREBASE_KEY="Your own info"
-    REACT_APP_FIREBASE_DOMAIN="Your own info"
-    REACT_APP_FIREBASE_DATABASE="Your own info"
-    REACT_APP_FIREBASE_STORAGE_BUCKET="Your own info"
 
 Frontend code architeture
 ==========================
