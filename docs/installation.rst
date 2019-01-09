@@ -124,6 +124,19 @@ To embed the browser in any HTML file, create a HTML page with following content
 
 The key API is the function ``renderBrowserInElement``, it accepts the contents array as first argument, and container as second argument which is a DOM element.
 
+Firebase setup
+==============
+
+If you installed a local browser mirror, you also need setup a Firebase instance to enable ``Session`` and ``Go Live``
+function, signup a Firebase account at https://firebase.google.com/, which is free.
+
+Create a ``.env`` file under ``frontend/`` folder with following content::
+
+    REACT_APP_FIREBASE_KEY="Your own info"
+    REACT_APP_FIREBASE_DOMAIN="Your own info"
+    REACT_APP_FIREBASE_DATABASE="Your own info"
+    REACT_APP_FIREBASE_STORAGE_BUCKET="Your own info"
+
 Frontend code architeture
 ==========================
 
