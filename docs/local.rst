@@ -8,9 +8,13 @@ being hosted on webserver.
 
 .. note:: the track *uploaded* through the file upload dialog *cannot* be saved to browser's local
           storage, thus, when you refresh the browser, your local tracks will gone. You need to
-          re-upload them (likely re-grant the permission to the browser to read your local files).
+          re-upload them (like re-grant the permission to the browser to read your local files).
           This is a security setup of Javascript. This also means you cannot use your local files
           for datahub.
+
+.. important:: Since the user need to give permission to the web browser to access
+               the files at local hard drive, so the local track **can not** be saved
+               into ``Session``. Please consider use HTTP(S) hosted tracks to work with the session function.
 
 To use your local track files, format your files to the correct format, open the ``Upload Track``
 menu from ``Tracks``:
