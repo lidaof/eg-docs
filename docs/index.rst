@@ -20,6 +20,7 @@ WashU Epigenome Browser
     url
     local
     installation
+    add
     contact
     faq
 
