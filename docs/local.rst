@@ -9,8 +9,9 @@ being hosted on a webserver.
 .. note:: the track *uploaded* through the file upload dialog *cannot* be saved to browser's local
           storage, thus, when you refresh the browser, your local tracks will gone. You need to
           re-upload them (like re-grant the permission to the browser to read your local files).
-          This is a security setup of Javascript. This also means you cannot use your local files
-          for datahub.
+          This is a security setup of Javascript. You can create a ``hub.config.json`` file
+          to speicify files as a local datahub. Even though after every refresh your tracks are gone,
+          but it woule be easier to just upload the local datahub again then uploading individual tracks separately.
 
 .. important:: Since the user need to give permission to the web browser to access
                the files at local hard drive, so the local track **can not** be saved
