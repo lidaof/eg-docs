@@ -88,6 +88,8 @@ example below::
 
 .. note:: Please note the ``name`` and ``options`` attribute specified in the file, the syntax is same as a remote datahub file.
 
+.. note:: Track files not specified in ``hub.config.json`` will be skipped.
+
 You can either choose an entire folder by clicking the first button:
 
 .. image:: _static/upload9.png
