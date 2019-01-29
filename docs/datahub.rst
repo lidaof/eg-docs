@@ -236,6 +236,25 @@ Example HiC track
         }
     }
 
+Example cool track
+-----------------
+
+.. code-block:: json
+
+    {
+        "type": "cool",
+        "name": "Aiden et al. (2009) GM06900 HINDIII 1kb",
+        "url": "Hyc3TZevQVm3FcTAZShLQg",
+        "options": {
+            "displayMode": "arc"
+        }
+    }
+
+.. note:: please note we are using the uuid ``Hyc3TZevQVm3FcTAZShLQg`` here from `higlass API server`_ instead of a file URL
+          to represent a cool track.
+
+.. _`higlass API server`: http://higlass.io/api/v1/tilesets
+
 Example genomealign track
 -------------------------
 
@@ -302,16 +321,21 @@ url
 *Requried*. ``url`` contains the URL to the track file and needs to be HTTP or HTTPS location string.
 
 .. important:: A ``url`` is requried for all the tracks in binary format. Gene annotaion tracks,
-               like ``refGene``, do not need a ``url`` as they are stored in the Mongo database. 
+               like ``refGene``, do not need a ``url`` as they are stored in the Mongo database.
                Additional annotation tracks, such as the ``ruler`` track, also do not need a ``url``.
 
-.. caution:: Each user-provided ``url`` must link to a publically available website, without password 
-             protection, so that the browser can read in the file. 
+.. caution:: Each user-provided ``url`` must link to a publically available website, without password
+             protection, so that the browser can read in the file.
+
+showOnHubLoad
+~~~~~~~~~~~~~
+
+*Optional*. If specified to ``true``, the track will be displayed when hub is loaded.
 
 metadata
 ~~~~~~~~
 
-*Optional*. An object specifying the metadata of the track. 
+*Optional*. An object specifying the metadata of the track.
 
 In this basic example the value of each metadata term is a **string**. ::
 
@@ -320,7 +344,7 @@ In this basic example the value of each metadata term is a **string**. ::
         "assay": "MRE"
     }
 
-This example public Roadmap data hub has more complex metadata definitions and makes use of a **list of strings** 
+This example public Roadmap data hub has more complex metadata definitions and makes use of a **list of strings**
 to build a *hierarchical structure*. ::
 
     {

@@ -17,8 +17,12 @@ WashU Epigenome Browser
     usage
     tracks
     datahub
+    url
+    local
     installation
+    add
     contact
+    faq
 
 
 Indices and tables

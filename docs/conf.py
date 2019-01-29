@@ -26,7 +26,7 @@ author = 'Daofeng Li, Silas Hsu, Renee L. Sears and Ting Wang'
 # The short X.Y version
 version = ''
 # The full version, including alpha/beta/rc tags
-release = '1.0'
+release = ''
 
 
 # -- General configuration ---------------------------------------------------

@@ -21,13 +21,35 @@ Configure your webserver to enable CORS
 ---------------------------------------
 
 Most likely the browser domain is different from the server the tracks are hosted on. The hosting server
-needs CORS enabled and for an Apache web server in Ubuntu this setup will work::
+needs CORS enabled.
+
+Enable CORS on Apache2 under Ubuntu
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For an Apache web server in Ubuntu this setup (add this to the enabled .conf file) would work::
 
     Header always set Access-Control-Allow-Origin "*"
     Header always set Access-Control-Allow-Methods "POST, GET, OPTIONS, DELETE, PUT"
-    Header always set Access-Control-Max-Age "1000"
+    Header always set Access-Control-Max-Age 1000
     Header always set Access-Control-Allow-Headers "x-requested-with, Content-Type, origin, authorization, accept, client-security-token"
 
+Enable CORS on Amazon S3 bucket
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+We have setup a test s3 bucket at http://washu-track-host.s3-website-us-east-1.amazonaws.com and tried bigWig_ files, 
+the link http://washu-track-host.s3-website-us-east-1.amazonaws.com/bigwig/TW551_20-5-bonemarrow_MRE.CpG.bigWig can be
+displayed at the browser with following CORS setup::
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+    <CORSRule>
+        <AllowedOrigin>*</AllowedOrigin>
+        <AllowedMethod>GET</AllowedMethod>
+        <AllowedHeader>*</AllowedHeader>
+    </CORSRule>
+    </CORSConfiguration>
+
+.. image:: _static/s3_cors.png
 
 Prepare track files
 -------------------
@@ -320,13 +342,13 @@ longrange
 The ``longrange`` track is a `bed`_ format-like file type. Each row contains columns from left to right:
 ``chromosome``, ``start position`` (0-based), and ``end position`` (not included), interaction target
 in this format ``chr2:333-444,55``. As an example, interval "chr1:111-222" interacts with 
-interval "chr2:333-444" on a score of 55, 
+interval "chr2:333-444" on a score of 55,
 we will use following two lines to represent this interaction::
 
     chr1    111 222  chr2:333-444,55
     chr2    333 444  chr1:111-222,55
 
-.. important:: Be sure to make **TWO** records for a pair of interacting loci, 
+.. important:: Be sure to make **TWO** records for a pair of interacting loci,
                one record for each locus.
 
 This format needs to be compressed by bgzip and indexed by tabix for submission as a track. See `Prepare track files`_.
@@ -340,3 +362,10 @@ The bigInteract format from UCSC can also be used at the browser, for more detai
 this format, please check the `UCSC bigInteract format`_ page.
 
 .. _`UCSC bigInteract format`: https://genome.ucsc.edu/goldenPath/help/interact.html
+
+cool
+~~~~
+
+Thanks to the higlass team who provides the data API, the browser is able to display cool tracks by using the data uuid
+from the higlass server, for example, you can use the uuid ``Hyc3TZevQVm3FcTAZShLQg`` to represent the track for *Aiden et al. (2009) GM06900 HINDIII 1kb*,
+for a full list of available cool tracks please check http://higlass.io/api/v1/tilesets/?dt=matrix
