@@ -21,8 +21,8 @@ WashU Epigenome Browser
     local
     installation
     add
-    contact
     faq
+    contact
 
 
 Indices and tables

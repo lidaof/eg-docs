@@ -55,6 +55,26 @@ Create a ``.env`` file under ``frontend/`` folder with following content::
     REACT_APP_FIREBASE_DATABASE="Your own info"
     REACT_APP_FIREBASE_STORAGE_BUCKET="Your own info"
 
+Use Docker
+==========
+
+The browser is also available as Docker images, to run the browser instance,
+get Docker from https://www.docker.com/, our official docker image page is
+at https://cloud.docker.com/repository/docker/epgg/eg-react, the image is based
+on Ubuntu 18.04, to run the image, run following commands::
+
+    docker run -it -p 3000:3000 epgg/eg-react
+
+.. note:: The first 3000 port is the port will be used on your local computer, you can
+          change it to any other port.
+
+After the docker image is running, to start the browser::
+
+    cd eg-react/frontend
+    npm start
+
+Open your web browser and locate to http://localhost:3000 to see the browser.
+
 Embedding
 =========
 
