@@ -8,11 +8,11 @@ Tracks
 
 Quoted from MDN_::
 
-    Cross-Origin Resource Sharing (CORS) is a mechanism that uses additional 
-    HTTP headers to tell a browser to let a web application running at 
-    one origin (domain) have permission to access selected resources 
-    from a server at a different origin. A web application makes a 
-    cross-origin HTTP request when it requests a resource that has 
+    Cross-Origin Resource Sharing (CORS) is a mechanism that uses additional
+    HTTP headers to tell a browser to let a web application running at
+    one origin (domain) have permission to access selected resources
+    from a server at a different origin. A web application makes 
+    cross-origin HTTP request when it requests a resource that has
     a different origin (domain, protocol, and port) than its own origin.
 
 .. _MDN: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
@@ -21,7 +21,7 @@ Configure your webserver to enable CORS
 ---------------------------------------
 
 Most likely the browser domain is different from the server the tracks are hosted on. The hosting server
-needs CORS enabled.
+needs CORS enabled. For any Apache web server, you might try the either following approach.
 
 Enable CORS on Apache2 under Ubuntu
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -33,10 +33,29 @@ For an Apache web server in Ubuntu this setup (add this to the enabled .conf fil
     Header always set Access-Control-Max-Age 1000
     Header always set Access-Control-Allow-Headers "x-requested-with, Content-Type, origin, authorization, accept, client-security-token"
 
+Then restart your Apache server.
+
+Enable CORS on Apache2 under CentOS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Try add this to the main configuration file ``/etc/httpd/conf/httpd.conf``::
+
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Headers: Range
+    Header set Access-Control-Max-Age: 86400
+
+.. image:: _static/centos_cors1.png
+
+in ``/etc/httpd/conf.modules.d/00-base.conf``, the header module should be enabled:
+
+.. image:: _static/centos_cors2.png
+
+Then restart your Apache server.
+
 Enable CORS on Amazon S3 bucket
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We have setup a test s3 bucket at http://washu-track-host.s3-website-us-east-1.amazonaws.com and tried bigWig_ files, 
+We have setup a test s3 bucket at http://washu-track-host.s3-website-us-east-1.amazonaws.com and tried bigWig_ files,
 the link http://washu-track-host.s3-website-us-east-1.amazonaws.com/bigwig/TW551_20-5-bonemarrow_MRE.CpG.bigWig can be
 displayed at the browser with following CORS setup::
 
@@ -56,7 +75,7 @@ Prepare track files
 
 The browser accesses track files from their URL. Only a portion of the data, that within
 the specific view region, are transferred to the browser for visualization. Thus, all
-the track files need be hosted in a web accssible location using HTTP or HTTPS. 
+the track files need be hosted in a web accssible location using HTTP or HTTPS.
 The following sections introduce the track types that the browser supports.
 
 Binary track file formats like bigWig_ and HiC_ can be used directly with the browser.
@@ -67,11 +86,11 @@ The resulting index file with suffix ``.tbi`` needs to be located
 at the same URL with the ``.gz`` file.
 
 Bed like format track files need be sorted before submission. For example, if we have a track file named ``track.bedgraph``
-we can use the generic Linux ``sort`` command, the ``bedSort`` tool from UCSC, or the ``sort-bed`` command from BEDOPS. 
+we can use the generic Linux ``sort`` command, the ``bedSort`` tool from UCSC, or the ``sort-bed`` command from BEDOPS.
 Here is an example command using each of the three methods::
 
     # Using Linux sort
-    sort -k1,1 -k2,2n track.bedgraph > track.bedgraph.sorted 
+    sort -k1,1 -k2,2n track.bedgraph > track.bedgraph.sorted
     # Using bedSort
     bedSort track.bedgraph track.bedgraph.sorted
     # Using sort-bed
@@ -82,13 +101,13 @@ Then the file must be compressed using bgzip and indexed using tabix::
     bgzip track.bedgraph.sorted
     tabix -p bed track.bedgraph.sorted.gz
 
-Move files "track.bedgraph.sorted.gz" and "track.bedgraph.sorted.gz.tbi" to a web server. 
+Move files "track.bedgraph.sorted.gz" and "track.bedgraph.sorted.gz.tbi" to a web server.
 The two files must be in the same directory. Obtain the URL to "track.bedgraph.sorted.gz" for submission.
 
 .. _`compressed by bgzip and indexed by tabix`: http://www.htslib.org/doc/tabix.html
 
-SAM files first need to be compressed to BAM_ files. BAM_ files need to be coordinate sorted and 
-indexed for use by the browser. 
+SAM files first need to be compressed to BAM_ files. BAM_ files need to be coordinate sorted and
+indexed for use by the browser.
 The resulting index file with suffix ``.bai`` needs be located
 at the same URL with the ``.bam`` file.
 
@@ -98,15 +117,15 @@ Here is an example command::
     samtools view -Sb test.sam > test.bam
     # Using samtools sort to coordinate sort the file
     samtools sort test.bam > test.sorted.bam
-    # Using samtools index 
-    samtools index test.sorted.bam 
+    # Using samtools index
+    samtools index test.sorted.bam
 
 .. _`coordinate sorting and indexing of bam files`: http://www.htslib.org/doc/samtools.html
 
 Annotation Tracks
 -----------------
 
-Annotation tracks represent genomic features or intervals across the genome. 
+Annotation tracks represent genomic features or intervals across the genome.
 Popular examples include SNP files, CpG Island files, and blacklisted regions.
 
 bed
@@ -122,8 +141,8 @@ Example lines are below::
     chr9	3036420	3036660	Blacklist_157	.	+
 
 Every line must consist of at least 3 fields separated by the ``Tab`` delimiter. The required fields from
-left to right are ``chromosome``, ``start position`` (0-based), and ``end position`` (not included). 
-A fourth (optional) column is reserved for the name of the interval and the sixth column (optional) 
+left to right are ``chromosome``, ``start position`` (0-based), and ``end position`` (not included).
+A fourth (optional) column is reserved for the name of the interval and the sixth column (optional)
 is reserved for the strand. All other columns are ignored, but can be present in the file.
 
 .. image:: _static/Bed_format_with_different_columns.png
@@ -146,7 +165,7 @@ refGene bed-like file downloaded from UCSC but with slight modifications. Each f
 this format contains (each column is separated by *Tab*):
 
     chr, transcript_start, transcript_stop, translation_start, translation_stop, strand, gene_name, transcript_id, type, exon(including UTR bases) starts, exon(including UTR bases) stops, and additional gene info (*optional*)
-    
+
 This format needs to be compressed by bgzip and indexed by tabix for submission as a track. See `Prepare track files`_.
 
 .. hint:: The 9th column contains gene type, but is simplified from the Gencode/Ensembl annotations to coding, pseudo, nonCoding,
