@@ -8,7 +8,7 @@ from their hard drive to the browser. The format for these track files is the sa
 .. note:: The tracks *uploaded* through the file upload feature *cannot* be saved to the browser's local
           storage. Thus, when you refresh the browser your local tracks will be gone. Tracks need to be
           re-upload to re-grant the browser permission to read  local files.
-          This is a security setup of Javascript. To avoid uploading multiple files repeatedly, the user can create 
+          This is a security setup of Javascript. To avoid uploading multiple files repeatedly, the user can create
           a ``hub.config.json`` file to specify files as a local datahub. In this manner, after a refresh event the user
           can just upload their local datahub again instead of uploading individual tracks separately.
 
@@ -29,8 +29,8 @@ By default, you will be on the ``Add Local Track`` tab. Second, choose your trac
 .. image:: _static/upload2.png
 
 Third, choose your files. You can choose many files of same type if the track upload type only requires one
-file (``bigWig``, ``bigBed``, ``HiC``, and ``bigInteract``) or if the track upload type requires a data 
-file and **index** file (``bedGraph``, ``methylC``, etc.) then you need to upload each pair individually. 
+file (``bigWig``, ``bigBed``, ``HiC``, and ``bigInteract``) or if the track upload type requires a data
+file and **index** file (``bedGraph``, ``methylC``, etc.) then you need to upload each pair individually.
 
 .. image:: _static/upload3.png
 
@@ -51,7 +51,7 @@ The bedGraph track is added to the browser view:
 .. image:: _static/upload7.png
 
 Upload files or a folder as a datahub
----------------------------------
+-------------------------------------
 
 If you want to upload many different types of track files to the browser, you can do that too!
 Choose the ``Add Local Hub`` tab from the track upload menu as before:
