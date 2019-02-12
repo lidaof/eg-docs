@@ -16,6 +16,8 @@ Start the browser
     This step will install dependent packages.
 #. Type ``npm start``
 
+.. warning:: if ``npm install`` gives you error, you might try ``npm install --force``.
+
 That's it! You are done with your mirror site.
 The browser is now accessible from http://localhost:3000/browser.
 
@@ -41,6 +43,8 @@ Then prepare your gene annotation files like the ones for ``hg19``, ``mm10`` etc
 
 Now your own backend API is running, change ``AWS_API`` variable to empty string in ``GeneSource.js`` file.
 After this you are using your own API for gene annotation tracks and gene search.
+
+.. _Firebase_setup:
 
 Firebase setup
 --------------

@@ -30,3 +30,14 @@ For example, when you visit https://epigenomegateway.wustl.edu/browser, and you 
 a custome track hosted at http://your.track.url.bigwig, the browser will display ``Data fetch failed``
 for that track because due to security settings, the browser in HTTPS page cannot access HTTP resource.
 In such case you can use http://epigenomegateway.wustl.edu/browser instead (without the ``s``).
+
+Firebase fetal error
+--------------------
+
+After you installed a new mirror, when you start your mirror instance by running ``npm start``, if you see
+a Firebase fetal error like following:
+
+.. image:: _static/firebase_error.png
+
+This means you need to setup a Firebase database for the Session/Live function to work properly,
+check :ref:`Firebase_setup` please
