@@ -388,3 +388,43 @@ cool
 Thanks to the higlass team who provides the data API, the browser is able to display cool tracks by using the data uuid
 from the higlass server, for example, you can use the uuid ``Hyc3TZevQVm3FcTAZShLQg`` to represent the track for *Aiden et al. (2009) GM06900 HINDIII 1kb*,
 for a full list of available cool tracks please check http://higlass.io/api/v1/tilesets/?dt=matrix
+
+Calling card track
+------------------
+
+Calling card data must be stored in a tab-delimited, plain text format. This format requires a minimum of four columns and can support up to six. The four required columns are CHROM, START, STOP, and COUNT, where COUNT refers to the number of reads for that insertion. The START and STOP columns can be either 0- or 1-indexed. The fifth and sixth columns are optional and represent STRAND and BARCODE, respectively. Here is an example of a four-column calling card file::
+
+    chr1    41954321        41954325        1
+    chr1    41954321        41954325        18
+    chr1    52655214        52655218        1
+    chr1    52655214        52655218        1
+    chr1    54690384        54690388        3
+    chr1    54713998        54714002        1
+    chr1    54713998        54714002        1
+    chr1    54713998        54714002        13
+    chr1    54747055        54747059        1
+    chr1    54747055        54747059        4
+    chr1    60748489        60748493        2
+
+Here is an example of a six-column calling card file::
+
+    chr1    51441754        51441758        1       -       CTAGAGACTGGC
+    chr1    51441754        51441758        21      -       CTTTCCTCCCCA
+    chr1    51982564        51982568        3       +       CGCGATCGCGAC
+    chr1    52196476        52196480        1       +       AGAATATCTTCA
+    chr1    52341019        52341023        1       +       TACGAAACACTA
+    chr1    59951043        59951047        1       +       ACAAGACCCCAA
+    chr1    59951043        59951047        1       +       ACAAGAGAGACT
+    chr1    61106283        61106287        1       -       ATGCACTACTTC
+    chr1    61106283        61106287        7       -       CGTTTTTCACCT
+    chr1    61542006        61542010        1       -       CTGAGAGACTGG
+
+our text file must be sorted by the first three columns. If your filename is example.ccf, you sort it with the following command: ``sort -k1V -k2n -k3n example.ccf > example_sorted.ccf``
+
+Note that you can have strand information without a barcode, but you cannot have barcode information without a strand column.
+
+Place your sorted text file in the public folder. Since genomic data is often large, we must compress and index it for fast retrieval. Use the following commands to do so::
+
+    bgzip example_sorted.ccf
+    tabix -p bed example_sorted.ccf.gz
+

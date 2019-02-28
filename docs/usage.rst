@@ -13,17 +13,17 @@ Genomic Region Locator
 ----------------------
 .. image:: _static/region_jump.png
 
-The genomic region locator allows the user to navigate to a region or gene. 
+The genomic region locator allows the user to navigate to a region or gene.
 
 Gene Search
 ~~~~~~~~~~~
 
-You can type a gene name/symbol, like ``Hox``, and when the input content reaches 3 characters 
+You can type a gene name/symbol, like ``Hox``, and when the input content reaches 3 characters
 the browser will try to find gene symbols starting with what you typed:
 
 .. image:: _static/gene_search1.png
 
-After a gene is selected a dropdown menu will pop up with isoforms for the gene. After clicking an isoform the browser will navigate you to its genomic region. 
+After a gene is selected a dropdown menu will pop up with isoforms for the gene. After clicking an isoform the browser will navigate you to its genomic region.
 
 .. image:: _static/gene_search2.png
 
@@ -40,11 +40,28 @@ the red **stop** button, what you said "HOX" will populate the gene search box a
 .. note:: This feature is dependent on web browser support. A web browser without support for
           speech recognition won't see this UI.
 
-Region Search 
+SNP search
+~~~~~~~~~~
+
+SNP search is also avaiable from the genomic region locator button:
+
+.. image:: _static/snp_1.png
+
+say you input a SNP id: rs1259546924, click the Go button, you will get information about this SNP:
+
+.. image:: _static/snp_2.png
+
+Click the blue postion link can navigate you to this SNP's position:
+
+.. image:: _static/snp_3.png
+
+.. note:: SNP search uses the Ensembl API services: https://rest.ensembl.org
+
+Region Search
 ~~~~~~~~~~~~~
 
 Below the gene search box you can use the region search box to navigate to specific genomic coordinates. Formats such as
-``chr6:52258852-52260880`` or ``chr6 52258852 52260880`` are accepted (the browser is not sensitive to the number of spaces or tabs between the `chr`, `start`, and `stop`. 
+``chr6:52258852-52260880`` or ``chr6 52258852 52260880`` are accepted (the browser is not sensitive to the number of spaces or tabs between the `chr`, `start`, and `stop`.
 
 .. image:: _static/coord_search.png
 
@@ -97,7 +114,7 @@ Toggle display of the Genome Navigator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 By using the genome navigator (below) users can jump to any genomic region
-or chromosome(s). 
+or chromosome(s).
 
 .. image:: _static/genome_navigator.png
 
@@ -190,6 +207,39 @@ Go back to the browser, you can your browser view is ordered by your region set:
 
 .. image:: _static/region_view.png
 
+Geneplot
+~~~~~~~~
+
+**Geneplot** function allows users to see overall signal of a numerical track over user selected
+gene/region sets. Choose ``Geneplot`` from the ``Apps`` menu, if there is no region sets added before,
+the browser will bring the region set adding interface:
+
+.. image:: _static/geneplot_1.png
+
+After adding a region set, you can choose the available set from the dropdown in first step:
+
+.. image:: _static/geneplot_2.png
+
+Now you need to choose a numerical track, you can use your custom track or publicly avaiable tracks:
+
+.. image:: _static/geneplot_3.png
+
+After choose a numerical track, click the **Plot** button, this will generate the boxplot by default:
+
+.. image:: _static/geneplot_4.png
+
+Choose line plot:
+
+.. image:: _static/geneplot_5.png
+
+Choose heatmap:
+
+.. image:: _static/geneplot_6.png
+
+When you mouse over the plot, there is a button for you to download the plot as SVG file:
+
+.. image:: _static/geneplot_7.png
+
 Session
 ~~~~~~~
 
@@ -222,6 +272,13 @@ Click the green *Restore* button and your session will be restored:
 
 .. image:: _static/session_restored.png
 
+Download and Upload session
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sessions can be downloaded to a json file to your local disk, or can be uploaded from your local drive as well.
+
+.. image:: _static/session_dn_up.png
+
 Live browsing
 ~~~~~~~~~~~~~
 
@@ -240,6 +297,19 @@ tracks as a new SVG file. Once rendered you can click the green download button 
 current browser view as a SVG image file.
 
 .. image:: _static/screenshot.png
+
+Fetch Sequence
+~~~~~~~~~~~~~~
+
+From the ``Apps`` menu choose **Fetch Sequence**,, this function allows user to retrieve genomic sequence of current view region, or users can also specified a list of regions
+to fetch the sequences. Each region should no longer than 10KB.
+
+.. image:: _static/fetch_seq1.png
+
+Click the **Fetch** or **Batch fetch** button to fetch the sequence. Click the **Copy** button can copy the fetched sequence
+to your clipboard.
+
+.. image:: _static/fetch_seq2.png
 
 Track management
 ----------------
