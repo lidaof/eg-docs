@@ -237,7 +237,7 @@ Example HiC track
     }
 
 Example cool track
------------------
+------------------
 
 .. code-block:: json
 
@@ -306,7 +306,7 @@ type
 name
 ~~~~
 
-*Requried*. ``name`` specifies the track name used internally by the browser. It is also 
+*Requried*. ``name`` specifies the track name used internally by the browser. It is also
 displayed as the track legend if no label_ speficied. Value can be any string.
 
 label
@@ -475,3 +475,11 @@ displayMode
      - *arc*, *heatmap*
    * - genomealign
      - *rough*, *fine*
+
+aggregateMethod
+^^^^^^^^^^^^^^^
+
+At high zoom-out level when 1 on-screen pixel spans >1bp, the underlying track data needs to be
+summarized into a single value for browser display.
+``aggregateMethod`` is used to control how the data is summarized. Supported values include:
+``MEAN``, ``SUM``, ``COUNT``, ``MAX``, ``MIN``. Default value is ``MEAN``.
