@@ -220,7 +220,7 @@ Example refbed track
 
 .. note:: ``categoryColors`` designates colors for the gene type as indicated in the 9th column. The default scheme is shown above for
           the five classes created by the ``Converting_Gencode_or_Ensembl_GTF_to_refBed.bash`` script, but any number of categories can
-          be defined.  
+          be defined.
 
 Example HiC track
 -----------------
@@ -268,6 +268,45 @@ Example genomealign track
         }
     }
 
+Example matplot track
+--------------------
+
+.. code-block:: json
+
+    {
+        "type": "matplot",
+        "name": "matplot wrap",
+        "tracks": [
+            {
+            "type": "bigwig",
+            "url": "https://vizhub.wustl.edu/public/tmp/TW463_20-5-bonemarrow_MeDIP.bigWig",
+            "name": "MeDIP",
+            "options": {
+                "color": "red",
+                "backgroundColor":"#FFE7AB"
+                },
+            "metadata": {
+                "sample": "bone",
+                "assay": "MeDIP"
+                }
+            },
+            {
+            "type": "bigwig",
+            "url": "https://vizhub.wustl.edu/public/tmp/TW551_20-5-bonemarrow_MRE.CpG.bigWig",
+            "name": "MRE",
+            "options": {
+                "color": "blue",
+                "backgroundColor":"#C0E3CC"
+                },
+            "metadata": {
+                "sample": "bone",
+                "assay": "MRE"
+                }
+            }
+        ]
+    }
+
+
 Example Ruler track
 --------------------
 
@@ -299,6 +338,9 @@ type
 * genomealign
 * longrange
 * bigInteract
+* callingcard
+* matplot
+* snp
 * ruler
 
 .. note:: ``type`` is case insensitive.
@@ -445,7 +487,7 @@ yMin
 colorAboveMax
 ^^^^^^^^^^^^^
 
-``colorAboveMax`` defines the color displayed when a *fixed* yScale_ is used and a value exceeds the 
+``colorAboveMax`` defines the color displayed when a *fixed* yScale_ is used and a value exceeds the
 yMax_ defined.
 
 color2BelowMin
@@ -483,3 +525,10 @@ At high zoom-out level when 1 on-screen pixel spans >1bp, the underlying track d
 summarized into a single value for browser display.
 ``aggregateMethod`` is used to control how the data is summarized. Supported values include:
 ``MEAN``, ``SUM``, ``COUNT``, ``MAX``, ``MIN``. Default value is ``MEAN``.
+
+smooth
+^^^^^^
+
+``smooth`` option allows you to smooth the graph of a quantitative track using window mean values.
+The browser will use the mean values from region [current_position - smooth, current_position + smooth].
+Default value is 0 (no smooth applied).

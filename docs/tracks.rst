@@ -428,3 +428,19 @@ Place your sorted text file in the public folder. Since genomic data is often la
     bgzip example_sorted.ccf
     tabix -p bed example_sorted.ccf.gz
 
+Matplot track
+-------------
+
+A matplot (also called a line plot) displays multiple numerical tracks on the same X and Y axes to easily compare datasets. Data is plotted as curves instead of bar plots.
+
+To use matplot, choose more than 1 numerical tracks:
+
+.. image:: _static/mat1.png
+
+Right click, and choose *Apply matplot* button, The new matplot track will be shown:
+
+.. image:: _static/mat2.png
+
+and it also supports many configurations:
+
+.. image:: _static/mat3.png

@@ -182,9 +182,9 @@ Users can submit a list of regions or genes to the browser, by choose ``Apps`` -
 
 .. image:: _static/region_set.png
 
-The brings up the region set user interface, here you can enter a list of gene names or coordinates 
-to make a gene set one item per line. 
-Gene names and coordinates can be mixed for input. 
+The brings up the region set user interface, here you can enter a list of gene names or coordinates
+to make a gene set one item per line.
+Gene names and coordinates can be mixed for input.
 Coordinate string must be in the form of "chr1:345-678" fields can be joined by space/tab/comma/colon/hyphen.
 
 .. image:: _static/region_ui.png
