@@ -468,7 +468,7 @@ yScale
 ^^^^^^
 
 ``yScale`` allows you to configure the track's y-scale. Options include *auto* or *fixed*.
-*auto* sets the y-scale from 0 to the max value of values in the view region for a given track. 
+*auto* sets the y-scale from 0 to the max value of values in the view region for a given track.
 *fixed* means you can specify the *minimal* and *maximal* value.
 
 yMax
@@ -483,6 +483,11 @@ yMin
 
 .. important:: If you need the track to be in *fixed* scale, you need to specify ``yScale`` to *fixed*
                besides of set ``yMax`` and ``yMin``.
+
+scoreScale/scoreMax/scoreMin
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+These options work similar as yScale/yMax/yMin, but these are for interaction tracks.
 
 colorAboveMax
 ^^^^^^^^^^^^^
@@ -532,3 +537,8 @@ smooth
 ``smooth`` option allows you to smooth the graph of a quantitative track using window mean values.
 The browser will use the mean values from region [current_position - smooth, current_position + smooth].
 Default value is 0 (no smooth applied).
+
+maxRows
+^^^^^^^
+
+``maxRows`` options controls the number of rows for the annotation track, like a geneAnnotation track.

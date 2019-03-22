@@ -29,6 +29,13 @@ Specify an HiC track in URL.
 
 Example: ``?genome=hg19&hicUrl=https://your.url.to.hic.file``
 
+position
+--------
+
+Specify the default genomic position once the browser is loaded.
+
+Example: ``?genome=hg19&position=chr1:1000-2000``
+
 datahub
 --------
 
