@@ -102,7 +102,7 @@ Get chromosome sizes
 Download the file from http://hgdownload.soe.ucsc.edu/goldenPath/mm10/bigZips/mm10.chrom.sizes,
 you can following awk command to create the ``chromSize.json`` file::
 
-    sort -V myoLuc2.chrom.sizes | awk 'BEGIN{print "["}{ print "\t{\"chr\": \""$1"\", \"size\": "$2"},"}END{print "]"}' > chromSize.json
+    sort -V myoLuc2.chrom.sizes | awk 'BEGIN{ORS="";print "["}{sep=NR==1?"\n":",\n"; print sep"\t{\"chr\": \""$1"\", \"size\": "$2"}"}END{print "\n]"}' > chromSize.json
 
 Move the ``chromSize.json`` file into the mm10 folder.
 
