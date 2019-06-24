@@ -269,7 +269,7 @@ Example genomealign track
     }
 
 Example matplot track
---------------------
+---------------------
 
 .. code-block:: json
 
@@ -393,13 +393,13 @@ to build a *hierarchical structure*. ::
         "url": "https://egg.wustl.edu/d/hg19/GSM997242_1.bigWig", 
         "metadata": {
             "Sample": [
-                "Adult Cells/Tissues", 
+                "Adult Cells/Tissues",
                 "Blood", 
                 "Other blood cells", 
                 "CD4+_CD25-_Th_Primary_Cells"
-            ],    
+            ],
             "Donor": [
-                "Donor Identifier", 
+                "Donor Identifier",
                 "Donor_332"
             ],    
             "Assay": [
@@ -542,3 +542,9 @@ maxRows
 ^^^^^^^
 
 ``maxRows`` options controls the number of rows for the annotation track, like a geneAnnotation track.
+
+hiddenPixels
+^^^^^^^^^^^^
+
+For annotation tracks, when an element spans less than `hiddenPixels` in the screen,
+this item will not be displayed. Default value is 0.5 pixel. Set to 0 will display all elements.

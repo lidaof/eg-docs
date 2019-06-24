@@ -2,24 +2,24 @@ Local track files
 =================
 
 We realize that not every research group has the ability to set up a web server with CORS enabled. As of version 48.0.0,
-we added the ability to read local track files or an entire folder as a datahub. This means the user can *upload* track files
-from their hard drive to the browser. The format for these track files is the same as those that are hosted on a webserver.
+we added the ability to read local track files or an entire folder as a datahub. This means the user can **view** track files
+from their hard drive to the browser. The format for these track files is same as those that are hosted on a webserver.
 
-.. note:: The tracks *uploaded* through the file upload feature *cannot* be saved to the browser's local
+.. note:: The tracks *viewed* through the local track feature *cannot* be saved to the browser's local
           storage. Thus, when you refresh the browser your local tracks will be gone. Tracks need to be
-          re-upload to re-grant the browser permission to read  local files.
+          re-selected or re-grant the browser permission to read local files.
           This is a security setup of Javascript. To avoid uploading multiple files repeatedly, the user can create
           a ``hub.config.json`` file to specify files as a local datahub. In this manner, after a refresh event the user
-          can just upload their local datahub again instead of uploading individual tracks separately.
+          can just choose their local datahub again instead of choosing individual tracks separately.
 
 .. important:: Since the user needs to give permission for the web browser to access
                files on a local hard drive, tracks from a local hard drive **cannot** be saved
                into ``Session``. Please consider using HTTP(S) hosted tracks to work with the session function.
 
-Upload files as tracks
-----------------------
+View local files as tracks
+--------------------------
 
-To use your local files, make sure to format your files correctly. First, open the ``Upload Track``
+To use your local files, make sure to format your files correctly. First, open the ``View Local Tracks``
 menu from ``Tracks``:
 
 .. image:: _static/upload1.png
@@ -28,9 +28,9 @@ By default, you will be on the ``Add Local Track`` tab. Second, choose your trac
 
 .. image:: _static/upload2.png
 
-Third, choose your files. You can choose many files of same type if the track upload type only requires one
-file (``bigWig``, ``bigBed``, ``HiC``, and ``bigInteract``) or if the track upload type requires a data
-file and **index** file (``bedGraph``, ``methylC``, etc.) then you need to upload each pair individually.
+Third, choose your files. You can choose many files of same type if the track type only requires one
+file (``bigWig``, ``bigBed``, ``HiC``, and ``bigInteract``) or if the track type requires a data
+file and **index** file (``bedGraph``, ``methylC``, etc.) then you need to choose *each pair* individually.
 
 .. image:: _static/upload3.png
 
@@ -50,7 +50,7 @@ The bedGraph track is added to the browser view:
 
 .. image:: _static/upload7.png
 
-Upload files or a folder as a datahub
+View files or a folder as a datahub
 -------------------------------------
 
 If you want to upload many different types of track files to the browser, you can do that too!
@@ -87,7 +87,7 @@ Create a file called ``hub.config.json`` for the browser to configure your local
 
 .. note:: Please note the ``name`` and ``options`` attribute specified in this file. The syntax is the same as a remote datahub file.
 
-.. note:: Track files not specified in ``hub.config.json`` will be skipped.
+.. note:: Track files not specified in ``hub.config.json`` will be skipped. Orders of tracks will follow the order defined in ``hub.config.json`` file.
 
 You can either choose an entire folder by clicking the first button:
 

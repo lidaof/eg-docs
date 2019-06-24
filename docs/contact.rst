@@ -18,6 +18,15 @@ Get help on social media
 You can also get help from social media:
 
 #. Google group: https://groups.google.com/forum/#!forum/epgg
-#. Google plus forum: https://goo.gl/ruXs2Y (Google is shutting down it, use github issues or google group)
 #. Facebook page: https://www.facebook.com/WashUEpiGenomeBrowser/
 #. Twitter: https://twitter.com/wuepgg
+#. Youtube Channel: https://www.youtube.com/channel/UCnGVWbxJv-DPDCAFDQ1oFQA
+
+Cite the browser
+----------------
+
+If you used the browser in your research, please help us by citing the following paper:
+
+* Daofeng Li, Silas Hsu, Deepak Purushotham, Renee L Sears, Ting Wang, WashU Epigenome Browser update 2019, Nucleic Acids Research, gkz348, https://doi.org/10.1093/nar/gkz348 [PMID: 31165883_].
+
+.. _31165883: https://www.ncbi.nlm.nih.gov/pubmed/31165883

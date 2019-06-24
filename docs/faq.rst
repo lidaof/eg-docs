@@ -21,8 +21,8 @@ Data fetch failed
 Please check the URL to your file is correct. If yes, most case, your webserver doesn't enable CORS.
 Please see :doc:`tracks` page for how to enable CORS settings.
 
-Use HTTP or HTTPS?
-------------------
+Use HTTP or HTTPS
+-----------------
 
 Both our main site and AWS mirror support both HTTP and HTTPS protocol, since webpage
 hosted through HTTPS cannot access resource hosted by HTTP, you should use our HTTP site.
@@ -41,3 +41,12 @@ a Firebase fetal error like following:
 
 This means you need to setup a Firebase database for the Session/Live function to work properly,
 check :ref:`Firebase_setup` please
+
+Local track security
+--------------------
+
+Local track function is perfect for view protected or private data, since there is no data transfer on the web. 
+More discussions about this please check here_.
+
+.. _here: https://github.com/lidaof/eg-react/issues/114
+
