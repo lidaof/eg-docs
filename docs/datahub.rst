@@ -548,3 +548,23 @@ hiddenPixels
 
 For annotation tracks, when an element spans less than `hiddenPixels` in the screen,
 this item will not be displayed. Default value is 0.5 pixel. Set to 0 will display all elements.
+
+isCombineStrands
+^^^^^^^^^^^^^^^^
+
+For methylC tracks, ``isCombineStrands`` will specificy if the strands should be combined ``true`` or not combined ``false``. We recommend combining stands for viewing CpG methylation, but leaving strand information for non-CpG methylation.
+
+depthFilter
+^^^^^^^^^^
+
+For methylC tracks a ``depthFilter`` can be set to filter out any bases with less than the depth(coverage) specified.
+
+depthColor
+^^^^^^^^^^
+
+For methylC tracks specify a ``depthColor`` for the depth line that overlays the bars.
+
+maxMethyl
+^^^^^^^^^
+
+For methylC tracks specify the y-axis max (for both strands) using ``maxMethyl``. Options range from (0-1].
