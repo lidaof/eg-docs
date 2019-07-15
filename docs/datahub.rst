@@ -524,7 +524,7 @@ displayMode
      - *rough*, *fine*
 
 flatarc mode
-~~~~~~~~~~~~
+""""""""""""
 
 ``flatarc`` mode is like ``arc`` mode, sometimes the curve would be displayed flatter, in fact it's a cubic curve.
 
