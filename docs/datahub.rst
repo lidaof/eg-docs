@@ -519,9 +519,16 @@ displayMode
    * - geneAnnotation
      - *full*, *density*
    * - HiC
-     - *arc*, *heatmap*
+     - *arc*, *heatmap*, *flatarc*
    * - genomealign
      - *rough*, *fine*
+
+flatarc mode
+~~~~~~~~~~~~
+
+``flatarc`` mode is like ``arc`` mode, sometimes the curve would be displayed flatter, in fact it's a cubic curve.
+
+.. image:: _static/flatarc.png
 
 aggregateMethod
 ^^^^^^^^^^^^^^^
@@ -555,7 +562,7 @@ isCombineStrands
 For methylC tracks, ``isCombineStrands`` will specificy if the strands should be combined ``true`` or not combined ``false``. We recommend combining stands for viewing CpG methylation, but leaving strand information for non-CpG methylation.
 
 depthFilter
-^^^^^^^^^^
+^^^^^^^^^^^
 
 For methylC tracks a ``depthFilter`` can be set to filter out any bases with less than the depth(coverage) specified.
 

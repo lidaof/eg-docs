@@ -27,6 +27,6 @@ Cite the browser
 
 If you used the browser in your research, please help us by citing the following paper:
 
-* Daofeng Li, Silas Hsu, Deepak Purushotham, Renee L Sears, Ting Wang, WashU Epigenome Browser update 2019, Nucleic Acids Research, gkz348, https://doi.org/10.1093/nar/gkz348 [PMID: 31165883_].
+* Daofeng Li, Silas Hsu, Deepak Purushotham, Renee L Sears, Ting Wang, WashU Epigenome Browser update, Nucleic Acids Research, Volume 47, Issue W1, 02 July 2019, Pages W158–W165, https://doi.org/10.1093/nar/gkz348 [PMID: 31165883_].
 
 .. _31165883: https://www.ncbi.nlm.nih.gov/pubmed/31165883
