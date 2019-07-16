@@ -59,6 +59,28 @@ Create a ``.env`` file under ``frontend/`` folder with following content::
     REACT_APP_FIREBASE_DATABASE="Your own info"
     REACT_APP_FIREBASE_STORAGE_BUCKET="Your own info"
 
+The detailed steps of how to get the information above are illustrated in the following screenshots:
+
+Signup a firebase account at Google if you don't have one, then login into your account, create a new prioject:
+
+.. image:: _static/fire1.png
+
+Type in the project name and click the Create project button:
+
+.. image:: _static/fire2.png
+
+Click the Web button to add a Web app:
+
+.. image:: _static/fire3.png
+
+Type in a web app name and click the Register app button:
+
+.. image:: _static/fire4.png
+
+The firebase configuration info will be displayed:
+
+.. image:: _static/fire5.png
+
 Use Docker
 ==========
 
