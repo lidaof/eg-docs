@@ -16,7 +16,7 @@ Start the browser
     This step will install dependent packages.
 #. Type ``npm start``
 
-.. warning:: if ``npm install`` gives you error, you might try ``npm install --force``.
+.. note:: if ``npm install`` gives you error, you might try ``npm install --force``.
 
 That's it! You are done with your mirror site.
 The browser is now accessible from http://localhost:3000/browser.
