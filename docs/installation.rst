@@ -24,7 +24,7 @@ The browser is now accessible from http://localhost:3000/browser.
 Setup your own backend API (optional)
 -------------------------------------
 
-By default, your local browser mirror site uses our API service at ``https://api.epigenomegateway.org/documentation``,
+By default, your local browser mirror site uses our API service at ``https://lambda.epigenomegateway.org/v2``,
 while if you find the species or assembly you are interested is not listed by our API, you can either contact us to add
 it or build your own API. To build your own API, please follow the steps below:
 
@@ -43,6 +43,14 @@ Then prepare your gene annotation files like the ones for ``hg19``, ``mm10`` etc
 
 Now your own backend API is running, change ``AWS_API`` variable to empty string in ``GeneSource.js`` file.
 After this you are using your own API for gene annotation tracks and gene search.
+
+Our current API in serice in ``GeneSource.js``:
+
+    export const AWS_API = "https://lambda.epigenomegateway.org/v2";
+
+This API is for testing only:
+
+    https://api.epigenomegateway.org/documentation
 
 .. _Firebase_setup:
 
