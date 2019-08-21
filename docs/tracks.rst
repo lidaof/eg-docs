@@ -31,7 +31,7 @@ For an Apache web server in Ubuntu this setup (add this to the enabled .conf fil
     Header always set Access-Control-Allow-Origin "*"
     Header always set Access-Control-Allow-Headers: Range
     Header always set Access-Control-Max-Age: 86400
-    
+
 Then restart your Apache server.
 
 Enable CORS on Apache2 under CentOS

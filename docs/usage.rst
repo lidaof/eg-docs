@@ -279,6 +279,9 @@ Sessions can be downloaded to a json file to your local disk, or can be uploaded
 
 .. image:: _static/session_dn_up.png
 
+.. note:: The downloaded session file can be put in a URL, then use ``sessionFile`` parameter for fast retrieve
+            the session, like ``http://epigenomegateway.wustl.edu/browser/?sessionFile=https://wangftp.wustl.edu/~dli/test/eg-session--1692c5f0-c392-11e9-829c-912864922e1e.json``
+
 Live browsing
 ~~~~~~~~~~~~~
 
