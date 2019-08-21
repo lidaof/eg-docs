@@ -369,6 +369,10 @@ url
 .. caution:: Each user-provided ``url`` must link to a publically available website, without password
              protection, so that the browser can read in the file.
 
+.. note:: ``url`` can use a relative child path to the datahub url, say you have a file ``a.bigWig`` with your
+            datahub ``http://your.host/your.hub.json``, when you add the track entry for ``a.bigWig``, the ``url`` can
+            be either ``http://your.host/a.bigWig`` or just ``a.bigWig``.
+
 showOnHubLoad
 ~~~~~~~~~~~~~
 

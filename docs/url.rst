@@ -22,6 +22,13 @@ Specify a session bundle ID in URL.
 
 Example: ``?genome=hg19&bundle=session-bundle-id``
 
+sessionFile
+-----------
+
+Specify a session file in URL.
+
+Example: ``?sessionFile=https://wangftp.wustl.edu/~dli/test/eg-session--1692c5f0-c392-11e9-829c-912864922e1e.json``
+
 hicUrl
 -------
 

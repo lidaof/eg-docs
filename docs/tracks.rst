@@ -11,7 +11,7 @@ Quoted from MDN_::
     Cross-Origin Resource Sharing (CORS) is a mechanism that uses additional
     HTTP headers to tell a browser to let a web application running at
     one origin (domain) have permission to access selected resources
-    from a server at a different origin. A web application makes 
+    from a server at a different origin. A web application makes
     cross-origin HTTP request when it requests a resource that has
     a different origin (domain, protocol, and port) than its own origin.
 
@@ -29,10 +29,9 @@ Enable CORS on Apache2 under Ubuntu
 For an Apache web server in Ubuntu this setup (add this to the enabled .conf file) would work::
 
     Header always set Access-Control-Allow-Origin "*"
-    Header always set Access-Control-Allow-Methods "POST, GET, OPTIONS, DELETE, PUT"
-    Header always set Access-Control-Max-Age 1000
-    Header always set Access-Control-Allow-Headers "x-requested-with, Content-Type, origin, authorization, accept, client-security-token"
-
+    Header always set Access-Control-Allow-Headers: Range
+    Header always set Access-Control-Max-Age: 86400
+    
 Then restart your Apache server.
 
 Enable CORS on Apache2 under CentOS
@@ -40,9 +39,9 @@ Enable CORS on Apache2 under CentOS
 
 Try add this to the main configuration file ``/etc/httpd/conf/httpd.conf``::
 
-    Header set Access-Control-Allow-Origin "*"
-    Header set Access-Control-Allow-Headers: Range
-    Header set Access-Control-Max-Age: 86400
+    Header always set Access-Control-Allow-Origin "*"
+    Header always set Access-Control-Allow-Headers: Range
+    Header always set Access-Control-Max-Age: 86400
 
 .. image:: _static/centos_cors1.png
 
