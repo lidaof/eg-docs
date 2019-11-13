@@ -306,6 +306,17 @@ Example matplot track
         ]
     }
 
+Example g3d track
+-------------------------
+
+.. code-block:: json
+
+    {
+        "type": "g3d",
+        "url": "https://wangftp.wustl.edu/~dli/tmp/test.g3d",
+        "name": "example 3d track",
+        "showOnHubLoad": true
+    }
 
 Example Ruler track
 --------------------

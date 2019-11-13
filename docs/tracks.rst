@@ -443,3 +443,24 @@ Right click, and choose *Apply matplot* button, The new matplot track will be sh
 and it also supports many configurations:
 
 .. image:: _static/mat3.png
+
+3D genomic structure track
+--------------------------
+
+3D genomic structure data can also be displayed at the browser. We developed the flexiable file format called .g3d, documentations
+for how to prepare .g3d file is available at `g3dtools documentation <https://g3d.readthedocs.io/en/latest/g3dtools.html>`_.
+
+G3d files can be submitted as custom tracks from ``Tracks -> Custom Tracks``, or using a datahub. Right cilck the g3d track
+allows you to customize the background color, height, resolution and data region properties.
+
+change resolution
+
+.. image:: _static/g3d_1.png
+
+change data region/Source
+
+.. image:: _static/g3d_2.png
+
+display of 3D genomic structure, unselect any Tools, use mouse to zoom in/out, rotate the structure.
+
+.. image:: _static/g3d_3.png
