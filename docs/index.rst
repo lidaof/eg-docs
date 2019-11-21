@@ -19,6 +19,7 @@ WashU Epigenome Browser
     datahub
     url
     local
+    text
     installation
     add
     faq
