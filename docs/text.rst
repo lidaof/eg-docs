@@ -4,7 +4,8 @@ Text Tracks
 Tracks are usually prepared in binary format for efficient region access, like `bigWig`, `bigBed`, `HiC` and etc.
 Text file format is very flexible, thus caused some trouble for us to standardize the data input.
 While there are some circumstances that text track files could also be useful, it can be very convenient to just upload a text
-file and visualize the data on the browser without formatting the data to a binary format. Also we have received requests that
+file and visualize the data on the browser without formatting the data to a binary format. Once added, text tracks can be very fast since
+there is no more network requests or transfers, also we have received requests that
 adding text files as tracks from our users.
 
 bed
@@ -65,7 +66,35 @@ The choose the bedGraph text file:
 
 The text track file is added:
 
-.. image:: _static/bedgraph_text_3.png 
+.. image:: _static/bedgraph_text_3.png
+
+longrange
+---------
+
+The `longrange` format can also be uploaded directly as text file, choose `longrange` in the text type dropdown menu:
+
+.. image:: _static/long_text_1.png 
+
+Choose the text file in `longrange` format:
+
+.. image:: _static/long_text_2.png 
+
+The track will be added as below (adjust region and display style as arc):
+
+.. image:: _static/long_text_3.png
+
+customized long-range format
+----------------------------
+
+One of our user proposed the long-range format as below:
+
+.. image:: _static/long_text_4.png 
+
+We also added the support and the file in this format can be loaded as track:
+
+.. image:: _static/long_text_5.png 
+
+`Feel free to contact us if you need more formats supported.`
 
 What if the text file is huge?
 ------------------------------
