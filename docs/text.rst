@@ -86,11 +86,11 @@ The track will be added as below (adjust region and display style as arc):
 customized long-range format
 ----------------------------
 
-One of our user proposed the long-range format as below:
+One of our user proposed a long-range format as below:
 
 .. image:: _static/long_text_4.png 
 
-We also added the support and the file in this format can be loaded as track:
+We also added the support and file in this format can be loaded as track:
 
 .. image:: _static/long_text_5.png 
 
@@ -99,7 +99,7 @@ We also added the support and the file in this format can be loaded as track:
 What if the text file is huge?
 ------------------------------
 
-If your text track if huge in size, convert to binary format is recommended. However, you can still use the text file if you want.
+If your text track is huge in size, convert to binary format is recommended. However, you can still use the text file if you want.
 Make sure you check the `Use a Worker thread` checkbox, the browser will use a background thread for text file loading.
 
 .. image:: _static/worker_check.png

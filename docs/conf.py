@@ -20,7 +20,7 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = 'WashU Epigenome Browser'
-copyright = '2018, Daofeng Li, Silas Hsu, Renee L. Sears and Ting Wang'
+copyright = '2018-2020, Ting Wang Lab'
 author = 'Daofeng Li, Silas Hsu, Renee L. Sears and Ting Wang'
 
 # The short X.Y version
