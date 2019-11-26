@@ -119,7 +119,7 @@ Create a file called ``mm10.js``, filling the following contents::
     import chromSize from "./chromSize.json";
     
     const allSize = chromSize.map(genom => new Chromosome(genom.chr, genom.size));
-    const genome = new Genome("myoLuc2", allSize);
+    const genome = new Genome("mm10", allSize);
 
     const navContext = genome.makeNavContext();
     const defaultRegion = navContext.parse("chr6:52425276-52425961");
