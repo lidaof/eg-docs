@@ -444,14 +444,13 @@ Offline mode
 ------------
 
 In case your device goes offline (no WIFI or network is down), the use can still use the local track and local text track function. A notice will show as below to indicate
- user's device is currently offline.
+user's device is currently offline.
 
  .. image:: _static/offline.png
 
- New version notice
- ------------------
+New version notice
+------------------
 
- Whenever there is a new version, a notification will show if user still use the old version.
+Whenever there is a new version, a notification will show if user still use the old version.
 
- .. image:: _static/newversion.png
- 
+.. image:: _static/newversion.png
