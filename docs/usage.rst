@@ -439,3 +439,19 @@ You can config the layout and/or the data source:
 And config the color, scale, flanking region length at each end of one interaction. You also can download the view as a SVG file used for publication.
 
 .. image:: _static/circlet.png
+
+Offline mode
+------------
+
+In case your device goes offline (no WIFI or network is down), the use can still use the local track and local text track function. A notice will show as below to indicate
+ user's device is currently offline.
+
+ .. image:: _static/offline.png
+
+ New version notice
+ ------------------
+
+ Whenever there is a new version, a notification will show if user still use the old version.
+
+ .. image:: _static/newversion.png
+ 
