@@ -391,7 +391,7 @@ for a full list of available cool tracks please check http://higlass.io/api/v1/t
 Calling card track
 ------------------
 
-Calling Card Format (CCF) is tab-delimited, plain text format for discrete genomic data, such as transposon insertions. This format requires a minimum of four columns and supports up to six. The four required columns are CHROM, START, END, and VALUE, where VALUE is a numeric value (i.e. an int or float). As with BED files, the START and END coordinates are 0-indexed. The fifth and sixth columns are optional and represent STRAND and STRING, respectively. The STRING column can be used to store sample- or entry- specific information, such as a replicate barcode. Here is an example of a four-column CCF file::
+Calling Card Format (CCF) is tab-delimited, plain text format for discrete genomic data, such as transposon insertions. This format requires a minimum of four columns and supports up to six. The four required columns are CHROM, START, END, and VALUE, where VALUE is a numeric value (i.e. an int or float). As with BED files, the START and END coordinates are 0-indexed. The fifth and sixth columns are optional and represent STRAND and ANNOTATION, respectively. The ANNOTATION column can be used to store sample- or entry- specific information, such as a replicate barcode. Here is an example of a four-column CCF file::
 
     chr1    41954321        41954325        1
     chr1    41954321        41954325        18
