@@ -391,7 +391,7 @@ for a full list of available cool tracks please check http://higlass.io/api/v1/t
 Calling card track
 ------------------
 
-Calling card data must be stored in a tab-delimited, plain text format. This format requires a minimum of four columns and can support up to six. The four required columns are CHROM, START, STOP, and COUNT, where COUNT refers to the number of reads for that insertion. The START and STOP columns can be either 0- or 1-indexed. The fifth and sixth columns are optional and represent STRAND and BARCODE, respectively. Here is an example of a four-column calling card file::
+Calling Card Format (CCF) is tab-delimited, plain text format for discrete genomic data, such as transposon insertions. This format requires a minimum of four columns and supports up to six. The four required columns are CHROM, START, END, and VALUE, where VALUE is a numeric value (i.e. an int or float). As with BED files, the START and END coordinates are 0-indexed. The fifth and sixth columns are optional and represent STRAND and ANNOTATION, respectively. The ANNOTATION column can be used to store sample- or entry- specific information, such as a replicate barcode. Here is an example of a four-column CCF file::
 
     chr1    41954321        41954325        1
     chr1    41954321        41954325        18
@@ -405,7 +405,7 @@ Calling card data must be stored in a tab-delimited, plain text format. This for
     chr1    54747055        54747059        4
     chr1    60748489        60748493        2
 
-Here is an example of a six-column calling card file::
+Here is an example of a six-column CCF file::
 
     chr1    51441754        51441758        1       -       CTAGAGACTGGC
     chr1    51441754        51441758        21      -       CTTTCCTCCCCA
@@ -418,11 +418,12 @@ Here is an example of a six-column calling card file::
     chr1    61106283        61106287        7       -       CGTTTTTCACCT
     chr1    61542006        61542010        1       -       CTGAGAGACTGG
 
-our text file must be sorted by the first three columns. If your filename is example.ccf, you sort it with the following command: ``sort -k1V -k2n -k3n example.ccf > example_sorted.ccf``
+Your text file must be sorted by the first three columns. If your filename is example.ccf, you can sort it with the following command: ``sort -k1V -k2n -k3n example.ccf > example_sorted.ccf``
+Alternatively, with ``bedops``: ``sort-bed example.ccf > example_sorted.ccf``
 
 Note that you can have strand information without a barcode, but you cannot have barcode information without a strand column.
 
-Place your sorted text file in the public folder. Since genomic data is often large, we must compress and index it for fast retrieval. Use the following commands to do so::
+Place your sorted CCF file in a web-accessible directory, then compress and index as follows::
 
     bgzip example_sorted.ccf
     tabix -p bed example_sorted.ccf.gz
