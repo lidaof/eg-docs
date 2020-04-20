@@ -268,14 +268,14 @@ Example genomealign track
         }
     }
 
-Example callingcard track
+Example qBED track
 -------------------------
 
 .. code-block:: json
 
     {
-        "type":"callingcard",
-        "url":"https://htcf.wustl.edu/files/RdNgrGeQ/HCT116-PBase.ccf.gz",
+        "type":"qbed",
+        "url":"https://htcf.wustl.edu/files/RdNgrGeQ/HCT116-PBase.qbed.gz",
         "name":"piggyBac insertions",
         "showOnHubLoad":"true",
         "options":{
@@ -289,9 +289,9 @@ Example callingcard track
           },
     }
 
-.. note:: Default callingcard track options are ``"logScale":"none"``, ``"show":"all"``, ``"markersize":3``, and ``"opacity":[100]``.
+.. note:: Default qBED track options are ``"logScale":"none"``, ``"show":"all"``, ``"markersize":3``, and ``"opacity":[100]``.
           Log-scaling can be set by specifying ``"logScale":"log10"``. To change opacity, pass a single value in brackets, as in the above example.
-          Calling card tracks will, by default, plot all entries in view. For information-dense regions, this can lead to excessive memory consumption.
+          qBED tracks will, by default, plot all entries in view. For information-dense regions, this can lead to excessive memory consumption.
           To plot a random subsample instead, specify ``"show":"sample"`` and pass the number of points to visualize to ``"sampleSize"``, e.g.
           ``"sampleSize":1000``
 
@@ -376,7 +376,7 @@ type
 * genomealign
 * longrange
 * bigInteract
-* callingcard
+* qBED
 * matplot
 * snp
 * ruler
