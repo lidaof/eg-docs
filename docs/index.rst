@@ -20,6 +20,7 @@ WashU Epigenome Browser
     url
     local
     text
+    dynamic
     installation
     add
     faq

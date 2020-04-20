@@ -561,16 +561,23 @@ displayMode
    * - geneAnnotation
      - *full*, *density*
    * - HiC
-     - *arc*, *heatmap*, *flatarc*
+     - *arc*, *heatmap*, *flatarc*, *square*
    * - genomealign
      - *rough*, *fine*
 
 flatarc mode
 """"""""""""
 
-``flatarc`` mode is like ``arc`` mode, sometimes the curve would be displayed flatter, in fact it's a cubic curve.
+For interaction track. ``flatarc`` mode is like ``arc`` mode, sometimes the curve would be displayed flatter, in fact it's a cubic curve.
 
 .. image:: _static/flatarc.png
+
+square mode
+"""""""""""
+
+For interaction track. ``square`` mode gives JuiceBox style like view for HiC maps.
+
+.. image:: _static/square.png
 
 aggregateMethod
 ^^^^^^^^^^^^^^^
@@ -617,3 +624,33 @@ maxMethyl
 ^^^^^^^^^
 
 For methylC tracks specify the y-axis max (for both strands) using ``maxMethyl``. Options range from (0-1].
+
+zoomLevel
+^^^^^^^^^
+
+For ``bigWig`` track only. ``bigWig`` files usually contain multiple resolutions, when viewing a large region,
+the Browser usually fetches a lower resolution for faster response, user can change this behaviour by changing this option.
+
+The example below first show viewing a bigWig track in a big region with ``AUTO`` zoom level, you can see the data is pretty flat,
+when we change zoom level to 0, 1, etc, we can see more details from the data, but takes more time to load.
+
+Automatical zoom level:
+
+.. image:: _static/bw_zoom1.png
+
+Right click, change zoom level to 0: (can also setup in data hub under ``options``)
+
+.. image:: _static/bw_zoom2.png
+
+View changed after change zoom level to 0:
+
+.. image:: _static/bw_zoom3.png
+
+alwaysDrawLabel
+^^^^^^^^^^^^^^^
+
+For ``bed`` and ``categorical`` tracks only. Usually for each ``bed`` and ``categorical` item in those tracks,
+the label are only drawn only when there are enough space inside the item block, by specificy this option to `true`,
+the label will always be drawn in the screen.
+
+.. image:: _static/bed_label.png
