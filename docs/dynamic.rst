@@ -2,7 +2,7 @@ Dynamic Tracks
 ==============
 
 Dynamic tracks is a new track type in the Browser to show dynamics of data as animations.
-Currently numerical data and HiC chromatin interaction data can be visualized with this new track type.
+Currently annotation features (``bed``), numerical data (``bigWig``, ``bedgraph``) and chromatin interaction data (like HiC) (``hic``, ``longrange``) can be visualized with this new track type.
 
 Use dynamic bedgraph format
 ---------------------------
@@ -183,6 +183,61 @@ The new dynamic HiC track is added:
 Check the animated version below:
 
 .. image:: _static/dy9.gif
+
+Make dynamic longrange chromatin interaction track
+--------------------------------------------------
+
+``longrange`` chromatin interaction tracks can also be used to make dynamic tracks.
+First, load more than 1 ``longrange`` track, select all of them while holding `Shift` key, right click on the selction, and choose *Dynamic Longrange*:
+
+.. image:: _static/dy13.png
+
+The new dynamic interaction track will be added, an animated version is displayed below:
+
+.. image:: _static/dy14.gif
+
+Make Dynamic bed track for annotation data
+------------------------------------------
+
+``bed`` tracks can also be made to be dynamic. Load more than 1 ``bed`` track in the browser, select all of them
+while holding `Shift` key, right click, and choose *Dynamic bed* button:
+
+.. image:: _static/dy15.png
+
+a new ``dynamicbed`` track will be added, right click on it will give you the configuration options:
+
+.. image:: _static/dy16.png
+
+An animated version is displayed below:
+
+.. image:: _static/dy17.gif
+
+Make dynamic bed track using data hub
+-------------------------------------
+
+The dynamic bed track shown above can also be submitted using data hub function, prepare a datahub file like below, and submit it as a remote data hub:
+
+.. code-block:: json
+
+    [
+    {
+        "type": "dynamicbed",
+        "name": "dynamic bed",
+        "showOnHubLoad": true,
+        "tracks": [
+        {
+            "type": "bed",
+            "url": "https://vizhub.wustl.edu/public/misc/dynamicTrack/bed/peak1.bed.gz",
+            "name": "peak1"
+        },
+        {
+            "type": "bed",
+            "url": "https://vizhub.wustl.edu/public/misc/dynamicTrack/bed/peak2.bed.gz",
+            "name": "peak2"
+        }
+        ]
+    }
+    ]
 
 Dynamic track options
 ---------------------
