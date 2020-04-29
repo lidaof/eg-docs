@@ -13,6 +13,9 @@ same as regular bedgraph format, except last column is an array of values::
     chr6    52424961        52425161        [10,9,8,7,6,5,4,3,2,1]
     chr6    52425286        52425296        [1,2,3,4,5,6,7,8,9,10]
 
+.. important:: The data array in 4th column are not required to be always with same length, for shorter arrays, values will be used repeatly from beginning of the array
+               if the same view window has longer arrays. To avoid this repeating process, users need to fill the missing data with ``0``.
+
 Format the file with bgzip and tabix, this example file can be accessed from https://vizhub.wustl.edu/public/misc/dynamicTrack/dynamic-hubs/test.dbg.gz, you can submit the new track file as a remote track:
 
 .. image:: _static/rt.png
@@ -245,17 +248,52 @@ Dynamic track options
 Besides regular propeties like ``color``, ``backgroundColor`` and ``height`` etc, dynamic track has a set of propeties just for this track type.
 
 playing
--------
+~~~~~~~
 
 ``playing`` indicates if the track animation is playing or paused, value can be `true` or `false`
 
 speed
------
+~~~~~
 
 ``speed`` indicates the playing speed of the animation, range from 1 to 10 where 1 is the slowest and 10 is the fastest.
 Value need be set in an array format, like ``[1]`` or ``[5]``
 
 dynamicLabels
--------------
+~~~~~~~~~~~~~
 
 for ``dbedgraph`` track only. specify the labels with each data points. Values should be an array of strings.
+
+useDynamicColors
+~~~~~~~~~~~~~~~~
+
+``useDynamicColors`` toggles if use a dynamic color set defined in data hub, see the option ``dynamicColors`` for more details. Right click on a dynamic
+track will also bring the menu to change this option.
+
+.. image:: _static/dy19.png
+
+dynamicColors
+~~~~~~~~~~~~~
+
+For each step of the animation, user can also set different colors for each step. ``dynamicColors`` is used for this purpose.
+Check this example data hub below and an animated track display:
+
+.. code-block:: json
+
+    [
+    {
+        "type": "dbedgraph",
+        "url": "https://wangftp.wustl.edu/~dli/test/a.dbg.gz",
+        "options": {
+            "dynamicLabels": ["stage1","stage2","stage3","stage4","stage5","stage6","stage7","stage8","stage9","stage10"],
+            "dynamicColors": ["red", "blue", "#00FF00", 0x000000],
+            "useDynamicColors": true
+        },
+        "showOnHubLoad": true
+        }
+    ]
+
+.. image:: _static/dy18.gif
+
+.. warning:: in order for ``dynamicColors`` to be effect, ``useDynamicColors`` need set to be ``true``. `color` in the array can be color name, or any CSS color, or color hex number.
+             If ``useDynamicColors`` is ``false``, the ``color`` attribute in options will be used to paint the animation.
+
