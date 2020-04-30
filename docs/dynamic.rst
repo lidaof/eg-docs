@@ -50,6 +50,11 @@ The track file above can also be used to prepare a data hub file as below, speci
         }
     ]
 
+
+When you submit this file as a data hub, you could see the labels are ploted along with the corresponding data:
+
+.. image:: _static/db4.gif
+
 Dynamic bedgraph track with negative values
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -57,10 +62,6 @@ In the data array of dynamic bedgraph track file, negative values are also allow
 An example is displayed below:
 
 .. image:: _static/dy20.gif
-
-When you submit this file as a data hub, you could see the labels are ploted along with the corresponding data:
-
-.. image:: _static/db4.gif
 
 Make dynamic plot track from user interface
 -------------------------------------------
