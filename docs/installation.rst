@@ -133,7 +133,7 @@ To embed the browser in any HTML file, create a HTML page with following content
         crossorigin="anonymous"></script> 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script> 
-    <script src="https://unpkg.com/epgg@latest/umd/epgg.js"></script> 
+    <script src="https://target.wustl.edu/dli/eg/epgg.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/epgg@latest/umd/epgg.css">
     </head>
     <body>

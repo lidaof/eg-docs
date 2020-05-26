@@ -1,10 +1,18 @@
 Tracks
 ======
 
-.. important:: Since all tracks are hosted on the web with HTTP/HTTPS links provided
+Track groups based on file types and localtions of the track files
+------------------------------------------------------------------
+
+Track files are divided to 2 groups based on their file types, text format files and binary files like ``bigWig`` and ``hic``.
+For binary track files, if the track files are located at websites, they are `Remote Tracks`, if they are located in users' computer then
+they are `Local Tracks`. For text track files, right now they can be uploaded from users' computer, they are called `Local Text Tracks`. Please check the following diagram as well:
+
+.. image:: _static/track_location_types.png
+
+.. important:: Since all remote tracks are hosted on the web with HTTP/HTTPS links provided
                for submission as tracks, the webservers which are hosting the track
                files need Cross-Origin Resource Sharing (CORS) enabled.
-
 
 Quoted from MDN_::
 

@@ -270,7 +270,8 @@ Value need be set in an array format, like ``[1]`` or ``[5]``
 dynamicLabels
 ~~~~~~~~~~~~~
 
-for ``dbedgraph`` track only. specify the labels with each data points. Values should be an array of strings.
+for ``dbedgraph`` and ``dynamicplot`` track types. Specify the labels with each data points. Values should be an array of strings. ``dynamicplot``, ``dynamichic``
+``dynamicbed`` by default the dynamic track will use the label of each member track. ``dynamicplot``'s default dynamic lables can be overwritten by using ``dynamicLabels``.
 
 useDynamicColors
 ~~~~~~~~~~~~~~~~
@@ -306,3 +307,4 @@ Check this example data hub below and an animated track display:
 .. warning:: in order for ``dynamicColors`` to be effect, ``useDynamicColors`` need set to be ``true``. `color` in the array can be color name, or any CSS color, or color hex number.
              If ``useDynamicColors`` is ``false``, the ``color`` attribute in options will be used to paint the animation.
 
+.. hint::  ``dynamicColors`` with ``useDynamicColors`` will overwrite the ``color`` or ``color2`` settings, once ``useDynamicColors`` was set to `false`, the color set in ``color`` will be used.
