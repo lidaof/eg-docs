@@ -75,4 +75,4 @@ First thank you very much for considering publishing figures, datahubs and sessi
 For best result, please put all your track files on a permenant web location (like your own web server or Amazon S3), 
 then  use :ref:`hub` or :ref:`sessionFile` URL parameter for browser hub URL. Browser URL with ``hub`` or ``sessionFile`` is permenant as long as your track files from your web server stay.
 
-.. note:: using ``session bundle Id`` is not recommended as session Id is suppose to be shared with trusted people, share the session Id in a public enviroment may result unwanted edits to your session.
+.. note:: using ``session bundle id`` is not recommended as session id is suppose to be shared with trusted people, share the session Id in a public environment may result unwanted edits to your session.
