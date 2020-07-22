@@ -8,6 +8,8 @@ Setup
 
 .. note:: Feel free to use any package manager tool on your system for installation (``brew``\ , etc.).
 
+* Get the source code from our github repo: https://github.com/lidaof/eg-react
+
 Start the browser
 -----------------
 

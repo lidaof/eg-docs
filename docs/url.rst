@@ -8,8 +8,10 @@ Specify the genome in URL. It's required for all other URL parameters.
 
 Example: ``?genome=hg19``
 
+.. _hub:
+
 hub
-----
+---
 
 Specify a data hub URL in JSON format.
 
@@ -22,12 +24,18 @@ Specify a session bundle ID in URL.
 
 Example: ``?genome=hg19&bundle=session-bundle-id``
 
+.. _sessionFile:
+
 sessionFile
 -----------
 
 Specify a session file in URL.
 
 Example: ``?sessionFile=https://wangftp.wustl.edu/~dli/test/eg-session--1692c5f0-c392-11e9-829c-912864922e1e.json``
+
+.. note:: ``sessionFile`` can be downloaded using the ``Download current session`` button in Session user interface.
+          
+          .. image:: _static/sessionFile.png
 
 hicUrl
 -------
