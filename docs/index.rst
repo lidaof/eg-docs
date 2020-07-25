@@ -21,6 +21,7 @@ WashU Epigenome Browser
     local
     text
     dynamic
+    image
     installation
     add
     faq
