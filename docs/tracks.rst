@@ -1,10 +1,18 @@
 Tracks
 ======
 
-.. important:: Since all tracks are hosted on the web with HTTP/HTTPS links provided
+Track groups based on file types and localtions of the track files
+------------------------------------------------------------------
+
+Track files are divided to 2 groups based on their file types, text format files and binary files like ``bigWig`` and ``hic``.
+For binary track files, if the track files are located at websites, they are `Remote Tracks`, if they are located in users' computer then
+they are `Local Tracks`. For text track files, right now they can be uploaded from users' computer, they are called `Local Text Tracks`. Please check the following diagram as well:
+
+.. image:: _static/track_location_types.png
+
+.. important:: Since all remote tracks are hosted on the web with HTTP/HTTPS links provided
                for submission as tracks, the webservers which are hosting the track
                files need Cross-Origin Resource Sharing (CORS) enabled.
-
 
 Quoted from MDN_::
 
@@ -388,10 +396,10 @@ Thanks to the higlass team who provides the data API, the browser is able to dis
 from the higlass server, for example, you can use the uuid ``Hyc3TZevQVm3FcTAZShLQg`` to represent the track for *Aiden et al. (2009) GM06900 HINDIII 1kb*,
 for a full list of available cool tracks please check http://higlass.io/api/v1/tilesets/?dt=matrix
 
-Calling card track
+qBED track
 ------------------
 
-Calling Card Format (CCF) is tab-delimited, plain text format for discrete genomic data, such as transposon insertions. This format requires a minimum of four columns and supports up to six. The four required columns are CHROM, START, END, and VALUE, where VALUE is a numeric value (i.e. an int or float). As with BED files, the START and END coordinates are 0-indexed. The fifth and sixth columns are optional and represent STRAND and ANNOTATION, respectively. The ANNOTATION column can be used to store sample- or entry- specific information, such as a replicate barcode. Here is an example of a four-column CCF file::
+qBED is tab-delimited, plain text format for discrete genomic data, such as transposon insertions. This format requires a minimum of four columns and supports up to six. The four required columns are CHROM, START, END, and VALUE, where VALUE is a numeric value (i.e. an int or float). As with BED files, the START and END coordinates are 0-indexed. The fifth and sixth columns are optional and represent STRAND and ANNOTATION, respectively. The ANNOTATION column can be used to store sample- or entry- specific information, such as a replicate barcode. Here is an example of a four-column qBED file::
 
     chr1    41954321        41954325        1
     chr1    41954321        41954325        18
@@ -405,7 +413,7 @@ Calling Card Format (CCF) is tab-delimited, plain text format for discrete genom
     chr1    54747055        54747059        4
     chr1    60748489        60748493        2
 
-Here is an example of a six-column CCF file::
+Here is an example of a six-column qBED file::
 
     chr1    51441754        51441758        1       -       CTAGAGACTGGC
     chr1    51441754        51441758        21      -       CTTTCCTCCCCA
@@ -418,15 +426,15 @@ Here is an example of a six-column CCF file::
     chr1    61106283        61106287        7       -       CGTTTTTCACCT
     chr1    61542006        61542010        1       -       CTGAGAGACTGG
 
-Your text file must be sorted by the first three columns. If your filename is example.ccf, you can sort it with the following command: ``sort -k1V -k2n -k3n example.ccf > example_sorted.ccf``
-Alternatively, with ``bedops``: ``sort-bed example.ccf > example_sorted.ccf``
+Your text file must be sorted by the first three columns. If your filename is example.qbed, you can sort it with the following command: ``sort -k1V -k2n -k3n example.qbed > example_sorted.qbed``
+Alternatively, with ``bedops``: ``sort-bed example.qbed > example_sorted.qbed``
 
 Note that you can have strand information without a barcode, but you cannot have barcode information without a strand column.
 
-Place your sorted CCF file in a web-accessible directory, then compress and index as follows::
+Place your sorted qBED file in a web-accessible directory, then compress and index as follows::
 
-    bgzip example_sorted.ccf
-    tabix -p bed example_sorted.ccf.gz
+    bgzip example_sorted.qbed
+    tabix -p bed example_sorted.qbed.gz
 
 Matplot track
 -------------
