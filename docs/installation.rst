@@ -89,6 +89,21 @@ The firebase configuration info will be displayed:
 
 .. image:: _static/fire5.png
 
+.. _use_without_Firebase:
+
+Use without firebase
+====================
+
+Firebase setup is necessary for using with Session and Live function, if browser mirror users think they won't be necessary, the firebase
+setup setup can be avoided then.
+
+In the ``frontend`` folder, create a ``.env`` file, add the line below:
+
+    REACT_APP_NO_FIREBASE=1
+
+rerun ``npm start``, the browser will start without session/live function.
+
+
 Use Docker
 ==========
 

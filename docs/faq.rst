@@ -40,7 +40,12 @@ a Firebase fetal error like following:
 .. image:: _static/firebase_error.png
 
 This means you need to setup a Firebase database for the Session/Live function to work properly,
-check :ref:`Firebase_setup` please
+check :ref:`Firebase_setup` please.
+
+Can I use without setup Firebase?
+---------------------------------
+
+Yes. But this means you would not have the Session/Live function, check :ref:`use_without_Firebase` please.
 
 Local track security
 --------------------
