@@ -94,7 +94,7 @@ The firebase configuration info will be displayed:
 .. _use_without_Firebase:
 
 Use without firebase
-====================
+--------------------
 
 Firebase setup is necessary for using with Session and Live function, if browser mirror users think they won't be necessary, the firebase
 setup setup can be avoided then.
