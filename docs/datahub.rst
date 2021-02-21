@@ -78,6 +78,21 @@ Example bigWig track
         }
     }
 
+Example dynseq track
+--------------------
+
+.. code-block:: json
+
+    {
+        "type": "dynseq",
+        "name": "example dynseq",
+        "url": "https://target.wustl.edu/dli/tmp/deeplift.example.bw",
+        "options": {
+            "color": "blue",
+            "height: 100
+        }
+    }
+
 Example methylC track
 ----------------------
 
@@ -365,6 +380,7 @@ type
 
 * bigWig
 * bedGraph
+* dynseq
 * methylC
 * categorical
 * hic

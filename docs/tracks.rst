@@ -66,6 +66,23 @@ We have setup a test s3 bucket at http://washu-track-host.s3-website-us-east-1.a
 the link http://washu-track-host.s3-website-us-east-1.amazonaws.com/bigwig/TW551_20-5-bonemarrow_MRE.CpG.bigWig can be
 displayed at the browser with following CORS setup::
 
+    [
+        {
+            "AllowedHeaders": [
+                "*"
+            ],
+            "AllowedMethods": [
+                "GET",
+                "HEAD"
+            ],
+            "AllowedOrigins": [
+                "*"
+            ]
+        }
+    ]
+
+If you happen to use old XML settings, you can setup it like this::
+
     <?xml version="1.0" encoding="UTF-8"?>
     <CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
     <CORSRule>
@@ -268,18 +285,31 @@ left to right are ``chromosome``, ``start position`` (0-based), ``end position``
 
 This format needs to be compressed by bgzip and indexed by tabix for submission as a track. See `Prepare track files`_.
 
+Dynamic Sequence Tracks
+-----------------------
+
+dynseq
+~~~~~~
+
+``dynseq`` is a new track type which is proposed and initially developped by Surag Nai from Anshul Kundaje's lab at Stanford University.
+Its track file is based on ``bigWig`` format, it provides importance scores for each nucleotide in the genome, so we visualize them as a string of letters with different colors (for each nucleotide) and different heights scaled by the importance scores.
+
+An example of loaded ``dynseq`` track is illustrated below:
+
+.. image:: _static/dynseq.png
+
 Read Alignment BAM Tracks
 -------------------------
 
-BAM
+bam
 ~~~
 
-The ``BAM`` format is a compressed SAM format used to store sequence alignment data.
+The ``bam`` format is a compressed SAM format used to store sequence alignment data.
 Please check the `Samtools Documentation`_ page to learn more about this format and how to manipulate these files.
 
 .. _Samtools Documentation: https://samtools.github.io/hts-specs/SAMv1.pdf
 
-Methylation tracks
+Methylation Tracks
 ------------------
 
 Methylation experiments like MeDIP-seq or MRE-seq can use `bigWig`_ or `bedGraph`_ format for data display.
@@ -307,7 +337,7 @@ and ``read depth``.
 
 This format needs to be compressed by bgzip and indexed by tabix for submission as a track. See `Prepare track files`_.
 
-Categorical tracks
+Categorical Tracks
 ------------------
 
 Categorical tracks represent genomic bins for different categories. The most popular
@@ -396,8 +426,8 @@ Thanks to the higlass team who provides the data API, the browser is able to dis
 from the higlass server, for example, you can use the uuid ``Hyc3TZevQVm3FcTAZShLQg`` to represent the track for *Aiden et al. (2009) GM06900 HINDIII 1kb*,
 for a full list of available cool tracks please check http://higlass.io/api/v1/tilesets/?dt=matrix
 
-qBED track
-------------------
+qBED Track
+----------
 
 qBED is tab-delimited, plain text format for discrete genomic data, such as transposon insertions. This format requires a minimum of four columns and supports up to six. The four required columns are CHROM, START, END, and VALUE, where VALUE is a numeric value (i.e. an int or float). As with BED files, the START and END coordinates are 0-indexed. The fifth and sixth columns are optional and represent STRAND and ANNOTATION, respectively. The ANNOTATION column can be used to store sample- or entry- specific information, such as a replicate barcode. Here is an example of a four-column qBED file::
 
@@ -436,7 +466,7 @@ Place your sorted qBED file in a web-accessible directory, then compress and ind
     bgzip example_sorted.qbed
     tabix -p bed example_sorted.qbed.gz
 
-Matplot track
+Matplot Track
 -------------
 
 A matplot (also called a line plot) displays multiple numerical tracks on the same X and Y axes to easily compare datasets. Data is plotted as curves instead of bar plots.
@@ -453,7 +483,7 @@ and it also supports many configurations:
 
 .. image:: _static/mat3.png
 
-3D genomic structure track
+3D Genomic Structure Track
 --------------------------
 
 3D genomic structure data can also be displayed at the browser. We developed the flexiable file format called .g3d, documentations
