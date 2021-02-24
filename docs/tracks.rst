@@ -292,7 +292,7 @@ dynseq
 ~~~~~~
 
 ``dynseq`` is a new track type which is proposed and initially developped by Surag Nair from Anshul Kundaje's lab at Stanford University.
-Its track file is the same as ``bigWig`` format. It provides importance scores for each nucleotide in the genome, which can be derived from using importance scoring methods on machine learning models. We visualize them as a string of letters with different colors (for each nucleotide) and different heights scaled by the importance scores.
+Its track file is the same as ``bigWig`` format. It provides scores for each nucleotide in the genome, which can be derived from using importance scoring methods on machine learning models. We visualize them as a string of letters with different colors (for each nucleotide) and different heights scaled by the importance scores.
 
 An example of loaded ``dynseq`` track highlighting an E2F motif instance is illustrated below:
 
