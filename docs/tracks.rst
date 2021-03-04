@@ -181,6 +181,13 @@ is reserved for the strand. All other columns are ignored, but can be present in
 
 This format needs to be compressed by bgzip and indexed by tabix for submission as a track. See `Prepare track files`_.
 
+bigbed
+~~~~~~
+
+``bigbed`` is a binary format of ``bed`` file. ``bigbed`` file can be submitted directly without bgzip/tabix processing. For more about the bed format please check the `UCSC bigbed`_ page.
+
+.. _`UCSC bigbed`: https://genome.ucsc.edu/goldenPath/help/bigBed.html
+
 refbed
 ~~~~~~
 
@@ -244,6 +251,23 @@ For Example::
   sed -i 's/ (1 of many)/_(1_of_many)/g' Danio_rerio.GRCz10.91.chr.gtf
   
 .. _scripts: https://github.com/lidaof/eg-react/tree/master/backend/scripts
+
+rgbpeak
+~~~~~~~
+
+``rgbpeak`` track file is based on ``bigbed`` format, content of a ``rgbpeak`` file (in bed format) looks like below::
+
+    chr10 46092019 46092519 chr10_46092019 537 . 46092019 46092519 117,117,117
+    chr10 47253553 47254053 chr10_47253553 748 . 47253553 47254053 107,107,107
+
+where the columns are ``chrom, start, end, peak_id, score, strand, thick_start, thick_end, RGB value``, the RBG value will be used for the color while ploting and score will be used to determin the height of the peak.
+if there is strand, arrow will be drew if zoom enough. thick_start and thick_end columns are ignored now.
+
+The bed file like above can be convert to bigbed format using the commands below::
+
+    bedSort peaks_rgb.bed peaks_rgb.bed
+    bedToBigBed peaks_rgb.bed hg38.chroms.sizes peaks_rgb.bigbed
+
 
 Numerical Tracks
 ----------------
