@@ -1,0 +1,169 @@
+View 3D Structure
+=================
+
+g3d format
+----------
+
+3D genomic structure data can also be displayed at the browser. ``g3d`` is a new format we developped for visualizing 3D structure data in the Browser. ``g3d`` format is a binary format based
+in bed-like format of data contains x, y, z coordinates for each genomic bin. Documentations
+for how to prepare .g3d file is available at `g3dtools documentation <https://g3d.readthedocs.io/en/latest/g3dtools.html>`_.
+
+G3d files can be submitted as custom tracks from ``Tracks -> Custom Tracks``, or using a datahub. Submitting a ``g3d`` track will trigger a new panel opened in the browser, which also contains menu allows you to customize the visulization, like change resolution and decorating the 3D structure using bigwig (like GC percentage) or compartment annotations.
+
+g3d track
+---------
+
+From `Tracks` menu, choose `Remote Tracks`, choose `g3d` track type and paste the g3d file url, you can also input a track label which is optional.
+
+.. note:: you can use our `example file <http://target.wustl.edu/dli/tmp/test2.g3d>`_11 for testing purpose, this file is converted from data published in `Three-dimensional genome structures of single diploid human cells, Science Vol. 361, Issue 6405, pp. 924-928 <https://science.sciencemag.org/content/361/6405/924.long>`_ and the original data was obtained from NCBI GEO database.
+
+.. image:: _static/g3d_1.png
+
+click the `Submit` button, close the Remote track panel, this is how it looks like with default view:
+
+.. image:: _static/g3d_2.png
+
+By default the 3D viewer contains main and thumbnail viewer, if you zoom/rotate in one of them, both of them will be synchronized. Yellow highlighted region indicates browser region, change region in browser will also change the highlighted region in yellow.
+
+3D viewer menu
+--------------
+
+The |g3dmenu| icon by default floats to the left of the screen, click it will open the Configuration menu for the 3D visulization, the menu is grouped to control the model data, layout, highlighting, painting, animation and export. Each group can be clicked to toggle expansion.
+
+.. |g3dmenu| image:: _static/g3d_3.png
+    :width: 32
+
+.. image:: _static/g3d_4.png
+
+The menu icon position can also be adjusted using the dropdown menu on the 3D viewer:
+
+.. image:: _static/g3d_5.png
+
+Config 3D model data
+--------------------
+
+The `Model data` section can control the resolution of the g3d data. 
+
+.. image:: _static/g3d_6.png
+
+All the models in the g3d file will be listed here and can be displayed or hidden using the eye icon button. The example screenshot below indicates the `maternal` model is hidden by click the its eye icon:
+
+.. image:: _static/g3d_7.png
+
+Config 3D viewer layout
+-----------------------
+
+The `Layout` section is used to control the layout of main and thumbnail viewer.
+
+.. image:: _static/g3d_8.png
+
+Change the view layout to `side by side`:
+
+.. image:: _static/g3d_9.png
+
+You can also change how the thumbnail structure looks like, for example, `sphere` style as below:
+
+.. image:: _static/g3d_10.png
+
+Toggle browser region highlighting
+----------------------------------
+
+By default the main viewer would highlight the structure part belongs to current browser region in yellow, the `Highlighting` section is used to control this behaviour, click the `Remove highligh` will turn off the highlighting.
+
+.. image:: _static/g3d_11.png
+
+This is how it looks like when the highlighting is turned off:
+
+.. image:: _static/g3d_12.png
+
+
+Numerical painting on 3D
+------------------------
+
+The numerical track in ``bigWig`` format can be used to paint the 3D structure. The `Use loaded tracks` check menu allows user to load either loaded bigWig tracks in browser or submit another bigWig track with file URL.
+
+.. image:: _static/g3d_13.png
+
+If uncheck `Use loaded tracks`, a URL input will be provided for bigWig URL input:
+
+.. image:: _static/g3d_14.png
+
+Here we are using the GC percentage data of `hg38` genome as example, add the `GC Percent` track from `Annotation Tracks`:
+
+.. image:: _static/g3d_15.png
+
+The GC Percent track is added:
+
+.. image:: _static/g3d_16.png
+
+Choose the track from the dropdown menu:
+
+.. image:: _static/g3d_17.png
+
+Click `Paint region` button:
+
+.. image:: _static/g3d_18.png
+
+you can also paint the whole chromosome by click the `Paint chromosome` button:
+
+.. image:: _static/g3d_19.png
+
+Click the color box on the color legend will bring a color palette for choosing colors:
+
+.. image:: _static/g3d_20.png
+
+Choose a different color will rerender the structure with color chosen:
+
+.. image:: _static/g3d_21.png
+
+Paint the whole genome is also doable, click the `Paint genome` button:
+
+.. image:: _static/g3d_22.png
+
+Click the `Remove paint` button will remove the painting.
+
+
+Compartment paint on 3D
+-----------------------
+
+Compartment calls table file can also be used to paint the 3D structure. Here we are using one ompartment calls data `4DNFIL65C8ZI <https://data.4dnucleome.org/files-processed/4DNFIL65C8ZI/>`_ from 4DN data portal. The file is pretty small about 1MB in size, users can either upload this file or put this file on a website and use the URL. The file can either in raw text file (`example text <https://wangftp.wustl.edu/~dli/tmp/4DNFIL65C8ZI_copy.txt>`_) or in compressed gzip format `example gzipped text <https://wangftp.wustl.edu/~dli/tmp/4DNFIL65C8ZI.txt.gz>`_.
+
+.. image:: _static/g3d_23.png
+
+Uncheck the `Use File URL` box to enable the file upload dialog, the uploaded file can be gzipped or not as well.
+
+.. image:: _static/g3d_24.png
+
+The screenshot below is an example using the compartment calls table mentioned above to paint the whole chromosome, green part indicates compartment A and red part indicates compartment B, color can also be customized. The operations are similar to numerical painting, and the painting can also be removed with provided button.
+
+.. image:: _static/g3d_25.png
+
+Animations on 3D
+----------------
+
+``g3d`` format is designed to be a container file format, it might contain multiple models from haplotypes or different cells/samples, each model may also contain data at different resolution. `This example file <http://target.wustl.edu/dli/tmp/hic-sync-3d/gm12878_cell1-3-5.g3d>`_ contains 3D structure data from 3 different cell at different resolutions. When there are multiple models available, the 3D viewer can play animation while each model will be displayed as a frame and loop over every model. Add this example as g3d track, this is how it looks like:
+
+.. image:: _static/g3d_27.png
+
+in the `Animation` section, click the `Play` button the animation will start, `Stop` will stop the animation, and `Reset` will reset the viewer to default view style.
+
+.. image:: _static/g3d_28.png
+
+Please check the animation below (speed was adjusted to reduce animation file size for documentation): 
+
+.. image:: _static/g3d_29.gif
+
+Sync 3D structure with dynamic hic
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Since the browser have both dynamic hic track type and animation over 3D structures, there is a way to sync the animation between dynamic hic track and 3D structure. The `Sync dynamic HiC` button enables animation synchronization between dynamic hic and models in 3D structure. Please see the animation below for example:
+
+.. image:: _static/g3d_30.gif
+
+Export 3D images
+----------------
+
+The 3D viewer can export current view as image in png format for download. Simplely click the buttons under `Export` section, users can download the image in main and thumbnail viewer.
+
+.. image:: _static/g3d_26.png
+
