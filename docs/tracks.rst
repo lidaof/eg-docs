@@ -275,12 +275,12 @@ VCF
 ~~~
 
 ``VCF`` files can be visulaized in the browser for displaying variant call data. Currently VCF file need to be bgzip and tabix indexed for submission.
-When viewing a ``VCF`` track at a region greater than 100Kb, the track will be displayed as numerical track showing the density of the variant calls. When view region is less than or equal to 100Kb, it will be displayed in Full mode.
-Click each of the variant item will show the popup tooltip with more information about this variant. 
+The VCF track has 3 display modes: `auto`, `density` and `full`. By default it's on `auto` mode, this means when viewing a ``VCF`` track at a region greater than 100Kb, the track will be displayed as numerical track showing the density of the variant calls, and when view region is less than or equal to 100Kb, it will be displayed in Full mode.
+The display mode can be changed from the right clicking menu. Click each of the variant item will show the popup tooltip with more information about this variant. 
 
 .. image:: _static/vcf1.png
 
-Color of each variant item are encoded based on the quality value, color of high  and low quality variant can be customized from right clicking menu.
+Color of each variant item are encoded based on the AF or quality value, using which value (AF or quality) to color the variant, or color of high and low value variant can be customized from right clicking menu as well.
 
 .. image:: _static/vcf2.png
 
