@@ -494,6 +494,21 @@ After right clicking on the track you can click **More Information** and see the
         "date collected": "May 7 2016"
     }
 
+queryEndPoint
+~~~~~~~~~~~~~
+
+*Optional*. Most time this parameter will be used with geneAnnotation track. When users deal with custom genome, or genome not listed in NCBI
+or Ensembl database, gene search link would not work, so in such case, user can specify a custom database to query detailed information. For example,
+for some trypanosome genome, gene search should be queried through TriTryDB, we can define the track like this then::
+
+    {
+        type: "geneAnnotation",
+        name: "gene",
+        label: "TriTrypDB genes",
+        genome: "TbruceiLister427",
+        queryEndpoint: { name: "TriTrypDB", endpoint: "https://tritrypdb.org/tritrypdb/app/search?q=" },
+    }
+
 options
 ~~~~~~~
 
@@ -541,6 +556,12 @@ yMin
 
 .. important:: If you need the track to be in *fixed* scale, you need to specify ``yScale`` to *fixed*
                besides of set ``yMax`` and ``yMin``.
+
+group
+^^^^^
+
+Numerical tracks can be grouped to same group, tracks from same group will share y-axis scale settings. For example, when 2 tracks are
+in one group, the y-axis will both set to max value of current views of both tracks. Users can find one example data hub with ``group`` settings from here: https://wangftp.wustl.edu/~dli/test/a-group.json
 
 scoreScale/scoreMax/scoreMin
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^

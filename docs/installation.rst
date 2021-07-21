@@ -23,6 +23,35 @@ Start the browser
 That's it! You are done with your mirror site.
 The browser is now accessible from http://localhost:3000/browser.
 
+Example commands for installation on a RHEL system
+--------------------------------------------------
+
+.. code-block:: bash
+
+   $ cat /etc/redhat-release 
+    Red Hat Enterprise Linux Server release 7.9 (Maipo)
+    # remove system nodejs (optional)
+    sudo yum remove nodejs
+    #install n for node version control
+    curl -L https://git.io/n-install | bash
+    source .bashrc
+    $ node -v
+    v14.17.0
+
+    # get the browser code go to frontend folder
+    git clone https://github.com/lidaof/eg-react.git
+    cd eg-react/frontend/
+    npm install --force
+    npm install react-app-rewired
+    npm start
+
+    # if get error like: System limit for number of file watchers reached, run this command below
+
+    echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
+    # details see: https://stackoverflow.com/questions/55763428/react-native-error-enospc-system-limit-for-number-of-file-watchers-reached
+
+
 Setup your own backend API (optional)
 -------------------------------------
 

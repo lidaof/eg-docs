@@ -292,6 +292,8 @@ Currently there are two types of numerical tracks:
 * bigWig_
 * bedGraph_
 
+.. _bigWig:
+
 bigWig
 ~~~~~~
 
@@ -299,6 +301,8 @@ bigWig
 Please check the `UCSC bigWig`_ page to learn more about this format.
 
 .. _`UCSC bigWig`: https://genome.ucsc.edu/goldenpath/help/bigWig.html
+
+.. _bedGraph:
 
 bedGraph
 ~~~~~~~~

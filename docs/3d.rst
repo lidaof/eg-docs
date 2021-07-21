@@ -15,7 +15,7 @@ g3d track
 
 From `Tracks` menu, choose `Remote Tracks`, choose `g3d` track type and paste the g3d file url, you can also input a track label which is optional.
 
-.. note:: you can use our `example file <http://target.wustl.edu/dli/tmp/test2.g3d>`_11 for testing purpose, this file is converted from data published in `Three-dimensional genome structures of single diploid human cells, Science Vol. 361, Issue 6405, pp. 924-928 <https://science.sciencemag.org/content/361/6405/924.long>`_ and the original data was obtained from NCBI GEO database.
+.. note:: you can use our `example file <http://target.wustl.edu/dli/tmp/test2.g3d>`_ for testing purpose, this file is converted from data published in `Three-dimensional genome structures of single diploid human cells, Science Vol. 361, Issue 6405, pp. 924-928 <https://science.sciencemag.org/content/361/6405/924.long>`_ and the original data was obtained from NCBI GEO database.
 
 .. image:: _static/g3d_1.png
 
@@ -28,7 +28,7 @@ By default the 3D viewer contains main and thumbnail viewer, if you zoom/rotate 
 3D viewer menu
 --------------
 
-The |g3dmenu| icon by default floats to the left of the screen, click it will open the Configuration menu for the 3D visulization, the menu is grouped to control the model data, layout, highlighting, painting, animation and export. Each group can be clicked to toggle expansion.
+The |g3dmenu| button by default floats to the left of the screen, click it will open the Configuration menu for the 3D visulization, the menu is grouped to control the model data, layout, highlighting & labeling, painting, animation and export. Each group can be clicked to toggle expansion.
 
 .. |g3dmenu| image:: _static/g3d_3.png
     :width: 32
@@ -65,10 +65,13 @@ You can also change how the thumbnail structure looks like, for example, `sphere
 
 .. image:: _static/g3d_10.png
 
-Toggle browser region highlighting
-----------------------------------
+Highlighting & labeling
+-----------------------
 
-By default the main viewer would highlight the structure part belongs to current browser region in yellow, the `Highlighting` section is used to control this behaviour, click the `Remove highligh` will turn off the highlighting.
+Toggle browser region highlighting
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+By default the main viewer would highlight the structure part belongs to current browser region in yellow, the `Highlighting` section is used to control this behaviour, click the `Remove highlight` will turn off the highlighting.
 
 .. image:: _static/g3d_11.png
 
@@ -76,6 +79,124 @@ This is how it looks like when the highlighting is turned off:
 
 .. image:: _static/g3d_12.png
 
+Customize highlighting
+~~~~~~~~~~~~~~~~~~~~~~
+
+Highlighting color and tube thickness can be customized to get a different viewer. As shown below, we changed the color to purple and thickness to 1:
+
+.. image:: _static/g3d_31.png
+
+and this is the updated and view:
+
+.. image:: _static/g3d_32.png
+
+Labeling by gene
+~~~~~~~~~~~~~~~~
+
+Gene symbol can be searched for labeling, start with search any gene symbol, the menu will auto complete the search based on users' input.
+
+.. image:: _static/g3d_33.png
+
+choose the isoform wanted:
+
+.. image:: _static/g3d_34.png
+
+the gene will be added as a new label in the label list:
+
+.. image:: _static/g3d_35.png
+
+and shown in 3D view:
+
+.. image:: _static/g3d_36.png
+
+update the display style of the label:
+
+.. image:: _static/g3d_37.png
+
+updated view of the label:
+
+.. image:: _static/g3d_38.png
+
+Labeling by region
+~~~~~~~~~~~~~~~~~~
+
+User can also manully type a region for highlighting:
+
+.. image:: _static/g3d_39.png
+
+the added label by region search by also be updated in the menu control:
+
+.. image:: _static/g3d_40.png
+
+the view after added region label:
+
+.. image:: _static/g3d_41.png
+
+Upload a file for labeling
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A text file contains list of regions/gene symbols can also be uploaded for batch labeling, as shown below, the text file contains content::
+
+    CYP4A22
+    chr10:96796528-96829254
+    CYP2A6
+    CYP3A4
+    chr1:47223509-47276522
+    CYP1A2
+
+upload this file:
+
+.. image:: _static/g3d_42.png
+
+regions in the file are all labeled:
+
+.. image:: _static/g3d_43.png
+
+Pointing using arrows
+~~~~~~~~~~~~~~~~~~~~~
+
+instead of using shapes for labels, arrows can also be used to pointing the region desired. Choose label style as arrow:
+
+.. image:: _static/g3d_44.png
+
+use either gene search or region labeling:
+
+.. image:: _static/g3d_44.png
+
+the new added label will be displayed under arrow list:
+
+.. image:: _static/g3d_45.png
+
+and displayed in 3d viewer:
+
+.. image:: _static/g3d_46.png
+
+config the style of arrow:
+
+.. image:: _static/g3d_47.png
+
+updated arrow style in the viewer:
+
+.. image:: _static/g3d_48.png
+
+Interactivity on tracks
+-----------------------
+
+From certain track types like gene and HiC track, users can choose to display gene or HiC anchors on 3D structure directly. As shown below, the tooltip of the gene has ``Show in 3D`` button, click it will add this gene to the label list and highlight it in 3D view:
+
+.. image:: _static/g3d_49.png
+
+.. image:: _static/g3d_50.png
+
+Clicking any dimond on a HiC track will also bring the ``Show in 3D`` button, click it will add both anchors of this contact to the arrow list by default:
+
+.. image:: _static/g3d_51.png
+
+.. image:: _static/g3d_52.png
+
+arrows pointing both anchors will be displayed in 3D view (there are 2 models in this structure, patenal and maternal, so 4 arrows displayed here): 
+
+.. image:: _static/g3d_53.png
 
 Numerical painting on 3D
 ------------------------
@@ -119,6 +240,8 @@ Choose a different color will rerender the structure with color chosen:
 Paint the whole genome is also doable, click the `Paint genome` button:
 
 .. image:: _static/g3d_22.png
+
+.. note:: by default the color gradient uses the min and max values from the bigwig file, users can also set the min and max value manually by unchecking the ``auto scale`` option.
 
 Click the `Remove paint` button will remove the painting.
 

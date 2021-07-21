@@ -23,6 +23,7 @@ WashU Epigenome Browser
     dynamic
     3d
     image
+    stats
     installation
     add
     faq
