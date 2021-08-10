@@ -28,7 +28,7 @@ By default the 3D viewer contains main and thumbnail viewer, if you zoom/rotate 
 3D viewer menu
 --------------
 
-The |g3dmenu| button by default floats to the left of the screen, click it will open the Configuration menu for the 3D visulization, the menu is grouped to control the model data, layout, highlighting & labeling, painting, animation and export. Each group can be clicked to toggle expansion.
+Clicking the |g3dmenu| button will open the configuration menu for the 3D visulization, which by default floats to the left of the screen, the menu is grouped to control the model data, layout, highlighting & labeling, painting, animation and export. Each group can be clicked to toggle expansion.
 
 .. |g3dmenu| image:: _static/g3d_3.png
     :width: 32
@@ -198,8 +198,11 @@ arrows pointing both anchors will be displayed in 3D view (there are 2 models in
 
 .. image:: _static/g3d_53.png
 
-Numerical painting on 3D
-------------------------
+Numerical painting
+------------------
+
+Numerical painting with bigwig data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The numerical track in ``bigWig`` format can be used to paint the 3D structure. The `Use loaded tracks` check menu allows user to load either loaded bigWig tracks in browser or submit another bigWig track with file URL.
 
@@ -245,21 +248,141 @@ Paint the whole genome is also doable, click the `Paint genome` button:
 
 Click the `Remove paint` button will remove the painting.
 
+Numerical painting with gene expression data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Compartment paint on 3D
------------------------
+For painting with gene expression data, the data need be organized in the following format::
 
-Compartment calls table file can also be used to paint the 3D structure. Here we are using one ompartment calls data `4DNFIL65C8ZI <https://data.4dnucleome.org/files-processed/4DNFIL65C8ZI/>`_ from 4DN data portal. The file is pretty small about 1MB in size, users can either upload this file or put this file on a website and use the URL. The file can either in raw text file (`example text <https://wangftp.wustl.edu/~dli/tmp/4DNFIL65C8ZI_copy.txt>`_) or in compressed gzip format `example gzipped text <https://wangftp.wustl.edu/~dli/tmp/4DNFIL65C8ZI.txt.gz>`_.
+    chr3	168903366	168921996	ENSG00000242268.2	2.40146671319
+    chr18	46756487	46764408	ENSG00000270112.3	0.0287250976522
+    chr3	11900011	11901245	ENSG00000225275.4	0.0
+    chr15	41921417	41928883	ENSG00000259883.1	0.305029986379
+    chr13	98949719	98950447	ENSG00000231981.3	0.0806509326125
+    chrX	152682810	152683842	ENSG00000269475.2	0.0
+    chr12	44880868	44880969	ENSG00000201788.1	0.0
+    chr17	57092145	57096425	ENSG00000263089.1	0.295277363304
+
+This is a 5 column bed format file, each column is chromosome, start, end, gene id or symbol, gene expression value (can be FPKM, RPKM or whatever types of value you want to plot).
+
+Choose `Gene expression` from the dropdown menu, then upload your file, click one the paint button.
+
+.. image:: _static/g3d_54.png
+
+And this is the view after painting with the expresion data, color and scale can be customized as described before:
+
+.. image:: _static/g3d_55.png
+
+Annotation painting
+-------------------
+
+Supported file formats for 3D annotation painting
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+cytoband
+^^^^^^^^
+
+For `cytoband` there is no need to upload a file, the cytoband data will be read from current loaded genome data.
+
+refGene
+^^^^^^^
+
+The standard `refGene` format from UCSC can be used for painting gene positions on 3D::
+
+    2085	NR_046630	chr3	+	196666747	196669405	196669405	196669405	3	196666747,196667841,196669263,	196666995,196668013,196669405,	0	NCBP2-AS1	unk	unk	-1,-1,-1,
+    2051	NR_046598	chr3	+	192232810	192234362	192234362	192234362	2	192232810,192234269,	192233297,192234362,	0	FGF12-AS2	unk	unk	-1,-1,
+    1312	NR_046514	chr13	+	95364969	95368199	95368199	95368199	2	95364969,95365891,	95365647,95368199,	0	SOX21-AS1	unk	unk	-1,-1,
+    585	NR_106918	chr1	-	17368	17436	17436	17436	1	17368,	17436,	0	MIR6859-1	unk	unk	-1,
+    585	NR_107062	chr1	-	17368	17436	17436	17436	1	17368,	17436,	0	MIR6859-2	unk	unk	-1,
+
+bed 9 columns
+^^^^^^^^^^^^^
+
+bed file with 9th column as RGB values can be used as well, for example, the chromHMM from Roadmap project looks like::
+
+    chr10	0	94800	15_Quies	0	.	0	94800	255,255,255
+    chr10	94800	95600	9_Het	0	.	94800	95600	138,145,208
+    chr10	95600	102200	15_Quies	0	.	95600	102200	255,255,255
+    chr10	102200	104400	9_Het	0	.	102200	104400	138,145,208
+    chr10	104400	110000	15_Quies	0	.	104400	110000	255,255,255
+    chr10	110000	111200	9_Het	0	.	110000	111200	138,145,208
+
+bed 4 columns
+^^^^^^^^^^^^^
+
+To make things simple, a 4 column bed format is supported as well, with the 4th column has color value::
+
+    chr11	108280000	109080000	#ff0100
+    chr11	109080000	109480000	#0000ff
+    chr11	109720000	110160000	#018100
+    chr11	110200000	111400000	#0064fb
+    chr11	111400000	112640000	#ef8c0a
+    chr11	112640000	113480000	#7f007f
+    chr11	113520000	114520000	#520000
+    chr11	114520000	114880000	#39ae00
+
+4DN compartment data
+^^^^^^^^^^^^^^^^^^^^
+
+Compartment calls table file can also be used to paint the 3D structure. We supported the compartment calls data `4DNFIL65C8ZI <https://data.4dnucleome.org/files-processed/4DNFIL65C8ZI/>`_ from 4DN data portal. The file is pretty small about 1MB in size. The file can either in raw text file (`example text <https://wangftp.wustl.edu/~dli/tmp/4DNFIL65C8ZI_copy.txt>`_) or in compressed gzip format `example gzipped text <https://wangftp.wustl.edu/~dli/tmp/4DNFIL65C8ZI.txt.gz>`_ for upload.
+
+The 4DN compartment data looks like::
+
+    chrom	start	end	gene_count	gene_coverage	E1	E2	E3
+    chr1	0	100000	595	0.8812700000000001			
+    chr1	100000	200000	952	1.0			
+    chr1	200000	300000	159	0.09797			
+    chr1	300000	400000	132	0.05368			
+    chr1	400000	500000	471	0.24454			
+    chr1	500000	600000	390	0.15467999999999998			
+    chr1	600000	700000	229	0.05782999999999999	
+
+Rao et.al compartment data
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The paper from Rao et.al published in Cell in 2014 also containes a compartment format, the format looks like below::
+
+    chr19	0	200000	NA	0	.	0	200000	255,255,255
+    chr19	200000	500000	B1	-1	.	200000	500000	220,20,60
+    chr19	500000	3800000	A1	2	.	500000	3800000	34,139,34
+    chr19	3800000	3900000	B1	-1	.	3800000	3900000	220,20,60
+    chr19	3900000	5000000	A1	2	.	3900000	5000000	34,139,34
+    chr19	5000000	5600000	B1	-1	.	5000000	5600000	220,20,60
+
+.. important:: The uploaded file for annotation painting can be raw text file or compressed with gzip, but `NOT` with bgzip.
+
+Example annotation painting
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Choose the format of your data be used to painting from the dropdown menu:
 
 .. image:: _static/g3d_23.png
 
-Uncheck the `Use File URL` box to enable the file upload dialog, the uploaded file can be gzipped or not as well.
+Then click one the paint button, the upload file button will appear if the format is not cytoband.
+
+cytoband painting
+^^^^^^^^^^^^^^^^^
 
 .. image:: _static/g3d_24.png
 
+.. image:: _static/g3d_25.png
+
+4DN compartment painting
+^^^^^^^^^^^^^^^^^^^^^^^^
+
 The screenshot below is an example using the compartment calls table mentioned above to paint the whole chromosome, green part indicates compartment A and red part indicates compartment B, color can also be customized. The operations are similar to numerical painting, and the painting can also be removed with provided button.
 
-.. image:: _static/g3d_25.png
+.. image:: _static/g3d_56.png
+
+.. image:: _static/g3d_57.png
+
+chromHMM painting
+^^^^^^^^^^^^^^^^^
+
+The screenshot below is an example using the chromHMM data from Roadmap to paint the whole chromosome.
+
+.. image:: _static/g3d_58.png
+
+.. image:: _static/g3d_59.png
 
 Animations on 3D
 ----------------

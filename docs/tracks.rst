@@ -268,6 +268,22 @@ The bed file like above can be convert to bigbed format using the commands below
     bedSort peaks_rgb.bed peaks_rgb.bed
     bedToBigBed peaks_rgb.bed hg38.chroms.sizes peaks_rgb.bigbed
 
+bedcolor
+~~~~~~~~
+
+Simiar to bed_ track, ``bedcolor`` track is a 4 column bed file while the 4th column is a color string::
+
+    chr11	108280000	109080000	#ff0100
+    chr11	109080000	109480000	#0000ff
+    chr11	109720000	110160000	#018100
+    chr11	110200000	111400000	#0064fb
+    chr11	111400000	112640000	#ef8c0a
+    chr11	112640000	113480000	#7f007f
+    chr11	113520000	114520000	#520000
+    chr11	114520000	114880000	#39ae00
+
+It can be uploaded as local text track, or indexed after bgzip/tabix and submitted as remote track.
+
 Variant Tracks
 --------------
 

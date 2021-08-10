@@ -537,6 +537,11 @@ height
 
 ``height`` controls the height of the track which is specified as a number and displayed in *pixels*.
 
+ensemblStyle
+^^^^^^^^^^^^
+
+currently for `bigwig` track, specify ``ensemblStyle`` option to `true` can enable data with chromosome names as 1, 2, 3...work in the browser
+
 yScale
 ^^^^^^
 
