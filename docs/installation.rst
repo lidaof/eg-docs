@@ -10,6 +10,8 @@ Setup
 
 * Get the source code from our github repo: https://github.com/lidaof/eg-react
 
+.. important:: For MacOSX with Apple M1 Chip, please use NodeJS version 16 and above, then try with ``npm install --force``.
+
 Start the browser
 -----------------
 
