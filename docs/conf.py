@@ -112,6 +112,11 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'WashUEpigenomeBrowserdoc'
 
+html_static_path = ['_static']
+
+html_css_files = [
+    'css/custom.css',
+]
 
 # -- Options for LaTeX output ------------------------------------------------
 

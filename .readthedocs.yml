@@ -3,6 +3,9 @@ build:
     image: latest
 sphinx:
     configuration: docs/conf.py
+formats:
+    - epub
+    - pdf
 python:
     version: 3.8
     install:
