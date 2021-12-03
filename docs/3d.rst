@@ -1,6 +1,14 @@
 View 3D Structure
 =================
 
+3D visualization video tutorial on YouTube
+------------------------------------------
+
+.. raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLE0UMwf5se6nroiymaQFo1C6mEeo7M2xj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 g3d format
 ----------
 
