@@ -33,6 +33,8 @@ click the `Submit` button, close the Remote track panel, this is how it looks li
 
 By default the 3D viewer contains main and thumbnail viewer, if you zoom/rotate in one of them, both of them will be synchronized. Yellow highlighted region indicates browser region, change region in browser will also change the highlighted region in yellow.
 
+.. note:: by default the model will spin after intially loaded, you can disable the spin in configuration menu. Please see the instructions in the sections below.
+
 3D viewer menu
 --------------
 
@@ -57,6 +59,22 @@ The `Model data` section can control the resolution of the g3d data.
 All the models in the g3d file will be listed here and can be displayed or hidden using the eye icon button. The example screenshot below indicates the `maternal` model is hidden by click the its eye icon:
 
 .. image:: _static/g3d_7.png
+
+Show nuclear envelop
+~~~~~~~~~~~~~~~~~~~~
+
+The 3d viewer uses an outer sphere to mimic the display of the nuclear envelop. Envelop can be configed to show or hide, color and opacity can also be customized.
+
+.. image:: _static/g3d_61.png
+
+Config the spin of 3d model
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The model will spin after intially load, the ``spin`` section can used to toggle the spin status, and control the direction, speed of the spin.
+
+.. image:: _static/spin.gif
+
+.. image:: _static/g3d_60.png
 
 Config 3D viewer layout
 -----------------------
