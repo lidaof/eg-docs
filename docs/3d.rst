@@ -8,6 +8,11 @@ View 3D Structure
 
     <iframe width="1096" height="617" src="https://www.youtube.com/embed/videoseries?list=PLE0UMwf5se6nroiymaQFo1C6mEeo7M2xj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+.. note:: If you cannot access YouTube, we also put the video tutorial on Bilibili, please |bili_link|.
+
+.. |bili_link| raw:: html
+
+   <a href="https://www.bilibili.com/medialist/play/438038855?from=space&business=space_series&business_id=608067&desc=1&spm_id_from=333.999.0.0" target="_blank">click this link</a>
 
 g3d format
 ----------
