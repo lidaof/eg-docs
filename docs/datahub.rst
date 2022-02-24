@@ -11,6 +11,7 @@ which are also defined in JSON syntax:
         "type": "track_type1",
         "name": "track_name1",
         "url": "track_url1",
+        "showOnHubLoad": true,
         "options": {
             "color": "red"
             }
@@ -19,6 +20,7 @@ which are also defined in JSON syntax:
         "type": "track_type2",
         "name": "track_name2",
         "url": "track_url2",
+        "showOnHubLoad": true,
         "options": {
             "color": "blue"
             }
@@ -26,6 +28,9 @@ which are also defined in JSON syntax:
     ]
 
 .. _JSON: http://json.org/
+
+.. important:: For each track in datahub, ``showOnHubLoad`` need set to ``true`` for the track to be displayed in browser. Tracks without ``showOnHubLoad`` set to ``true``
+               won't be displayed in browser but can be added later in track facet table.
 
 Example data hub
 ----------------
@@ -132,7 +137,7 @@ Example categorical track
             "6": {"name": "Genic enhancers", "color": "#c2e105"},
             "7": {"name": "Enhancers", "color": "#ffff00"},
             "8": {"name": "ZNF genes & repeats", "color": "#66cdaa"},
-            "9": {"name": "Heterochromatin", "color": "#8    a91d0"},
+            "9": {"name": "Heterochromatin", "color": "#8a91d0"},
             "10": {"name": "Bivalent/Poised TSS", "color": "#cd5c5c"},
             "11": {"name": "Flanking Bivalent TSS/Enh", "color": "#e9967a"},
             "12": {"name": "Bivalent Enhancer", "color": "#bdb76b"},
@@ -284,7 +289,7 @@ Example genomealign track
     }
 
 Example qBED track
--------------------------
+------------------
 
 .. code-block:: json
 
@@ -430,7 +435,7 @@ url
 showOnHubLoad
 ~~~~~~~~~~~~~
 
-*Optional*. If specified to ``true``, the track will be displayed when hub is loaded.
+*Optional*. If specified to ``true``, the track will be displayed when hub is loaded. Default value: ``false``.
 
 metadata
 ~~~~~~~~
