@@ -103,7 +103,7 @@ First you need make the bucket public, for more information you can check the `d
 
 .. image:: _static/gs1.png
 
-Then you can use either the `gsutl <https://cloud.google.com/storage/docs/quickstart-gsutil?cloudshell=true>`_ or the CloudShell in your Google cloud's web console. Create a file called ``cors.json`` with contents below::
+Then you can use either the `gsutil <https://cloud.google.com/storage/docs/quickstart-gsutil?cloudshell=true>`_ tool or the CloudShell in your Google cloud's web console. Create a file called ``cors.json`` with contents below::
 
     [
         {
