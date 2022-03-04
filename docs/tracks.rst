@@ -94,6 +94,38 @@ If you happen to use old XML settings, you can setup it like this::
 
 .. image:: _static/s3_cors.png
 
+Enable CORS on Google cloud storage
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you have track files hotsed in Google cloud storage, they can be viewed in the browser as well after setting up correct CORS policy.
+
+First you need make the bucket public, for more information you can check the `docs from google <https://cloud.google.com/storage/docs/access-control/making-data-public>`_:
+
+.. image:: _static/gs1.png
+
+Then you can use either the `gsutl <https://cloud.google.com/storage/docs/quickstart-gsutil?cloudshell=true>`_ or the CloudShell in your Google cloud's web console. Create a file called ``cors.json`` with contents below::
+
+    [
+        {
+        "origin": ["*"],
+        "method": ["GET", "HEAD"],
+        "responseHeader": ["Authorization", "Content-Range", "Accept", "Content-Type", "Origin", "Range"],
+        "maxAgeSeconds": 3600
+        }
+    ]
+
+then set the CORS policy to your bucket with the command below::
+
+    gsutil cors set cors.json gs://washu-browser-track-host
+
+the screenshot below shows how I did in CloudShell in the console web page:
+
+.. image:: _static/gs2.png
+
+After this, you can copy the URL to the file and submit to the browser for visualization.
+
+.. image:: _static/gs3.png
+
 Prepare track files
 -------------------
 
