@@ -210,6 +210,25 @@ updated arrow style in the viewer:
 
 .. image:: _static/g3d_48.png
 
+Interactivity on 3D model
+-------------------------
+
+Click on the segments of 3D model will bring up the menu to interact with the Browser:
+
+.. image:: _static/g3d_62.png
+
+Click ``Browser region`` button will let the browser jump to the region of this segment:
+
+.. image:: _static/g3d_63.png
+
+or you can add this segment to current browser reigon by click ``Add to set view`` button, the browser will enter Region set view mode:
+
+.. image:: _static/g3d_64.png
+
+you can keep adding as many segments as you want. Click ``Close set view`` button to restore to the default view.
+
+.. image:: _static/g3d_65.png
+
 Interactivity on tracks
 -----------------------
 

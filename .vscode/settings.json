@@ -1,3 +1,5 @@
 {
-    "restructuredtext.confPath": "${workspaceFolder}/docs"
+    "restructuredtext.confPath": "${workspaceFolder}/docs",
+    "esbonio.server.enabled": true,
+    "esbonio.sphinx.confDir": "/Users/dli/eg-docs/docs"
 }
