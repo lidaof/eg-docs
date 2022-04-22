@@ -1,8 +1,8 @@
 Installation
 ============
 
-Setup
------
+Setup on MacOSX/Linux
+---------------------
 
 * Install NodeJS from https://nodejs.org/en/
 
@@ -24,6 +24,35 @@ Start the browser
 
 That's it! You are done with your mirror site.
 The browser is now accessible from http://localhost:3000/browser.
+
+
+Setup on Windows
+----------------
+
+To run the browser App on Windows, you can either install a subsystem for Linux, after that, the steps are pretty much same as in MacOSX and Linux, for more about
+linux system in Windows, please `check Install Windows Subsystem for Linux (WSL) <https://docs.microsoft.com/en-us/windows/wsl/install>`_.
+
+Another option is to run the App directly in Windows, steps are also similar, assume you are using PowerShell.
+
+1. install nodejs: (it's optional to check `install necessary tools`)
+
+.. image:: _static/win1.png
+
+2. install git: https://git-scm.com/download/win
+
+3. get the code from github and run ``npm install`` under ``frontend`` folder:
+
+.. image:: _static/win2.png
+
+
+4. run ``npm start`` to start the browser in local development:
+
+.. image:: _static/win3.png
+
+5. browser is running under Windows:
+
+.. image:: _static/win4.png
+
 
 Example commands for installation on a RHEL system
 --------------------------------------------------
