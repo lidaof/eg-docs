@@ -34,7 +34,7 @@ linux system in Windows, please `check Install Windows Subsystem for Linux (WSL)
 
 Another option is to run the App directly in Windows, steps are also similar, assume you are using PowerShell.
 
-1. install nodejs: (it's optional to check `install necessary tools`)
+1. install nodejs: (you may need check `install necessary tools`)
 
 .. image:: _static/win1.png
 
