@@ -38,7 +38,7 @@ Example: ``?sessionFile=https://wangftp.wustl.edu/~dli/test/eg-session--1692c5f0
           .. image:: _static/sessionFile.png
 
 hicUrl
--------
+------
 
 Specify an HiC track in URL.
 
@@ -51,8 +51,15 @@ Specify the default genomic position once the browser is loaded.
 
 Example: ``?genome=hg19&position=chr1:1000-2000``
 
+noDefaultTracks
+---------------
+
+Remove the default tracks when load a data hub.
+
+Example: ``?genome=hg19&noDefaultTracks=1``
+
 datahub
---------
+-------
 
 Redirects to the legacy browser.
 
