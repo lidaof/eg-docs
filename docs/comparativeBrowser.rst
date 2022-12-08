@@ -43,4 +43,4 @@ To change the order of the tracks, click the "Reorder tool" icon on the tools me
 
 Now drag the tracks up and down to the desired position, as shown here:
 
-.. image:: _static/comparative/view_1.png
+.. image:: _static/comparative/view_2.png
