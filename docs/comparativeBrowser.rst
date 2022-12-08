@@ -1,8 +1,9 @@
-The WashU Comarative Epigenome Browser
-=========================================
+Comparative Browser
+===================
 
 Landing page
 ------------
+
 The WashU Comparative Epigenome Browser is available at http://comparativegateway.wustl.edu/. Users can easily select multiple available species using the interface.
 
 * Click "select genomes" on the page to start selecting species:
@@ -10,7 +11,8 @@ The WashU Comparative Epigenome Browser is available at http://comparativegatewa
 .. image:: _static/comparative/home.png
 
 Select Reference genome and secondary genomes
---------------------------------------------
+---------------------------------------------
+
 Species selection tool allows users to select multiple species.
 
 * The WashU Comparative Epigenome Browser requires a reference genome, which all the other genomes will be compared to. Available assemblies can be found in the dropdown menu:
@@ -22,9 +24,10 @@ Species selection tool allows users to select multiple species.
 * With all the desired genomes selected, click "save selection" and a temporary datahub will be generated. Once it is ready, click the datahub link under "OPEN IN WASH U EPIGENOME BROWSER" and a new browser view will be opened in a new tab:
 .. image:: _static/comparative/widget_3.png
 
-Orgnizing tracks on the WashU Epigenome Browser
------------------------------------------------
-With the new browser tab launched, it only contains basic annotation tracks of the refernece genome and the selected genome-align tracks that connects to the secondary genomes. In the example, hg38-mm10 and hg38-panTro6 genome-align tracks are attached to the hg38 reference genome tracks:
+Organizing tracks on the WashU Epigenome Browser
+------------------------------------------------
+
+With the new browser tab launched, it only contains basic annotation tracks of the reference genome and the selected genome-align tracks that connects to the secondary genomes. In the example, hg38-mm10 and hg38-panTro6 genome-align tracks are attached to the hg38 reference genome tracks:
 
 .. image:: _static/comparative/view_1.png
 
