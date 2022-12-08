@@ -26,6 +26,7 @@ WashU Epigenome Browser
     stats
     installation
     add
+    comparativeBrowser
     faq
     contact
 
