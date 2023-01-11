@@ -1,5 +1,5 @@
-Comparative Browser
-===================
+The Comparative Epigenome Browser
+=================================
 
 Landing page
 ------------
