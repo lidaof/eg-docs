@@ -16,12 +16,15 @@ Select Reference genome and secondary genomes
 Species selection tool allows users to select multiple species.
 
 * The WashU Comparative Epigenome Browser requires a reference genome, which all the other genomes will be compared to. Available assemblies can be found in the dropdown menu:
+
 .. image:: _static/comparative/widget_1.png
 
 * After selecting the reference genome, users can select secondary genomes available to the reference genome. In the following example, hg38 is the reference genome, mm10 and panTro6 are selected as secondary genomes:
+
 .. image:: _static/comparative/widget_2.png
 
 * With all the desired genomes selected, click "save selection" and a temporary datahub will be generated. Once it is ready, click the datahub link under "OPEN IN WASH U EPIGENOME BROWSER" and a new browser view will be opened in a new tab:
+
 .. image:: _static/comparative/widget_3.png
 
 Organizing tracks on the WashU Epigenome Browser
