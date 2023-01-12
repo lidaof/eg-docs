@@ -27,7 +27,6 @@ WashU Epigenome Browser
     installation
     add
     comparativeBrowser
-    comparativeBrowserAddTracks
     faq
     contact
 
