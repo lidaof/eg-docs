@@ -73,15 +73,18 @@ We will specify the track type as bigWig, and the track is mapped to mm10. Click
 .. image:: _static/comparative/3_AddLocalTrack.png
 
 Now we have liver RNA-seq data from both human and mouse loaded at the bottom of the window:
+
 .. image:: _static/comparative/4_AllTracks.png
 
 Organizing all the tracks in the browser
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To better compare the data, we can reorder the tracks. We like to group the tracks by species and separated by the genome-align track. Please click the "Reorder tool", and drag the human track on the top of the genome-align track:
+
 .. image:: _static/comparative/5_Reorder.png
 
 After reodering, the human track is between the human repeatMasker track and the hg38-mm10 genome-align track:
+
 .. image:: _static/comparative/6_AfterReorder.png
 
 Navigation in the browser
