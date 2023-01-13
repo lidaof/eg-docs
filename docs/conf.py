@@ -118,6 +118,11 @@ html_css_files = [
     'css/custom.css',
 ]
 
+html_js_files = [
+    'js/underscore.js',
+    'js/jquery.js',
+]
+
 # -- Options for LaTeX output ------------------------------------------------
 
 latex_elements = {
