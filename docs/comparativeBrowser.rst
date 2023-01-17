@@ -74,7 +74,7 @@ We will specify the track type as bigWig, and the track is mapped to mm10. Click
 
 Now we have liver RNA-seq data from both human and mouse loaded at the bottom of the window:
 
-.. image:: _static/comparative/4_AllTracks.png
+.. image:: _static/comparative/4_allTracks.png
 
 Organizing all the tracks in the browser
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -96,7 +96,7 @@ The browser allows navigation in the reference genome using either gene name, SN
 
 The browser window should display SPP2 gene now:
 
-.. image:: _static/comparative/8_SPP2Gene.png
+.. image:: _static/comparative/8_Spp2Gene.png
 
 Using tools to zoom in and out
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

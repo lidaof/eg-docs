@@ -24,7 +24,7 @@ needs_sphinx = '2.0'
 # -- Project information -----------------------------------------------------
 
 project = 'WashU Epigenome Browser'
-copyright = '2018-2022, WashU Epigenome Browser Team'
+copyright = '2018-2023, WashU Epigenome Browser Team'
 author = 'WashU Epigenome Browser Team'
 
 # The short X.Y version
