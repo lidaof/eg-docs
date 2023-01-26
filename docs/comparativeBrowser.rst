@@ -14,7 +14,7 @@ The browser is available at http://comparativegateway.wustl.edu/ and allows user
 Select Reference genome and secondary genomes
 ---------------------------------------------
 
-After clicking "select genomes", the species selection tool will become availabl. Users can now use it to select multiple species to compare with. 
+After clicking "select genomes", the species selection tool will become available. The recommended assembly is marked by ">". Users can now use it to select multiple species to compare with. 
 
 * The WashU Comparative Epigenome Browser requires a reference genome, which all the other genomes will be compared to. Available assemblies can be found in the dropdown menu:
 
