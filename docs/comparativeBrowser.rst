@@ -12,7 +12,7 @@ The browser is available at http://comparativegateway.wustl.edu/. It allows user
 .. image:: _static/comparative/home.png
 
 Select a reference genome and one or more secondary genomes
----------------------------------------------
+-----------------------------------------------------------
 
 After clicking "select genomes", the species selection tool will become available for users to choose a reference genome. Next, users can select one or multiple species to compare to the reference. 
 For species with multiple assemblies available, we marked one assembly with a ">" as the recommended assembly based on genome completeness and genome-alignment availability.
