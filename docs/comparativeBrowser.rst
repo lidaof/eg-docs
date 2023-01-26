@@ -6,12 +6,14 @@ Landing page
 
 The WashU Comparative Epigenome Browser is a valuable resource for scientists studying comparative genomics and epigenomics.
 The browser is available at http://comparativegateway.wustl.edu/. It allows users to easily select and compare multiple assemblies from different species.
+
 * Click “select genomes” on the page to begin. A few examples are available as “showcases”, and video tutorials are available on the “tutorials” page:
 
 .. image:: _static/comparative/home.png
 
 Select a reference genome and one or more secondary genomes
 ---------------------------------------------
+
 After clicking “select genomes”, the species selection tool will become available. The recommended assembly is marked by “>”. Users can now use it to select multiple species to compare with. how is an assembly recommended? when you say “users can now use it” what do you mean by it?
 * The WashU Comparative Epigenome Browser uses a selected reference genome to compare other genomes. Available assemblies can be found in the dropdown menu:
 
@@ -27,6 +29,7 @@ After clicking “select genomes”, the species selection tool will become avai
 
 Organizing tracks on the WashU Epigenome Browser
 ------------------------------------------------
+
 The new browser tab contains basic annotation tracks of the reference genome and the selected genome-align tracks that connects the syntenic regions from the reference genome to the secondary genomes.
 In the example, hg38-mm10 and hg38-panTro6 genome-align tracks are attached to the hg38 reference genome tracks:
 
@@ -50,6 +53,7 @@ Add data tracks to the Comparative Epigenome Browser
 
 Add new tracks to the Comparative Epigenome Browser
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 With genome-align track loaded, we can start loading additional data tracks onto it and perform analysis.
 Here, we have human genome hg38 as the reference genome, mouse mm10 as the secondary genome. We also have gene and repeat annotations mapped to both genomes:
 
@@ -74,6 +78,7 @@ Now, we have liver RNA-seq data from both human and mouse, mapped to hg38 and mm
 
 Organizing all the tracks in the browser
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 To better compare the data, we can reorder the tracks. Here, we will group the tracks by species and have them separated by the genome-align track.
 Click the “Reorder tool”, and drag the “Human liver RNA-seq” track above the genome-align track:
 
@@ -85,6 +90,7 @@ After reordering, the human track is between the human repeatMasker track and th
 
 Navigation in the browser
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 The browser allows navigation in the reference genome using either gene name, SNP, or coordinates directly. Click the coordinates box at the top to enter the navigation window. Let’s navigate to the gene “SPP2":
 
 .. image:: _static/comparative/7_Navigation.png
@@ -95,6 +101,7 @@ The browser window should display the entirety of SPP2 gene spanning the whole w
 
 Using tools to zoom in and out
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 We built a “tools” bar at the top of the browser window to allow users to perform some basic operations within the browser. There are different buttons to zoom in or out with different resolutions or pan left/right. For example, to zoom out one time, click the “-1" button:
 
 .. image:: _static/comparative/9_Zoomout.png
