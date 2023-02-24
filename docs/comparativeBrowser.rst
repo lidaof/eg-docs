@@ -119,3 +119,109 @@ To zoom into the SPP2 gene’s promoter region, click and drag over the regions 
 Now, the browser displays the comparison between human SPP2 gene’s promoter region with the orthologous Spp2 gene promoter in mouse, with gene annotation, repeat annotation and liver RNA-seq data tracks from both species mapped to the hg38 and mm10, respectively:
 
 .. image:: _static/comparative/12_Promoter.png
+
+
+Use case: create a human-mouse multiple tracks comparison view using the Comparative Epigenome Browser
+------------------------------------------------------------------------------------------------------
+
+In this use case, we will create a human-mouse multiple tracks comparison view using the Comparative Epigenome Browser. We will use remote tracks to add the following data tracks to the browser and recreate the browser view for Figure 3b from the paper (https://www.biorxiv.org/content/10.1101/2022.11.29.518374v1):
+
+Select assemblies and annotations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Click "select genomes", the species selection tool will become available for users to choose a reference genome. Select human, hg19. 
+
+.. image:: _static/comparative/Fig3b_2.png
+
+With hg19 selected as the reference genome, available secondary genomes will be available. Select mouse, mm10.
+
+.. image:: _static/comparative/Fig3b_3.png
+
+Click “Save selection”, and click the datahub link under “OPEN IN WASHU EPIGENOME BROWSER” to open a the browser window in a new browser tab.
+
+.. image:: _static/comparative/Fig3b_4.png
+
+Click "Tracks" -> "Annotation Tracks", and add "mm10":"Genes":"RefSeq genes" and "mm10":"RepeatMasker":"All Repeats":"RepeatMasker" tracks to the browser window.
+
+.. image:: _static/comparative/Fig3b_5.png
+
+Add Epigenomic data tracks to the comparative epigenome browser window.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+We collected the following epigenomic dataset from ENCODE and roadmap projects:
+
+human liver H3K4me3 ChIP-seq bigwig file mapped on hg19:
+https://egg.wustl.edu/d/hg19/GSM621675.bigWig
+
+human liver H3K27ac ChIP-seq bigwig file mapped on hg19:
+https://egg.wustl.edu/d/hg19/GSM1112809_1.bigWig
+
+human liver WGBS methylC track file mapped on hg19:
+https://remc.wustl.edu/dli/WGBS/E066.methylc2.gz
+
+human liver RNA-seq bigwig file mapped on hg19:
+https://www.encodeproject.org/files/ENCFF975NSG/@@download/ENCFF975NSG.bigWig
+
+human brain H3K4me3 ChIP-seq bigwig file mapped on hg19:
+https://egg.wustl.edu/d/hg19/GSM773012.bigWig
+
+human brain H3K27ac ChIP-seq bigwig file mapped on hg19:
+https://egg.wustl.edu/d/hg19/GSM773015.bigWig
+
+human brain WGBS methylC track file mapped on hg19:
+https://remc.wustl.edu/dli/WGBS/E071.methylc2.gz
+
+human brain RNA-seq bigwig file mapped on hg19:
+https://www.encodeproject.org/files/ENCFF386BQW/@@download/ENCFF386BQW.bigWig
+
+mouse liver H3K4me3 ChIP-seq bigwig file mapped on mm10:
+https://epgg-test.wustl.edu/d/mm10/ENCFF072QFI.bigWig
+
+mouse liver H3K27ac ChIP-seq bigwig file mapped on mm10:
+https://epgg-test.wustl.edu/d/mm10/ENCFF041ONG.bigWig
+
+mouse liver WGBS methylC track file mapped on mm10:
+https://vizhub.wustl.edu/public/comparativeBrowser/tracks/mouseLiver.sort.methylC.gz
+
+mouse liver RNA-seq bigwig file mapped on mm10:
+https://epgg-test.wustl.edu/d/mm10/ENCFF697PQZ.bigWig
+
+mouse brain H3K4me3 ChIP-seq bigwig file mapped on mm10:
+https://epgg-test.wustl.edu/d/mm10/ENCFF389PES.bigWig
+
+mouse brain H3K27ac ChIP-seq bigwig file mapped on mm10:
+https://epgg-test.wustl.edu/d/mm10/ENCFF269ZNW.bigWig
+
+mouse brain WGBS methylC track file mapped on mm10:
+https://vizhub.wustl.edu/public/comparativeBrowser/tracks/mouseForebrain.sort.methylC.gz
+
+mouse brain RNA-seq bigwig file mapped on mm10:
+https://epgg-test.wustl.edu/d/mm10/ENCFF368ACN.bigWig
+
+
+Use the "Tracks" -> "Remote tracks" function to add them one by one to the Browser window.
+Using human liver H3K4me3 ChIP-seq bigwig file as example:
+
+.. image:: _static/comparative/Fig3b_10.png
+
+Repeat the process to load all the tracks from the list above.
+With All tracks added, Click "Reorder tool" in the tools bar, and drag tracks up and down to order all the tracks by genomes and tissue.
+
+.. image:: _static/comparative/Fig3b_11.png
+
+If only CpG methylation were characterized, we can also check "Combine strands" to merge both strands in all the methylC tracks. 
+
+.. image:: _static/comparative/Fig3b_12.png
+
+We can then change the peak display color by right click each track, and change the primary color.
+
+.. image:: _static/comparative/Fig3b_13.png
+
+Click genome coordinates on the top and navigate to any gene or coordinates. Here we are navigating to gene SPP2.
+
+.. image:: _static/comparative/Fig3b_14.png
+
+Zoom out 1/3 times, and we can see the whole SPP2 gene with all the data tracks marked by different colors.
+
+.. image:: _static/comparative/Fig3b_15.png
+    
