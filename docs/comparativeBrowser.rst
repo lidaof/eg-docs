@@ -121,10 +121,10 @@ Now, the browser displays the comparison between human SPP2 gene’s promoter re
 .. image:: _static/comparative/12_Promoter.png
 
 
-Use case: create a human-mouse multiple tracks comparison view using the Comparative Epigenome Browser
+Example: create a human-mouse multiple tracks comparison view using the Comparative Epigenome Browser
 ------------------------------------------------------------------------------------------------------
 
-In this use case, we will create a human-mouse multiple tracks comparison view using the Comparative Epigenome Browser. We will use remote tracks to add the following data tracks to the browser and recreate the browser view for Figure 3b from the paper (https://www.biorxiv.org/content/10.1101/2022.11.29.518374v1):
+Here we will create a human-mouse multiple tracks comparison view using the Comparative Epigenome Browser. We will use remote tracks to add the following data tracks to the browser and recreate the browser view for Figure 3b from the paper (https://www.biorxiv.org/content/10.1101/2022.11.29.518374v1):
 
 Select assemblies and annotations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -200,7 +200,7 @@ https://epgg-test.wustl.edu/d/mm10/ENCFF368ACN.bigWig
 
 
 Use the "Tracks" -> "Remote tracks" function to add them one by one to the Browser window.
-Using human liver H3K4me3 ChIP-seq bigwig file as example:
+Using human liver H3K4me3 ChIP-seq bigwig file as an example:
 
 .. image:: _static/comparative/Fig3b_10.png
 
@@ -224,4 +224,3 @@ Click genome coordinates on the top and navigate to any gene or coordinates. Her
 Zoom out 1/3 times, and we can see the whole SPP2 gene with all the data tracks marked by different colors.
 
 .. image:: _static/comparative/Fig3b_15.png
-    
