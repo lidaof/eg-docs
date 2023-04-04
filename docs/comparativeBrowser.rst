@@ -181,7 +181,7 @@ mouse liver H3K27ac ChIP-seq bigwig file mapped on mm10:
 https://epgg-test.wustl.edu/d/mm10/ENCFF041ONG.bigWig
 
 mouse liver WGBS methylC track file mapped on mm10:
-https://vizhub.wustl.edu/public/comparativeBrowser/tracks/mouseLiver.sort.methylC.gz
+https://vizhub.wustl.edu/public/comparativeBrowser/tracks/mouseAdultLiver.sort.methylC.gz
 
 mouse liver RNA-seq bigwig file mapped on mm10:
 https://epgg-test.wustl.edu/d/mm10/ENCFF697PQZ.bigWig
