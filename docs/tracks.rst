@@ -557,6 +557,38 @@ Place your sorted qBED file in a web-accessible directory, then compress and ind
     bgzip example_sorted.qbed
     tabix -p bed example_sorted.qbed.gz
 
+genome-align Track
+------------------
+genome-align is tab-delimited, plain text BED-like format to display pairwise whole-genome alignment. It can be directly derived from AXT file. The four required columns are CHROM, START, END, and ALIGNMENT, where ALIGNMENT indicates id number and detailed alignment information in a JSON format ::
+
+    chr1    start   end alignment
+
+The Fourth column ALIGNMENT contains the following information:
+
+.. code-block:: json
+
+    "id":1,
+    "genomealign": {
+        "chr": "chr4",
+        "start": 154100819,
+        "stop": 154100880,
+        "strand": "-",
+        "targetseq": "ATTGGAGGAAAGATGAGTGAGAGCATCAACTTCTCTCACAACCTAGGCCAGTAAGTAGTGCTT",
+        "queryseq":  "ATTGGAGGGAGGGTGAACAAAGAGATAGACTTCTG--GCAACCTGGGCCAGTAGGTAGTGTCT"
+    }
+
+Here is an example of the genome-align track::
+
+    chr1    12177   12240   id:1,genomealign:{chr:"chr4",start:154100819,stop:154100880,strand:"-",targetseq:"ATTGGAGGAAAGATGAGTGAGAGCATCAACTTCTCTCACAACCTAGGCCAGTAAGTAGTGCTT",queryseq:"ATTGGAGGGAGGGTGAACAAAGAGATAGACTTCTG--GCAACCTGGGCCAGTAGGTAGTGTCT"}
+    chr1    12245   12273   id:2,genomealign:{chr:"chr9",start:114130992,stop:114131016,strand:"+",targetseq:"CATCTCCTTGGCTGTGATACGTGGCCGG",queryseq:"TGTCCCCTTGTCTGC----CGGGGCTGG"}
+
+Your text file must be sorted by the first three columns. If your filename is example.qbed, you can sort it with the following command: ``sort -k1V -k2n -k3n example.genomealign > example.sorted.genomealign``
+
+Place your sorted genome-align file in a web-accessible directory, then compress and index as follows::
+
+    bgzip example.sorted.genomealign
+    tabix -p bed example.sorted.genomealign.gz
+
 Matplot Track
 -------------
 
