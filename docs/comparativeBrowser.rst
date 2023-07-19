@@ -124,7 +124,7 @@ Now, the browser displays the comparison between human SPP2 gene’s promoter re
 Example: create a human-mouse multiple tracks comparison view using the Comparative Epigenome Browser
 ------------------------------------------------------------------------------------------------------
 
-Here we will create a human-mouse multiple tracks comparison view using the Comparative Epigenome Browser. We will use remote tracks to add the following data tracks to the browser and recreate the browser view for Figure 3b from the paper (https://www.biorxiv.org/content/10.1101/2022.11.29.518374v1):
+Here we will create a human-mouse multiple tracks comparison view using the Comparative Epigenome Browser. We will use remote tracks to add the following data tracks to the browser and recreate the browser view for Figure 3b from the paper (https://genome.cshlp.org/content/33/5/824):
 
 Select assemblies and annotations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
