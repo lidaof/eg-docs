@@ -582,6 +582,8 @@ Here is an example of the genome-align track::
     chr1    12177   12240   id:1,genomealign:{chr:"chr4",start:154100819,stop:154100880,strand:"-",targetseq:"ATTGGAGGAAAGATGAGTGAGAGCATCAACTTCTCTCACAACCTAGGCCAGTAAGTAGTGCTT",queryseq:"ATTGGAGGGAGGGTGAACAAAGAGATAGACTTCTG--GCAACCTGGGCCAGTAGGTAGTGTCT"}
     chr1    12245   12273   id:2,genomealign:{chr:"chr9",start:114130992,stop:114131016,strand:"+",targetseq:"CATCTCCTTGGCTGTGATACGTGGCCGG",queryseq:"TGTCCCCTTGTCTGC----CGGGGCTGG"}
 
+We have a script to convert AXT file to genome-align format, you can find it in the scripts_ directory: (https://github.com/lidaof/eg-react/blob/master/backend/scripts/axt2align.py).
+
 Your text file must be sorted by the first three columns. If your filename is example.qbed, you can sort it with the following command: ``sort -k1V -k2n -k3n example.genomealign > example.sorted.genomealign``
 
 Place your sorted genome-align file in a web-accessible directory, then compress and index as follows::
