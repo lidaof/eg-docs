@@ -44,3 +44,7 @@ Daofeng Li, Deepak Purushotham, Jessica K Harrison, Silas Hsu, Xiaoyu Zhuo, Chan
 Daofeng Li, Jessica K. Harrison, Deepak Purushotham & Ting Wang, Exploring genomic data coupled with 3D chromatin structures using the WashU Epigenome Browser, Nature Methods volume 19, pages 909–910 (2022) [PMID: 35864166_].
 
 .. _35864166: https://pubmed.ncbi.nlm.nih.gov/35864166/
+
+Zhuo, Xiaoyu, Silas Hsu, Deepak Purushotham, Prashant K. Kuntala, Jessica K. Harrison, Alan Y. Du, Samuel Chen, Daofeng Li, and Ting Wang. Comparing Genomic and Epigenomic Features across Species Using the WashU Comparative Epigenome Browser, Genome Research, May 8, 2023, gr.277550.122. https://doi.org/10.1101/gr.277550.122.
+
+(Comparative browser paper)
