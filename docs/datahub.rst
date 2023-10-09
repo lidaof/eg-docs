@@ -449,6 +449,12 @@ In this basic example the value of each metadata term is a **string**. ::
         "assay": "MRE"
     }
 
+You can also use this syntax for customized color::
+
+     "sample": {"name"" "bone", "color": "#FF0000"}
+    
+The value of color can also be “red”, “blue”, and any CSS color.
+
 This example public Roadmap data hub has more complex metadata definitions and makes use of a **list of strings**
 to build a *hierarchical structure*. ::
 
