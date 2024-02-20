@@ -108,11 +108,7 @@ After this you are using your own API for gene annotation tracks and gene search
 
 Our current API in serice in ``GeneSource.js``:
 
-    export const AWS_API = "https://lambda.epigenomegateway.org/v2";
-
-This API is for testing only:
-
-    https://api.epigenomegateway.org/documentation
+    export const AWS_API = "https://lambda.epigenomegateway.org/v3";
 
 .. _Firebase_setup:
 

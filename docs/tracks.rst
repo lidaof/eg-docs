@@ -618,3 +618,15 @@ and it also supports many configurations:
 
 .. image:: _static/mat3.png
 
+RepeatMasker Track
+------------------
+
+We used bigbed format to display the RepeatMasker track. The bigbed file can be downloaded from UCSC genome browser, for example, the hg38 RepeatMasker bigbed file can be downloaded from http://hgdownload.soe.ucsc.edu/goldenPath/hg38/database/rmsk.bb. The bigbed file can be submitted directly without bgzip/tabix processing.
+
+For version 2 rmsk files, if you have your own bed format repeatmasker annotation file, you can convert it to bigbed format using the following steps:
+
+#. Use `rm2gff3 <https://github.com/clemgoub/rm2gff3>`_ to convert the repeatmasker.out file to a GFF3
+#. Use `format_gff.py <https://github.com/lidaof/eg-react/files/14272508/format_rmgff.py.txt>`_ script (rename it to a Python script after download) to convert this into the BED9+4 format expected by `rmskv2`
+#. Use the command `bedToBigBed -as rmskv2.as  -type=bed9+4 {repeatmasker.bed} {genome.chrom} {repeatmasker.bb}` with this `rmskv2.as <https://github.com/lidaof/eg-react/files/14272535/rmskv2.as.txt>`_ file
+
+You can check this link https://github.com/lidaof/eg-react/issues/345#issuecomment-1942661099 for more details.
